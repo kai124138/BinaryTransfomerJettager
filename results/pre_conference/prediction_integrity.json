@@ -1,0 +1,308 @@
+{
+  "definition": "Arithmetic mean of five one-vs-rest ROC AUC values.",
+  "evaluation_split": "Zenodo validation archive, held out from training",
+  "metadata_agreement_atol": 1e-12,
+  "roc_sampling": "300 logarithmic FPR points, seed 1; visualization only",
+  "sources": [
+    {
+      "configuration": "n8-FP32-seed1",
+      "sha256": "7d1804012964fcad3fc7b098badd31154c44ca147fbf1e8228a8cf58b74c2307",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-FP32-seed2",
+      "sha256": "72612b35099e3d53bf04ef4f3069356b403bf140dfa4a95855f849710a3f4a90",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-FP32-seed3",
+      "sha256": "863afc4bcbfd59995884a7fd1f505ade9e5b1d4ba568b0f29bc4a6be3e9eee34",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W8A8-seed1",
+      "sha256": "c4617952457932751bda5ffc4c5af78cf38f4c3baf2480960a2cd2e61cb33a0f",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W8A8-seed2",
+      "sha256": "38b6ed3f4b38c04a1e9f26191cac63b93cbf64944e077ec629bc6ad0782a6d9b",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W8A8-seed3",
+      "sha256": "4cf29288447e881161bef469bffa9889a2accf8aac377a12a824982ef97ec179",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A8-seed1",
+      "sha256": "888c24df02e66c539dd8e3d2443070267a3ba680f4b6a36f8579281794a0a55b",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A8-seed2",
+      "sha256": "e571d09bdf0651ccba090a4b69dff1c365049dd06cf033ef5aae26bf6463f6f6",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A8-seed3",
+      "sha256": "e750c64ec03e05a48c1cb78968dc79edd4622ce26939a8c9fe955c0afc4085d8",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A6-seed1",
+      "sha256": "6e7f1052eaf3f5a6d00bc23ce31f63e5c33f6547165e1d65a8dec7913631316c",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A6-seed2",
+      "sha256": "57087ce126f080f5951fc236202e12f6542f549c0414878b81a24fefc86aded6",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A6-seed3",
+      "sha256": "4eae7c14b22032efde8d9b8d521d7afbc133a2dcecb3bad3aabdaf730730b059",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A4-seed1",
+      "sha256": "94e75db6077163a274bf2400e3d79157063303d022dc840362a84d924b0975f3",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A4-seed2",
+      "sha256": "ad6e54a465f65b72b3bed0cc24b285a7371516e2f1284e845edc7ec9b0f86493",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n8-W1A4-seed3",
+      "sha256": "e0ef6e72f45c770696716ecf7e23c7e1ebe216a8044a80a8df9647a48d92ad93",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-FP32-seed1",
+      "sha256": "48568997d5b86e214f7dba4058f7783cc2c14b23eb864045b12644629abed879",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-FP32-seed2",
+      "sha256": "225bbdd309dd2098f198a8112bc0225a00c9e8ad128f73ca1d238b91a44f357b",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-FP32-seed3",
+      "sha256": "587b08ada9abc3db048711b1983c194456f13cab7b94d29aa354fcd421646287",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W8A8-seed1",
+      "sha256": "a8806182a8e9c58658437efe0097f37366c9efbc4023e919ba04c59e19a38e0c",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W8A8-seed2",
+      "sha256": "fb5e70b63a52a49e6cf88eceb8a9c0d993350f7f5794b674c5ab43e03b627038",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W8A8-seed3",
+      "sha256": "0a7ceb07d3b806f23a42b54490ddb6c53a51937015c24c332690615d521be02a",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A8-seed1",
+      "sha256": "dd60ca7f6bbdd368b2473f62e90b26d48ad18aa19fe1a72421d0198e8bd8e92e",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A8-seed2",
+      "sha256": "2918e9f70b91fcfebad45c3dfa9de3f561bfbd1d073eb0b03686821b3014371a",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A8-seed3",
+      "sha256": "0cd80d2f6d4a0d469f193b8c69b36dc72b33f5d111b277815eb2334c18ca85d2",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A6-seed1",
+      "sha256": "765e88a82401528556412f875f071ad616ca1395ba378291b5570edc813421c7",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A6-seed2",
+      "sha256": "4053b91c1e2a76b6e1a4f72ab22af4698c62579dbc7dbb01038a677c1bcf31b8",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A6-seed3",
+      "sha256": "4653728ade4de2ab1b37e3e614b13eac0779258cd543dc26f3640ec7b9809b82",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A4-seed1",
+      "sha256": "d3b107590143ce1c92563289840b178d0c1f0c26ba6e75b13579c21864a30c05",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A4-seed2",
+      "sha256": "99f20569cb38af46050fda51049b7e01639e4073e434506ce93b37c77ab850fe",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n16-W1A4-seed3",
+      "sha256": "68efff5c7fd08c48b094fe1f79024ff73e838462f71808e6b3813c44ff744e1c",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-FP32-seed1",
+      "sha256": "b61d70dd0e61740de2fcbdca469d87303261031f2eb194bee8c9c8110b6e8d11",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-FP32-seed2",
+      "sha256": "b601fe755f44d902666d927ebc5cfe95ef1b3302f1c9bcac468078307535f2c1",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-FP32-seed3",
+      "sha256": "570d4bb44b6ca2c699843b15515aa8dc84b329e77650c8ad200b81a29ed88bb3",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W8A8-seed1",
+      "sha256": "c1ffe021fbeba8d15db85efb71a1f94ae57a51802e0dbcda1637afd970b98337",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W8A8-seed2",
+      "sha256": "7a9ca5534da29a518a1f6e3eb4a6ed5469d48ff0488f936646354659a083b980",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W8A8-seed3",
+      "sha256": "4581d4f9f6657abe0a6066b7f78816abac0786cc05b1973beecb87191aa03006",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A8-seed1",
+      "sha256": "016a9b80ac5c1f1b87977bec438b2f3be388d8638e9ec9e31d44cd83f664eb26",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A8-seed2",
+      "sha256": "ba77fe65ef74779e92a0dae7a7d95799d2142e9f97e427a1076f1f43553ff2cc",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A8-seed3",
+      "sha256": "9bd09ca5a563bf893ffdeb10920ba9dfcc2a1152c6d7a63d58f19eebced5acad",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A6-seed1",
+      "sha256": "e86b70794aca4cceec989e2c94185bab2a23b87f02a08cf3ff265215af01ea75",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A6-seed2",
+      "sha256": "dba1c2fa47fbbd09061a30a0ddcef2a426d2b1267110b03c0cf3decd3db23162",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A6-seed3",
+      "sha256": "c264ff6a8b42b315d37987a9d364f2ebe569b790c47b263affa1c8c0d72b75a6",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A4-seed1",
+      "sha256": "457acb2c5520fd75f14f7a5352edede07d1bbfd955a95b746e1121f3b90b70d9",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A4-seed2",
+      "sha256": "c6c6e00bb413713f74f302188d893ce721d12742883524664b253c255956af89",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n32-W1A4-seed3",
+      "sha256": "aacdf87b41fd8c7a669619f26ca5c475733584e7091911f1c5dfd0d92b2cf7f7",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-FP32-seed1",
+      "sha256": "4fb3469424ab5ea6d825ee67ff6b42d65a249d904f19454452569efc5f464b7b",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-FP32-seed2",
+      "sha256": "0f8fd3768903843e5855d982c32e93b01b4a4cae3fa0f868ce8fe7069f3f5e65",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-FP32-seed3",
+      "sha256": "76ab46f23c19b94a9d4b2c9d5bc8e2010eeda93a12373f9f7fa0193592ccca95",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W8A8-seed1",
+      "sha256": "b03c1f9aae0f403e518546d35aaec76724b60916a66cff745a075c93b366b708",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W8A8-seed2",
+      "sha256": "ae37d6f1bc10d725b1ba6c124f329a73c3e77680c3be47e998cb53d8bd3d3ff5",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W8A8-seed3",
+      "sha256": "cd1529c68e83139e01fc25d9879246551c4a78c3b0c8046d1a90c45fa2a24701",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A8-seed1",
+      "sha256": "a592c89297698bcf6dd2a6f2021df2fa0938fb2cec854b6d99e550569b971da0",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A8-seed2",
+      "sha256": "883f31ffe01dba109036cd3e29963067c7d1feb82cb8b7945f2c400ddc759c27",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A8-seed3",
+      "sha256": "01e728da2226144113b4d3097d8869d27f87a2ff05623aef505f47651bfc58ee",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A6-seed1",
+      "sha256": "a274f0b039c0f7f45ca32cc14c1ed1dd4be0e7fd9a01557f305f67cb04dd3d1c",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A6-seed2",
+      "sha256": "a4b0a2fd7f43f798697e585ef9af6f48b85d47957e724e01d79822a129106d9d",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A6-seed3",
+      "sha256": "eb5c4d650612da894a3e12d4098c8bf7f6cdf108c76cbc90b7f257a9b95b4629",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A4-seed1",
+      "sha256": "88e4cb14f836157257d69caca32903a417e61253cd1eccb04bcdb21735b8d657",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A4-seed2",
+      "sha256": "bddd5f9e820fa44feed58c40e59ca3da5e8629914f3fe973a1a67cfc8d8d6d2f",
+      "n_events": 260000
+    },
+    {
+      "configuration": "n64-W1A4-seed3",
+      "sha256": "ed95a919697cb0b53535c25438e4bff8cc84405289c73385a7fd61af225dbbd2",
+      "n_events": 260000
+    }
+  ]
+}

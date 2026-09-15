@@ -1,0 +1,45 @@
+# Local environments and caches
+.venv*/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mpl-cache/
+.uv-cache/
+.DS_Store
+build/
+dist/
+
+# Training inputs and generated checkpoints
+data/
+outputs/
+checkpoints/
+*.h5
+*.hdf5
+*.keras
+*.npz
+*.npy
+*.tar.gz
+
+# Notebooks, operational records, and personal material
+*.ipynb
+.ipynb_checkpoints/
+*.log
+*.jsonl
+logs/
+wandb/
+.env
+.env.*
+*.pem
+*.key
+*api-key*
+.claude/
+.codex/
+.agents/
+.obsidian/
+Sessions/
+notebooks/
+docs/infrastructure/
+*.pptx
+*.docx
