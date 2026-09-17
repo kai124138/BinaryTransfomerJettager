@@ -14,6 +14,10 @@ We are testing which binary-weight transformer architectures improve five-class 
 
 Start with the status table below, open a run’s W&B link for live curves, and use the architecture table to see exactly what changed. W&B updates during training; the GitHub table is a timestamped snapshot refreshed separately. Promotion decisions and validated results will be recorded separately from preliminary training metrics.
 
+## Hardware work in parallel
+
+The selected R4 gradual-EBOP model is now in a separate, bounded synthesis chain on Mulder. Linux C simulation passed; Vitis HLS is running and Vivado OOC follows after success. See the [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) for its intent, export repairs, RF=1 setting, and the xczu7ev proxy-device limitation.
+
 ## Live snapshot
 
 Execution note (2026-09-17): All 12 configurations passed remote build, gradient and save/reload checks; resume and initialization checks also passed. The 12-run GPU queue is submitted. A00 and A01 have both completed and checkpointed a real training epoch; the concurrency limit is two workers. Each run stops at cumulative epoch 100 for the first promotion decision. See the [launch record](launch-record.json).
