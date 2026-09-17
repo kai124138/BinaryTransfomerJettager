@@ -4,7 +4,7 @@ Protocol date: 2026-09-17. Scope: **initial A-series screen; B/F/H stages condit
 
 This is the protocol for the current training batch. Run state belongs in the [work hub](README.md) and its [machine-readable snapshot](live-status.json); the design below does not claim that a planned run has started or completed.
 
-The primary batch trains the entire binary-weight transformer. It is **not frozen-backbone training**. The later F-series explicitly freezes the backbone and changes only the final classifier or output biases. The completed frozen-backbone investigation supplies historical evidence below; its results are separate from the new A-series.
+The primary batch trains the entire binary-weight transformer. It is **not frozen-backbone training**. The later F-series explicitly freezes the backbone and changes only the final classifier or output biases. Frozen-backbone results are separate from the new A-series.
 
 ## Stages and boundaries
 
@@ -137,7 +137,7 @@ Run these inexpensive follow-ups on the two finalist backbones, separately at ea
 
 Use 100,000 training events, ridge coefficient 0.01, and at most 150 L-BFGS iterations for F02/F03, matching the prior successful method. Record the exact objective normalization from the existing refit code and convergence status. Evaluate F02/F03 on the same disjoint validation selection subset as F01; reserve the remaining validation fitting subset for bias fitting. Freeze subset membership before running the batch. The prior bias split was 61,999 fitting / 62,001 selection events. Record bias precision explicitly: prior head-refit biases were floating point, so deployment requires bias quantization and remeasurement. A D=32 final head has 160 weights; D=16 has 80.
 
-F02/F03 are **mixed-weight-precision models with a frozen binary backbone**, not entirely binary networks. They require a corresponding binary-backbone gate and mixed-precision export validation. Include classifier and correction costs in the final resource check. A software/native-cost gain is not proof of II, latency, or FPGA fit. The earlier F03-equivalent result improved R1 by 0.3965 percentage points (paired event-level 95% interval 0.3191–0.4740 points, one seed); no gain is promised on the new architectures.
+F02/F03 are **mixed-weight-precision models with a frozen binary backbone**, not entirely binary networks. They require a corresponding binary-backbone gate and mixed-precision export validation. Include classifier and correction costs in the final resource check. A software/native-cost gain is not proof of II, latency, or FPGA fit. No gain is promised on the new architectures.
 
 ```mermaid
 flowchart LR
@@ -228,6 +228,8 @@ Seeds 1/2/3 vary initialization; hold data split and data order fixed to isolate
 
 ## Code snippets and launch prerequisites
 
+The launch uses a validated, immutable training-runtime revision. Its implementation changes are not yet included in this public source snapshot; use the matching runtime revision before executing these templates, particularly for accuracy-based selection, combined variants and the one-layer model.
+
 The [12 A-series configurations](../../code/hgq2/configs/batch20260917/) are the reproducibility entry point. Each A-series architecture row links its individual JSON. The configs contain existing configuration keys; proposed B-series floors are deliberately not inserted as silently ignored fields. The live snapshot records the actual launch revision and runtime state when available.
 
 ```python
@@ -255,7 +257,9 @@ python run_ablation.py train --config configs/batch20260917/batch20260917-a00-s1
 
 These are reproducibility templates. Consult the live snapshot for the commands and phases actually executed; a template alone is not launch evidence. Create separate prepared-array roots for N=8/16/32, with common event membership and train-only standardization per N. The current preparation code trusts an existing READY marker, so never point N=16 training at an N=8 cache. Preserve one immutable cache per actual preprocessing contract, not merely per human-readable name.
 
-Preflight checks required before launch (the work hub reports completion):
+A-series launch preflight passed: all 12 builds, gradient updates, model save/reload, matched initialization, architecture-derived binary checks, seed naming and checkpoint resumption. The checklist below also includes work required for later B/F/H stages; those follow-up stages have not launched.
+
+Implementation checklist:
 
 | Item | Failure mode to guard against | Required verification |
 |---|---|---|

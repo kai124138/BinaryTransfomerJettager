@@ -7,7 +7,7 @@ We are testing which binary-weight transformer architectures improve five-class 
 [Detailed protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run configurations](../../code/hgq2/configs/batch20260917/) · [Machine-readable live status](live-status.json) · [Project results](../../README.md)
 
 <!-- WANDB_LINK_START -->
-[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — project `BNJetTag-Batch20260917`, group `batch20260917`. Run links and measurements will appear after registration; an empty project is not evidence that training has started.
+[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — project `BNJetTag-Batch20260917`, group `batch20260917`. This W&B project is private: live curves require project access. The public GitHub snapshot contains run state and epoch progress. Numerical monitoring metrics remain in W&B while access preferences are being resolved.
 <!-- WANDB_LINK_END -->
 
 ## How to follow this work
@@ -16,26 +16,28 @@ Start with the status table below, open a run’s W&B link for live curves, and 
 
 ## Live snapshot
 
+Execution note (2026-09-17): All 12 configurations passed remote build, gradient and save/reload checks; resume and initialization checks also passed. The 12-run GPU queue is submitted. A00 and A01 have both completed and checkpointed a real training epoch; the concurrency limit is two workers. Each run stops at cumulative epoch 100 for the first promotion decision. See the [launch record](launch-record.json).
+
 The table below is a dated status snapshot. Check its timestamp and the [status JSON](live-status.json) before treating it as current. `planned` means that no submission or remote run is recorded; `queued` requires either an explicit submission record or a remote queue state. A blank metric is unmeasured, not zero. Budget feasibility applies to the selected checkpoint, not merely the requested target.
 
 <!-- LIVE_STATUS_START -->
 
-Snapshot refreshed: **2026-09-17T15:01:57Z**. Source: `initial_planning_snapshot`.
+Snapshot refreshed: **2026-09-17T15:32:02Z**. Source: `local_snapshot`.
 
 | Run | State | Epochs | Latest val accuracy / AUC | Best feasible val accuracy / AUC | Feasible EBOPs / target | Runtime | Source updated UTC |
 |---|---|---:|---:|---:|---:|---:|---|
-| A00 | planned | — | — / — | — | — / 350,000 | — | — |
-| A01 | planned | — | — / — | — | — / 350,000 | — | — |
-| A02 | planned | — | — / — | — | — / 350,000 | — | — |
-| A03 | planned | — | — / — | — | — / 350,000 | — | — |
-| A04 | planned | — | — / — | — | — / 350,000 | — | — |
-| A05 | planned | — | — / — | — | — / 350,000 | — | — |
-| A06 | planned | — | — / — | — | — / 350,000 | — | — |
-| A07 | planned | — | — / — | — | — / 350,000 | — | — |
-| A08 | planned | — | — / — | — | — / 350,000 | — | — |
-| A09 | planned | — | — / — | — | — / 500,000 | — | — |
-| A10 | planned | — | — / — | — | — / 250,000 | — | — |
-| A11 | planned | — | — / — | — | — / 500,000 | — | — |
+| [A00](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8b75fad4710f) | running | 5 / 1000 | — / — | — | — / 350,000 | — | 2026-09-17T15:29:47Z |
+| [A01](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8cdfda97a5a5) | running | 0 / 1000 | — / — | — | — / 350,000 | — | — |
+| A02 | queued | — | — / — | — | — / 350,000 | — | — |
+| A03 | queued | — | — / — | — | — / 350,000 | — | — |
+| A04 | queued | — | — / — | — | — / 350,000 | — | — |
+| A05 | queued | — | — / — | — | — / 350,000 | — | — |
+| A06 | queued | — | — / — | — | — / 350,000 | — | — |
+| A07 | queued | — | — / — | — | — / 350,000 | — | — |
+| A08 | queued | — | — / — | — | — / 350,000 | — | — |
+| A09 | queued | — | — / — | — | — / 500,000 | — | — |
+| A10 | queued | — | — / — | — | — / 250,000 | — | — |
+| A11 | queued | — | — / — | — | — / 500,000 | — | — |
 
 A paused screening rung is not a completed 1,000-epoch run. Blank metrics are unverified or unavailable. Runtime scope and budget-check details are recorded in [live-status.json](live-status.json).
 
