@@ -14,9 +14,13 @@ We are testing which binary-weight transformer architectures improve five-class 
 
 Start with the status table below, open a run’s W&B link for live curves, and use the architecture table to see exactly what changed. W&B updates during training; the GitHub table is a timestamped snapshot refreshed separately. Promotion decisions and validated results will be recorded separately from preliminary training metrics.
 
-## Hardware work in parallel
+## Current execution status: manual handoff
 
-The selected R4 gradual-EBOP model is now in a separate, bounded synthesis chain on Mulder. Linux C simulation passed; Vitis HLS is running and Vivado OOC follows after success. See the [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) for its intent, export repairs, RF=1 setting, and the xczu7ev proxy-device limitation.
+**17 September 2026 update:** the training Indexed Job failed with `MaxFailedIndexesExceeded` at16:34UTC; failed indexes were1–3 and no batch Pods remain. A00 retains60completed epochs and A01retains39 in persistent checkpoints. The underlying individual Pod failures have not been established from the retained controller status. Execution is now manual at Kai's request; no restart was submitted.
+
+The R4 hardware study passed local and Linux C simulation, but Vitis failed in its compiler frontend before RTL generation. No Vivado synthesis ran. See the [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) for the experiment's intent and current blockers.
+
+The older training table below is retained as a historical snapshot and is **superseded by this status update**.
 
 ## Live snapshot
 

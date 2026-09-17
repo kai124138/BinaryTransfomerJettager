@@ -1,6 +1,6 @@
 # R4 gradual-EBOP model: hardware synthesis
 
-Status snapshot: **2026-09-17T17:58:17+00:00**. Vitis HLS is running; Vivado OOC follows automatically only if HLS succeeds. This page is updated separately from the remote job.
+Status snapshot: **2026-09-17T18:11:40+00:00**. **Stopped; manual handoff requested.** Three HLS attempts failed in the Vitis frontend before RTL generation. No Vivado model synthesis started. Local and Linux C-simulation gates passed; no further attempts were launched after the handoff request.
 
 ## Intent
 
@@ -13,8 +13,8 @@ The model has eight constituents, three input features, d_model=32, two transfor
 | Model-to-export fidelity | Original selected checkpoint and fixed validation sample | Passed |
 | Local C simulation | 4,096 jets | Bit-exact against export |
 | Linux C simulation on Mulder | Fresh compilation, same 4,096 jets | Bit-exact against export |
-| Vitis HLS 2023.2 | VU13P, 2.5 ns, RF=1, Latency, io_parallel | Running |
-| Vivado OOC 2023.2 | xczu7ev, 2.5 ns, four threads | Queued after successful HLS |
+| Vitis HLS 2023.2 | VU13P, 2.5 ns, RF=1, Latency, io_parallel | Failed in compiler frontend |
+| Vivado OOC 2023.2 | xczu7ev, 2.5 ns, four threads | Not started; requires valid RTL |
 | Place-and-route / bitstream | Outside this study | Not launched |
 
 ## What the results will establish
@@ -33,4 +33,4 @@ Layer tracing also exposed a zero-grid conversion defect: ReLU followed by a sat
 
 One serialized synthesis chain; no GPU allocation. Guards stop its own subprocesses at 64 GiB process-group RSS, six hours for HLS, eight hours for Vivado, or 50 GiB work-directory growth. Temporary files use the isolated work directory. Raw reports, constraints, verification records and logs are retained before reporting results.
 
-Next update: HLS resources, top-level latency/II, and the subsequent Vivado synthesis state. [Return to the work hub](README.md).
+Next task: resolve the Vitis compiler crash before retrying hardware synthesis. Splitting interface pragmas and using explicit C linkage did not resolve it. [Return to the work hub](README.md).
