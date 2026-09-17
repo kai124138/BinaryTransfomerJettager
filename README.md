@@ -6,6 +6,14 @@ This repository contains the model implementation, training and evaluation scrip
 
 [Recent results](#research-update--september-2026) · [Pre-conference study](#pre-conference-fixed-precision-study) · [Methods](#model-and-evaluation) · [Reproduction](#reproduce-the-results) · [Code](#repository-structure)
 
+## What I’m working on now
+
+**[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
+
+The active batch tests 12 binary-transformer architectures and EBOP budgets, selecting checkpoints by validation accuracy. Runs are screened at 100, 200 and 400 epochs before longer, multi-seed confirmation. The hub explains the intent of each run, shows the experiment diagrams, and links to live training curves and dated status snapshots. Frozen-backbone classifier refinements and II=1 hybrid-DSP implementation studies are separate follow-up stages.
+
+[Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/live-status.json)
+
 ## Research update — September 2026
 
 ### Post-conference: EBOP-constrained training
