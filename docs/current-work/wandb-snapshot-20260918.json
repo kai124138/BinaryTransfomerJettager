@@ -1,0 +1,222 @@
+{
+  "description": "Allowlisted W&B API summaries; validation monitoring only, not held-out or hardware results. Missing fields remain unavailable.",
+  "campaigns": [
+    {
+      "batch": "batch20260917",
+      "project": "kayamaguchi-uc-san-diego/BNJetTag-Batch20260917",
+      "fetched_at_utc": "2026-09-18T12:16:51.228398+00:00",
+      "runs": [
+        {
+          "id": "8b75fad4710f",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 12796.792465958,
+            "_timestamp": 1789691106.2314606,
+            "completed_epochs": 100,
+            "ebops": 599799,
+            "epoch": 99,
+            "epoch_seconds": 167.2926362711005,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5834677419354839,
+            "val_macro_auc": 0.8487550703786646
+          }
+        },
+        {
+          "id": "8cdfda97a5a5",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 8925.315077413,
+            "_timestamp": 1789695097.0410032,
+            "completed_epochs": 100,
+            "ebops": 456462,
+            "epoch": 99,
+            "epoch_seconds": 78.43190682306886,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5384193548387097,
+            "val_macro_auc": 0.8226886155899539
+          }
+        },
+        {
+          "id": "968ae5d77f36",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 13907.430463559,
+            "_timestamp": 1789698547.4975731,
+            "completed_epochs": 100,
+            "ebops": 443662,
+            "epoch": 99,
+            "epoch_seconds": 119.80975249502808,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5731129032258064,
+            "val_macro_auc": 0.8445358092597838
+          }
+        },
+        {
+          "id": "92c3adf8ea07",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 6418.69318542,
+            "_timestamp": 1789692811.8648553,
+            "completed_epochs": 100,
+            "ebops": 937044,
+            "epoch": 99,
+            "epoch_seconds": 44.73696126881987,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5369838709677419,
+            "val_macro_auc": 0.8233930151581028
+          }
+        },
+        {
+          "id": "c8390667f58e",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 14040.687751292,
+            "_timestamp": 1789700557.1930108,
+            "completed_epochs": 100,
+            "ebops": 692894,
+            "epoch": 99,
+            "epoch_seconds": 114.44382052309813,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5744112903225806,
+            "val_macro_auc": 0.8469784262657098
+          }
+        },
+        {
+          "id": "2d39a44e8179",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 12776.931095049,
+            "_timestamp": 1789699313.761636,
+            "completed_epochs": 100,
+            "ebops": 570630,
+            "epoch": 99,
+            "epoch_seconds": 94.20031295204537,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5816048387096774,
+            "val_macro_auc": 0.8507175769704671
+          }
+        },
+        {
+          "id": "0f7f39c0d625",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 13987.243475391,
+            "_timestamp": 1789700570.209385,
+            "completed_epochs": 100,
+            "ebops": 2496133,
+            "epoch": 99,
+            "epoch_seconds": 110.24043520260602,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.3771774193548387,
+            "val_macro_auc": 0.6818705396346421
+          }
+        },
+        {
+          "id": "d8fca5f337d4",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 13344.428994524,
+            "_timestamp": 1789701245.8712668,
+            "completed_epochs": 100,
+            "ebops": 834733,
+            "epoch": 99,
+            "epoch_seconds": 86.55108266603202,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.492258064516129,
+            "val_macro_auc": 0.8013038529444387
+          }
+        },
+        {
+          "id": "422cac75fde4",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 13742.088658235,
+            "_timestamp": 1789703144.5584335,
+            "completed_epochs": 100,
+            "ebops": 692305,
+            "epoch": 99,
+            "epoch_seconds": 106.98027575714514,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.4888306451612903,
+            "val_macro_auc": 0.808781584625005
+          }
+        },
+        {
+          "id": "8de4f4468d17",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 22233.614282418,
+            "_timestamp": 1789713574.266148,
+            "completed_epochs": 100,
+            "ebops": 788177,
+            "epoch": 99,
+            "epoch_seconds": 164.89207219099626,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.4758064516129033,
+            "val_macro_auc": 0.7893013169711629
+          }
+        },
+        {
+          "id": "2182aedd5fba",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 11140.959392611,
+            "_timestamp": 1789703338.3971727,
+            "completed_epochs": 100,
+            "ebops": 553981,
+            "epoch": 99,
+            "epoch_seconds": 78.34947312809527,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.5583629032258065,
+            "val_macro_auc": 0.8387748743592807
+          }
+        },
+        {
+          "id": "722576c02e4e",
+          "state": "finished",
+          "updated_at": null,
+          "summary": {
+            "_runtime": 11476.954966788,
+            "_timestamp": 1789704645.8644917,
+            "completed_epochs": 100,
+            "ebops": 688677,
+            "epoch": 99,
+            "epoch_seconds": 98.96782572288066,
+            "phase": "paused_for_promotion",
+            "screening_target_epochs": 100,
+            "val_categorical_accuracy": 0.6121290322580645,
+            "val_macro_auc": 0.8655814470175688
+          }
+        }
+      ]
+    },
+    {
+      "batch": "batch20260918",
+      "project": "kayamaguchi-uc-san-diego/BNJetTag-Batch20260917",
+      "fetched_at_utc": "2026-09-18T12:16:51.447419+00:00",
+      "runs": []
+    }
+  ]
+}
