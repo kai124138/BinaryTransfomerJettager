@@ -39,7 +39,8 @@
   "limitations": [
     "Screen completion is not full 1000-epoch completion.",
     "Some completed container logs are no longer available.",
-    "W&B summaries were not refreshed; anonymous reads were unavailable.",
     "Latest-epoch metrics are not selected-checkpoint results; no new held-out evaluation or hardware validation."
-  ]
+  ],
+  "wandb_refreshed_at_utc": "2026-09-20T21:56:56.882734+00:00",
+  "metrics_recovery": "All 27 architecture/attention summaries and all seven original ablation summaries recovered from authenticated W&B; older unavailable log evidence remains archived."
 }

@@ -1,5 +1,7 @@
 # Training batch plan with explicitly separate frozen-backbone follow-up
 
+**Continuation amendment (20 September):** all current architecture/attention arms will complete their existing 1,000-epoch schedules, superseding selective promotion below. Original scientific settings remain fixed. [Execution record](FULL_LENGTH_CONTINUATION_20260920.md).
+
 Protocol date: 2026-09-17. Scope: **initial A-series screen; B/F/H stages conditional**.
 
 This is the protocol for the current training batch. Run state belongs in the [work hub](README.md) and its [machine-readable snapshot](live-status.json); the design below does not claim that a planned run has started or completed.

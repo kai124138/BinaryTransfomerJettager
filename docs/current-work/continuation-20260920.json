@@ -1,0 +1,233 @@
+{
+  "schema_version": 1,
+  "snapshot_at_utc": "2026-09-20T22:08:06.102882+00:00",
+  "scope": "27 public architecture/attention continuations; separate private studies are not included.",
+  "policy": "All current arms continue to their unchanged1000-epoch schedules; selective screening promotion is superseded.",
+  "preflight": "PREFLIGHT_ALL_PASS: existing checkpoints, canonical config/source hashes and1000-epoch schedules verified; no completed run is restarted.",
+  "scientific_identity": "Original immutable source bundles, configurations, data roots, optimizer state and training arithmetic preserved.",
+  "scheduling_note": "Full campaign parallelism; pending runs start as shared-cluster capacity becomes available. Running pod phase can include dependency installation.",
+  "jobs": [
+    {
+      "batch": "batch20260917",
+      "job_name": "kai-batch0917-full-e1000-0920",
+      "status": "submitted",
+      "screening_completed_epochs": 100,
+      "target_epochs": 1000,
+      "run_count": 12,
+      "configured_parallelism": 12,
+      "active_deadline_seconds": 1209600,
+      "backoff_limit_per_index": 6,
+      "pod_phases": {
+        "Running": 11,
+        "Pending": 1
+      },
+      "runs": [
+        {
+          "index": 0,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 1,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 2,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 3,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": 101
+        },
+        {
+          "index": 4,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 5,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 6,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 7,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 8,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 9,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": 100,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 10,
+          "pod_phase": "Running",
+          "scheduled": true,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 11,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        }
+      ]
+    },
+    {
+      "batch": "batch20260918",
+      "job_name": "kai-batch0918-full-e1000-0920",
+      "status": "submitted",
+      "screening_completed_epochs": 400,
+      "target_epochs": 1000,
+      "run_count": 15,
+      "configured_parallelism": 15,
+      "active_deadline_seconds": 1209600,
+      "backoff_limit_per_index": 6,
+      "pod_phases": {
+        "Pending": 15
+      },
+      "runs": [
+        {
+          "index": 0,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 1,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 2,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 3,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 4,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 5,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 6,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 7,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 8,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 9,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 10,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 11,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 12,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 13,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        },
+        {
+          "index": 14,
+          "pod_phase": "Pending",
+          "scheduled": false,
+          "resume_epoch_observed": null,
+          "latest_observed_completed_epoch": null
+        }
+      ]
+    }
+  ]
+}

@@ -10,7 +10,7 @@ This repository contains the model implementation, training and evaluation scrip
 
 **[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
 
-As of **20 September 2026**, all 12 architecture runs have completed their 100-epoch screen, all 15 attention/precision/schedule runs have completed their 400-epoch screen, and all seven original EBOP ablations have finished 1,000 epochs. No training workers are active. The nine recoverable final-epoch attention logs all remain over budget; continuation requires checkpoint-history and controller review. See the **[dated progress report and per-run results](docs/current-work/TRAINING_PROGRESS_20260920.md)** for evidence and missing-metric coverage. Frozen-backbone classifier refinements and II=1 hybrid-DSP implementation studies remain separate follow-up stages.
+All **27 current architecture and attention runs** have been submitted to complete their existing **1,000-epoch schedules**, resuming from the 100- and 400-epoch screening checkpoints. All seven original EBOP ablations have already finished 1,000 epochs. The six missing attention summaries have been recovered from W&B. See the **[continuation status](docs/current-work/FULL_LENGTH_CONTINUATION_20260920.md)** and **[complete screening results](docs/current-work/TRAINING_PROGRESS_20260920.md)** for execution evidence, metrics and budget limitations. Frozen-backbone classifier refinements and FPGA implementation remain separate follow-up stages.
 
 [Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/live-status.json)
 

@@ -1,5 +1,7 @@
 # Fifteen-run follow-up: attention and compression timing
 
+**Continuation amendment (20 September):** all current architecture/attention arms will complete their existing 1,000-epoch schedules, superseding selective promotion below. Original scientific settings remain fixed. [Execution record](FULL_LENGTH_CONTINUATION_20260920.md).
+
 **Campaign `batch20260918` · all 15 screening runs completed 2026-09-19T10:05:38Z · verified 20 September**
 
 The study tests whether changes to attention design, probability precision, or compression timing improve five-class jet tagging at a final native cost of 350,000 EBOPs. It trains the complete binary-weight transformer, using five arms and three matched initialization seeds per arm. [Current results and completion status](TRAINING_PROGRESS_20260920.md) · [Machine-readable status](batch20260918-status.json) · [Config index](../../code/hgq2/configs/batch20260918/index.json).

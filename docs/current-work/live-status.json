@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "batch": "batch20260917",
-  "refreshed_at_utc": "2026-09-18T12:16:51Z",
-  "refresh_source": "authenticated_wandb_api",
+  "refreshed_at_utc": "2026-09-20T21:56:56.882734+00:00",
+  "refresh_source": "authenticated_wandb_graphql",
   "project_url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917",
   "selection_objective": "validation categorical accuracy under the final native EBOP target",
   "freshness_note": "This is a static snapshot at refresh time, not a streaming dashboard. Per-run source timestamps may be older.",
@@ -27,13 +27,19 @@
       "latest_validation_accuracy": 0.5834677419354839,
       "latest_validation_macro_ovr_auc": 0.8487550703786646,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 12796.792465958,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T00:25:06Z",
       "diagnostic": null,
       "latest_native_ebops": 599799,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8487550703786646,
+        "val_categorical_accuracy": 0.5834677419354839,
+        "ebops": 599799
+      }
     },
     {
       "run": "A01",
@@ -53,13 +59,19 @@
       "latest_validation_accuracy": 0.5384193548387097,
       "latest_validation_macro_ovr_auc": 0.8226886155899539,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 8925.315077413,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T01:31:37Z",
       "diagnostic": null,
       "latest_native_ebops": 456462,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 98,
+        "val_macro_auc": 0.80161400819235,
+        "val_categorical_accuracy": 0.5039677419354839,
+        "ebops": 436750
+      }
     },
     {
       "run": "A02",
@@ -79,13 +91,19 @@
       "latest_validation_accuracy": 0.5816048387096774,
       "latest_validation_macro_ovr_auc": 0.8507175769704671,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 12776.931095049,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T02:41:53Z",
       "diagnostic": null,
       "latest_native_ebops": 570630,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8507175769704671,
+        "val_categorical_accuracy": 0.5816048387096774,
+        "ebops": 570630
+      }
     },
     {
       "run": "A03",
@@ -105,13 +123,19 @@
       "latest_validation_accuracy": 0.5731129032258064,
       "latest_validation_macro_ovr_auc": 0.8445358092597838,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 13907.430463559,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T02:29:07Z",
       "diagnostic": null,
       "latest_native_ebops": 443662,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8445358092597838,
+        "val_categorical_accuracy": 0.5731129032258064,
+        "ebops": 443662
+      }
     },
     {
       "run": "A04",
@@ -131,13 +155,19 @@
       "latest_validation_accuracy": 0.492258064516129,
       "latest_validation_macro_ovr_auc": 0.8013038529444387,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 13344.428994524,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T03:14:05Z",
       "diagnostic": null,
       "latest_native_ebops": 834733,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8013038529444387,
+        "val_categorical_accuracy": 0.492258064516129,
+        "ebops": 834733
+      }
     },
     {
       "run": "A05",
@@ -157,13 +187,19 @@
       "latest_validation_accuracy": 0.3771774193548387,
       "latest_validation_macro_ovr_auc": 0.6818705396346421,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 13987.243475391,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T03:02:50Z",
       "diagnostic": null,
       "latest_native_ebops": 2496133,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.6818705396346421,
+        "val_categorical_accuracy": 0.3771774193548387,
+        "ebops": 2496133
+      }
     },
     {
       "run": "A06",
@@ -183,13 +219,19 @@
       "latest_validation_accuracy": 0.5744112903225806,
       "latest_validation_macro_ovr_auc": 0.8469784262657098,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 14040.687751292,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T03:02:37Z",
       "diagnostic": null,
       "latest_native_ebops": 692894,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8469784262657098,
+        "val_categorical_accuracy": 0.5744112903225806,
+        "ebops": 692894
+      }
     },
     {
       "run": "A07",
@@ -209,13 +251,19 @@
       "latest_validation_accuracy": 0.5583629032258065,
       "latest_validation_macro_ovr_auc": 0.8387748743592807,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 11140.959392611,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T03:48:58Z",
       "diagnostic": null,
       "latest_native_ebops": 553981,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8387748743592807,
+        "val_categorical_accuracy": 0.5583629032258065,
+        "ebops": 553981
+      }
     },
     {
       "run": "A08",
@@ -235,13 +283,19 @@
       "latest_validation_accuracy": 0.4888306451612903,
       "latest_validation_macro_ovr_auc": 0.808781584625005,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 13742.088658235,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T03:45:44Z",
       "diagnostic": null,
       "latest_native_ebops": 692305,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.808781584625005,
+        "val_categorical_accuracy": 0.4888306451612903,
+        "ebops": 692305
+      }
     },
     {
       "run": "A09",
@@ -261,13 +315,19 @@
       "latest_validation_accuracy": 0.5369838709677419,
       "latest_validation_macro_ovr_auc": 0.8233930151581028,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 6418.69318542,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T00:53:31Z",
       "diagnostic": null,
       "latest_native_ebops": 937044,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8233930151581028,
+        "val_categorical_accuracy": 0.5369838709677419,
+        "ebops": 937044
+      }
     },
     {
       "run": "A10",
@@ -287,13 +347,19 @@
       "latest_validation_accuracy": 0.4758064516129033,
       "latest_validation_macro_ovr_auc": 0.7893013169711629,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 22233.614282418,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T06:39:34Z",
       "diagnostic": null,
       "latest_native_ebops": 788177,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.7893013169711629,
+        "val_categorical_accuracy": 0.47580645161290325,
+        "ebops": 788177
+      }
     },
     {
       "run": "A11",
@@ -313,15 +379,31 @@
       "latest_validation_accuracy": 0.6121290322580645,
       "latest_validation_macro_ovr_auc": 0.8655814470175688,
       "best_feasible": null,
-      "feasibility_status": "no_verified_feasible_checkpoint",
+      "feasibility_status": "no_feasible_checkpoint_recorded_in_durable_state",
       "runtime_seconds": 11476.954966788,
       "runtime_basis": "wandb_reported_run_seconds",
       "source_updated_utc": "2026-09-18T04:10:45Z",
       "diagnostic": null,
       "latest_native_ebops": 688677,
-      "latest_within_final_target": false
+      "latest_within_final_target": false,
+      "lowest_recorded_checkpoint": {
+        "epoch": 99,
+        "val_macro_auc": 0.8655814470175688,
+        "val_categorical_accuracy": 0.6121290322580645,
+        "ebops": 688677
+      }
     }
   ],
   "cluster_verified_at_utc": "2026-09-20T20:46:42Z",
-  "cluster_verification_note": "All 12 recovered screening indexes remain complete; numerical W&B snapshot retains its original 2026-09-18 freshness."
+  "cluster_verification_note": "The September 20 cluster check confirmed completed 100-epoch screens. W&B was refreshed afterward; per-run source timestamps retain the actual metric times.",
+  "checkpoint_state_verified_at_utc": "2026-09-20T22:03:55.162350+00:00",
+  "checkpoint_feasibility_source": "checkpoint-screen-status-20260920.json",
+  "continuation_status": {
+    "source": "continuation-20260920.json",
+    "snapshot_at_utc": "2026-09-20T22:08:06.102882+00:00",
+    "job_name": "kai-batch0917-full-e1000-0920",
+    "target_epochs": 1000,
+    "status": "submitted"
+  },
+  "screening_snapshot_note": "Per-run metric/phase values below describe the completed screening stop. Consult continuation_status for subsequent execution."
 }

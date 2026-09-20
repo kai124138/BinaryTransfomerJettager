@@ -24,7 +24,16 @@
         "source_line_sha256": "47eb274120d34a3035de64479a27f54679d853dea1d49efb41e2868e0d7740d4",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "95964aa58017",
+        "run_name": "ebops-n8-20260912-ablation-r0-baseline-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 393582,
+        "validation_macro_ovr_auc": 0.852632593454661,
+        "source_updated_utc": "2026-09-13T05:28:02.606456+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "channel_quantization",
@@ -47,7 +56,16 @@
         "source_line_sha256": "b3431725b88efa940426207a0cb1de2c4f3ce70f9dd18d64bd690679e213ffb8",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "2f84bd301583",
+        "run_name": "ebops-n8-20260912-ablation-r1-channel-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 317890,
+        "validation_macro_ovr_auc": 0.8512631478945508,
+        "source_updated_utc": "2026-09-13T02:58:11.065011+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "reduced_feedforward",
@@ -56,7 +74,16 @@
       "completed_epochs": 1000,
       "completion_source": "Kubernetes completedIndexes 0-6",
       "latest_epoch_metrics": null,
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "64e2f6f5d184",
+        "run_name": "ebops-n8-20260912-ablation-r2-ffn32-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 362606,
+        "validation_macro_ovr_auc": 0.8606368949701043,
+        "source_updated_utc": "2026-09-13T21:39:55.259734+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "attention_probability_8bit",
@@ -79,7 +106,16 @@
         "source_line_sha256": "300a6fadf53d56794cd4c1e5354efa96ee4c042065833743445224f32502ce0c",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "3b88abc82ce3",
+        "run_name": "ebops-n8-20260912-ablation-r3-prob8-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 360814,
+        "validation_macro_ovr_auc": 0.8525079442353883,
+        "source_updated_utc": "2026-09-15T23:34:52.472300+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "gradual_budget_schedule",
@@ -102,7 +138,16 @@
         "source_line_sha256": "d58f7d9c2fea8e8e3a424ed2308597140da9ce7c46403bba660fef26443d2a81",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "cc0da02952b7",
+        "run_name": "ebops-n8-20260912-ablation-r4-gradual-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 361838,
+        "validation_macro_ovr_auc": 0.850851791566901,
+        "source_updated_utc": "2026-09-16T04:50:48.732224+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "fixed_width_recovery",
@@ -125,7 +170,16 @@
         "source_line_sha256": "be451f90edf899baa70dbf7ea53bc3b68e5ca36499d08a57c7785ba8b3ed034f",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "e5b18e950027",
+        "run_name": "ebops-n8-20260912-ablation-r5-recovery-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 308270,
+        "validation_macro_ovr_auc": 0.8232857259242538,
+        "source_updated_utc": "2026-09-15T07:31:40.850528+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     },
     {
       "arm": "knowledge_distillation",
@@ -148,7 +202,17 @@
         "source_line_sha256": "68d22ed3ba806fd7d028ca1e08b5d254404f06f10adf0e54b288a80431faa1fc",
         "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
       },
-      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update.",
+      "wandb_final_epoch_metrics": {
+        "run_id": "b01b23c8027b",
+        "run_name": "ebops-n8-20260912-ablation-r6-distill-w1a8-s1",
+        "completed_epochs": 1000,
+        "native_ebops": 344430,
+        "validation_macro_ovr_auc": 0.8444254251978135,
+        "source_updated_utc": "2026-09-20T06:08:27.649085+00:00",
+        "selection_note": "Final epoch, not necessarily best feasible checkpoint; held-out evaluation unchanged."
+      }
     }
-  ]
+  ],
+  "wandb_refreshed_at_utc": "2026-09-20T21:56:57.867287+00:00"
 }

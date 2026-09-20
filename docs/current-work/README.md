@@ -16,9 +16,9 @@ Start with the status table below, open a run’s W&B link for live curves, and 
 
 ## Current execution status
 
-Cluster checked at **2026-09-20T20:46:42Z**. **No training workers are active.** The original architecture screen completed **12/12 runs at 100 epochs**, the attention follow-up completed **15/15 runs at 400 epochs**, and the original EBOP ablations completed **7/7 runs at 1,000 epochs**. Screening runs retain their unchanged 1,000-epoch schedules and await a continuation decision.
+**All 27 public architecture and attention runs are submitted for full 1,000-epoch continuation.** Snapshot **2026-09-20T22:08:06.102882+00:00**: 11 Running, 16 Pending. Pending runs are queued for shared resources; Running containers may still be starting. The original seven ablations have already completed 1,000 epochs.
 
-**[Full September 20 progress report and per-run metrics](TRAINING_PROGRESS_20260920.md).** Final-epoch logs are available for 9 of 15 attention runs: all nine exceed 350k EBOPs, with 31.5903%–41.3782% validation accuracy and beta=0.001. The other six metric rows remain unavailable. Review checkpoint histories and budget-controller behavior before promotion; no selected winner is established. The architecture table below retains its September 18 W&B metric timestamp.
+**[Continuation status and checkpoint guarantees](FULL_LENGTH_CONTINUATION_20260920.md)** · **[Complete screening metrics](TRAINING_PROGRESS_20260920.md)**. The six previously unavailable attention summaries were recovered from W&B. All 15 last screening checkpoints exceed 350k EBOPs, and all 27 durable screening states record no feasible checkpoint at their own targets. Per-run source timestamps distinguish historical screening metrics from resumed execution.
 
 The separate [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) retains its dated hardware record. This training update adds no FPGA resource, latency, or II measurements.
 
@@ -43,7 +43,7 @@ Snapshot fetched: **2026-09-18T12:16:51Z**, through the authenticated W&B API. A
 | [A10](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8de4f4468d17) | 100 | 47.5806% | 0.789301 | 788,177 | 250,000 | No |
 | [A11](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/722576c02e4e) | 100 | 61.2129% | 0.865581 | 688,677 | 500,000 | No |
 
-**Every latest checkpoint remains above its own EBOP target.** A11 has the highest latest validation accuracy (61.2129%), at 688,677 EBOPs against a 500,000 target. Among the 350,000-target rows, A00 has the highest latest validation accuracy (58.3468%), at 599,799 EBOPs. These are descriptive screening observations, not established improvements or deployment-ready winners. No best-feasible checkpoint metrics were reported in the fetched summaries; that is not proof that no earlier feasible checkpoint exists.
+**Every latest checkpoint remains above its own EBOP target.** A11 has the highest latest validation accuracy (61.2129%), at 688,677 EBOPs against a 500,000 target. Among the 350,000-target rows, A00 has the highest latest validation accuracy (58.3468%), at 599,799 EBOPs. These are descriptive screening observations, not established improvements or deployment-ready winners. The September20 continuation preflight subsequently inspected all12 durable checkpoint states and found `best_feasible=null` for every run. See [checkpoint-state evidence](checkpoint-screen-status-20260920.json).
 
 The screen has not established convergence or training-seed robustness. Promotion must consider learning curves, cost trajectories, matched controls, and the configured final budget. Checkpoint selection continues to use validation accuracy subject to that budget. W&B AUC and accuracy are reported directly here and have not been independently recomputed from prediction arrays for this update.
 
