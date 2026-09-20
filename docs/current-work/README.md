@@ -1,8 +1,8 @@
 # Current work: accuracy under a computational budget
 
-**Updated 18 September 2026 · batches `batch20260917` and `batch20260918`**
+**Updated 20 September 2026 · batches `batch20260917` and `batch20260918`**
 
-We are testing which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. The original 12-configuration screen has reached its first 100-epoch checkpoint. A further 15 training runs have been submitted to test attention design, attention precision, and compression timing. Frozen-backbone classifier fitting and hybrid DSP mappings are separate, conditional follow-ups.
+We are testing which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. The original 12-configuration screen has reached its first 100-epoch checkpoint. The further 15 runs testing attention design, attention precision, and compression timing have completed their 400-epoch screen. All seven original ablations have now completed 1,000 epochs. Frozen-backbone classifier fitting and hybrid DSP mappings are separate, conditional follow-ups.
 
 [15-run follow-up](BATCH20260918_ATTENTION_STUDY.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run configurations](../../code/hgq2/configs/batch20260917/) · [Machine-readable live status](live-status.json) · [Project results](../../README.md)
 
@@ -16,9 +16,9 @@ Start with the status table below, open a run’s W&B link for live curves, and 
 
 ## Current execution status
 
-Cluster checked at **2026-09-18T12:16:15Z**. The recovered original job completed **12/12 screening runs**, each at cumulative epoch **100 of 1,000**, on **2026-09-18T06:39:45Z**. W&B marks every run `paused_for_promotion`. This supersedes the earlier failure/manual-handoff notice; the recovered job resumed existing checkpoints.
+Cluster checked at **2026-09-20T20:46:42Z**. **No training workers are active.** The original architecture screen completed **12/12 runs at 100 epochs**, the attention follow-up completed **15/15 runs at 400 epochs**, and the original EBOP ablations completed **7/7 runs at 1,000 epochs**. Screening runs retain their unchanged 1,000-epoch schedules and await a continuation decision.
 
-The **15-run follow-up was submitted at 2026-09-18T12:14:11Z** with parallelism 15. The pod check at **2026-09-18T12:16:59Z** found **3 Running and 12 Pending**, with 3 workers Ready. These are startup observations, not evidence that every worker has begun training. No runs from the new group were visible in the W&B query at **2026-09-18T12:16:51.447419+00:00**. See the [follow-up protocol](BATCH20260918_ATTENTION_STUDY.md) and [submission/status record](batch20260918-status.json).
+**[Full September 20 progress report and per-run metrics](TRAINING_PROGRESS_20260920.md).** Final-epoch logs are available for 9 of 15 attention runs: all nine exceed 350k EBOPs, with 31.5903%–41.3782% validation accuracy and beta=0.001. The other six metric rows remain unavailable. Review checkpoint histories and budget-controller behavior before promotion; no selected winner is established. The architecture table below retains its September 18 W&B metric timestamp.
 
 The separate [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) retains its dated hardware record. This training update adds no FPGA resource, latency, or II measurements.
 
@@ -51,7 +51,7 @@ Exact values, source timestamps, runtime scope, and config hashes are in [live-s
 
 <!-- LIVE_STATUS_END -->
 
-## The 15 additional runs now launching
+## The 15 additional runs: 400-epoch screen complete
 
 Five configurations are each trained from scratch with **matched initialization seeds 4, 5, and 6**. All use the A04 reference: 16 constituents, D=32, FFN=32, two transformer blocks, four heads, channel-wise learned activation widths, binary projection weights, and a final 350k-EBOP target. A04 is a controlled reference, not the winner of the 100-epoch screen.
 

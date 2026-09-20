@@ -1,8 +1,8 @@
 # Fifteen-run follow-up: attention and compression timing
 
-**Campaign `batch20260918` · submitted 2026-09-18T12:14:11Z**
+**Campaign `batch20260918` · all 15 screening runs completed 2026-09-19T10:05:38Z · verified 20 September**
 
-The study tests whether changes to attention design, probability precision, or compression timing improve five-class jet tagging at a final native cost of 350,000 EBOPs. It trains the complete binary-weight transformer, using five arms and three matched initialization seeds per arm. [Current results and startup status](README.md) · [Machine-readable status](batch20260918-status.json) · [Config index](../../code/hgq2/configs/batch20260918/index.json).
+The study tests whether changes to attention design, probability precision, or compression timing improve five-class jet tagging at a final native cost of 350,000 EBOPs. It trains the complete binary-weight transformer, using five arms and three matched initialization seeds per arm. [Current results and completion status](TRAINING_PROGRESS_20260920.md) · [Machine-readable status](batch20260918-status.json) · [Config index](../../code/hgq2/configs/batch20260918/index.json).
 
 ## Fixed settings and comparisons
 
@@ -32,7 +32,7 @@ The planned continuation retains **B00 and two selected variant arms**, each wit
 
 ## Launch and implementation evidence
 
-The cluster confirms submission of `kai-batch0918-screen-e400` with parallelism **15**. The timestamped worker counts are in the [status record](batch20260918-status.json); submission and Running/Ready status do not prove a completed training epoch. The campaign uses the existing W&B project `BNJetTag-Batch20260917` and the new group **`batch20260918`**.
+The cluster confirms submission of `kai-batch0918-screen-e400` with parallelism **15**. All 15 indexes completed the 400-epoch rung; zero workers remain active at the September 20 check. The [status record](batch20260918-status.json) and [progress report](TRAINING_PROGRESS_20260920.md) record completion and the available final-epoch metrics. The campaign uses the existing W&B project `BNJetTag-Batch20260917` and the new group **`batch20260918`**.
 
 All 15 configurations passed local synthetic build, finite-gradient-step, and save/reload checks. Arm-effect checks included the missing positional table in B02 and B04's budget transitions. Resume/config/code guard checks passed on selected B02/B04 cases; uninterrupted-versus-resumed equivalence was tested for B02. These are software checks, not real-data training or FPGA results.
 

@@ -10,7 +10,7 @@ This repository contains the model implementation, training and evaluation scrip
 
 **[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
 
-The active batch tests 12 binary-transformer architectures and EBOP budgets, selecting checkpoints by validation accuracy. Runs are screened at 100, 200 and 400 epochs before longer, multi-seed confirmation. The hub explains the intent of each run, shows the experiment diagrams, and links to live training curves and dated status snapshots. Frozen-backbone classifier refinements and II=1 hybrid-DSP implementation studies are separate follow-up stages.
+As of **20 September 2026**, all 12 architecture runs have completed their 100-epoch screen, all 15 attention/precision/schedule runs have completed their 400-epoch screen, and all seven original EBOP ablations have finished 1,000 epochs. No training workers are active. The nine recoverable final-epoch attention logs all remain over budget; continuation requires checkpoint-history and controller review. See the **[dated progress report and per-run results](docs/current-work/TRAINING_PROGRESS_20260920.md)** for evidence and missing-metric coverage. Frozen-backbone classifier refinements and II=1 hybrid-DSP implementation studies remain separate follow-up stages.
 
 [Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/live-status.json)
 
@@ -22,7 +22,7 @@ The current study enforces a **350,000 effective bit-operation (EBOP) ceiling** 
 
 <!-- BEGIN RECENT_RESULTS -->
 
-Evaluation snapshot: **2026-09-15**. All experiments use eight constituents and one training seed.
+Evaluation snapshot: **2026-09-15**. All experiments use eight constituents and one training seed. All seven training runs have since completed 1,000 epochs; the checkpoint evaluations below retain their original date and interim labels pending final re-evaluation. [Training completion record](results/post_conference/ablation-training-status-20260920.json).
 
 | Experiment | EBOPs | Validation AUC | Held-out accuracy | Status |
 |---|---:|---:|---:|---|

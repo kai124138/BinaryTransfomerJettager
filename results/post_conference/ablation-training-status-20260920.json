@@ -1,0 +1,154 @@
+{
+  "refreshed_at_utc": "2026-09-20T20:46:42Z",
+  "job_completed_at_utc": "2026-09-20T06:08:41Z",
+  "scope": "Training completion and final-epoch log metrics; distinct from selected-checkpoint held-out evaluation.",
+  "runs": [
+    {
+      "arm": "tensor_quantization",
+      "index": 0,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 393582,
+        "target_ebops": 350000,
+        "beta": 2.12e-06,
+        "validation_macro_ovr_auc": 0.852633,
+        "validation_accuracy": null,
+        "epoch_seconds": 52.0,
+        "source_updated_utc": "2026-09-13T05:28:02.606327+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-13T05:28:02.606327910Z [epoch 1000/1000] EBOPs=393582 target=350000 beta=2.12e-06 AUC=0.852633 seconds=52.0 checkpoint=epoch-1000",
+        "source_line_sha256": "47eb274120d34a3035de64479a27f54679d853dea1d49efb41e2868e0d7740d4",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "channel_quantization",
+      "index": 1,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 317890,
+        "target_ebops": 350000,
+        "beta": 9.73e-07,
+        "validation_macro_ovr_auc": 0.851263,
+        "validation_accuracy": null,
+        "epoch_seconds": 44.7,
+        "source_updated_utc": "2026-09-13T02:58:11.064898+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-13T02:58:11.064898748Z [epoch 1000/1000] EBOPs=317890 target=350000 beta=9.73e-07 AUC=0.851263 seconds=44.7 checkpoint=epoch-1000",
+        "source_line_sha256": "b3431725b88efa940426207a0cb1de2c4f3ce70f9dd18d64bd690679e213ffb8",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "reduced_feedforward",
+      "index": 2,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": null,
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "attention_probability_8bit",
+      "index": 3,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 360814,
+        "target_ebops": 350000,
+        "beta": 1.17e-06,
+        "validation_macro_ovr_auc": 0.852508,
+        "validation_accuracy": null,
+        "epoch_seconds": 55.9,
+        "source_updated_utc": "2026-09-15T23:34:52.472148+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-15T23:34:52.472148063Z [epoch 1000/1000] EBOPs=360814 target=350000 beta=1.17e-06 AUC=0.852508 seconds=55.9 checkpoint=epoch-1000",
+        "source_line_sha256": "300a6fadf53d56794cd4c1e5354efa96ee4c042065833743445224f32502ce0c",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "gradual_budget_schedule",
+      "index": 4,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 361838,
+        "target_ebops": 350000,
+        "beta": 2.41e-06,
+        "validation_macro_ovr_auc": 0.850852,
+        "validation_accuracy": null,
+        "epoch_seconds": 53.2,
+        "source_updated_utc": "2026-09-16T04:50:48.732096+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-16T04:50:48.732096836Z [epoch 1000/1000] EBOPs=361838 target=350000 beta=2.41e-06 AUC=0.850852 seconds=53.2 checkpoint=epoch-1000",
+        "source_line_sha256": "d58f7d9c2fea8e8e3a424ed2308597140da9ce7c46403bba660fef26443d2a81",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "fixed_width_recovery",
+      "index": 5,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 308270,
+        "target_ebops": 350000,
+        "beta": 4.28e-07,
+        "validation_macro_ovr_auc": 0.823286,
+        "validation_accuracy": null,
+        "epoch_seconds": 30.8,
+        "source_updated_utc": "2026-09-15T07:31:40.850335+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-15T07:31:40.850335842Z [epoch 1000/1000] EBOPs=308270 target=350000 beta=4.28e-07 AUC=0.823286 seconds=30.8 checkpoint=epoch-1000",
+        "source_line_sha256": "be451f90edf899baa70dbf7ea53bc3b68e5ca36499d08a57c7785ba8b3ed034f",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    },
+    {
+      "arm": "knowledge_distillation",
+      "index": 6,
+      "status": "training_complete",
+      "completed_epochs": 1000,
+      "completion_source": "Kubernetes completedIndexes 0-6",
+      "latest_epoch_metrics": {
+        "epoch": 1000,
+        "training_horizon_epochs": 1000,
+        "native_ebops": 344430,
+        "target_ebops": 350000,
+        "beta": 2.38e-06,
+        "validation_macro_ovr_auc": 0.844425,
+        "validation_accuracy": null,
+        "epoch_seconds": 50.9,
+        "source_updated_utc": "2026-09-20T06:08:27.648930+00:00",
+        "source": "training_log",
+        "source_line": "2026-09-20T06:08:27.648930057Z [epoch 1000/1000] EBOPs=344430 target=350000 beta=2.38e-06 AUC=0.844425 seconds=50.9 checkpoint=epoch-1000",
+        "source_line_sha256": "68d22ed3ba806fd7d028ca1e08b5d254404f06f10adf0e54b288a80431faa1fc",
+        "metric_precision": "Six decimal places as printed by the trainer; not independently recomputed."
+      },
+      "selected_checkpoint_evaluation": "See separately dated ablation_metrics.json; not refreshed by this status update."
+    }
+  ]
+}

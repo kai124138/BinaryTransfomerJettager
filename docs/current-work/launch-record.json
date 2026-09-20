@@ -24,7 +24,7 @@
   "first_real_epoch_checkpoint_verified": true,
   "record_scope": "Original submission; current recovered job is recorded under latest_execution.",
   "latest_execution": {
-    "snapshot_at_utc": "2026-09-18T12:16:15Z",
+    "snapshot_at_utc": "2026-09-20T20:46:42Z",
     "job_name": "kai-batch0917-screen-e100-r3",
     "created_at_utc": "2026-09-17T21:56:02Z",
     "completed_at_utc": "2026-09-18T06:39:45Z",

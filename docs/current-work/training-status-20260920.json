@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "cluster_snapshot_at_utc": "2026-09-20T20:46:42Z",
+  "scope": "Public architecture, attention and original EBOP ablation campaigns",
+  "source": "Kubernetes Job status and retained training log lines",
+  "active_workers": 0,
+  "jobs": [
+    {
+      "job_name": "kai-batch0917-screen-e100-r3",
+      "status": "Complete",
+      "completed_indexes": "0-11",
+      "succeeded_indexes": 12,
+      "started_at_utc": "2026-09-17T21:56:02Z",
+      "completed_at_utc": "2026-09-18T06:39:45Z",
+      "active_workers": 0,
+      "failed_pod_attempts": 0
+    },
+    {
+      "job_name": "kai-batch0918-screen-e400",
+      "status": "Complete",
+      "completed_indexes": "0-14",
+      "succeeded_indexes": 15,
+      "started_at_utc": "2026-09-18T12:14:11Z",
+      "completed_at_utc": "2026-09-19T10:05:38Z",
+      "active_workers": 0,
+      "failed_pod_attempts": 1
+    },
+    {
+      "job_name": "kai-ebops-abl-0912-e1000",
+      "status": "Complete",
+      "completed_indexes": "0-6",
+      "succeeded_indexes": 7,
+      "started_at_utc": "2026-09-12T08:33:22Z",
+      "completed_at_utc": "2026-09-20T06:08:41Z",
+      "active_workers": 0,
+      "failed_pod_attempts": 2
+    }
+  ],
+  "limitations": [
+    "Screen completion is not full 1000-epoch completion.",
+    "Some completed container logs are no longer available.",
+    "W&B summaries were not refreshed; anonymous reads were unavailable.",
+    "Latest-epoch metrics are not selected-checkpoint results; no new held-out evaluation or hardware validation."
+  ]
+}
