@@ -10,6 +10,10 @@ We are testing which binary-weight transformer architectures improve five-class 
 [Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. The September 21 numerical snapshot comes from durable trainer records; earlier W&B snapshots remain linked as history. Project visibility was not changed.
 <!-- WANDB_LINK_END -->
 
+## Engram lookup-memory study
+
+The separate [Engram study and source](ENGRAM_STUDY.md) are now public. Its September 21, 23:46 PDT snapshot records E00 at epoch 675 and E01–E03 at 1,000 epochs with failed final metric-reproduction checks. None has a feasible checkpoint. Its four pilot runs are additional to the 27 architecture/attention runs below; its augmented cost convention includes custom memory arithmetic estimates.
+
 ## How to follow this work
 
 Start with the status table below, open a run’s W&B link for live curves, and use the architecture table to see exactly what changed. W&B updates during training; the GitHub table is a timestamped snapshot refreshed separately. Promotion decisions and validated results will be recorded separately from preliminary training metrics.

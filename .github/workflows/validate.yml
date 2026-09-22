@@ -11,5 +11,6 @@ jobs:
         with:
           python-version: '3.12'
       - run: python code/analysis/validate_repository.py
+      - run: python code/analysis/validate_engram_publication.py
       - run: pip install -r requirements-plots.txt
       - run: python code/analysis/build_figures.py

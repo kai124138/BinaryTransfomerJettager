@@ -14,6 +14,8 @@ This repository contains the model implementation, training and evaluation scrip
 
 [Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/training-status-20260921.json)
 
+**Engram study:** the [four-arm lookup-memory experiment](docs/current-work/ENGRAM_STUDY.md) and its [frozen implementation](code/engram/README.md) are now included. At the September 21, 23:46 PDT snapshot, E01–E03 reached 1,000 epochs but failed final metric-reproduction checks; E00 remained in training. None has a feasible checkpoint under the augmented 350k target. These provisional records are separate from the native-only architecture/attention tables.
+
 ## Research update — September 2026
 
 ### Post-conference: EBOP-constrained training
@@ -216,6 +218,7 @@ The publication checks cover all 60 pre-conference prediction archives, JSON/con
 
 ```text
 code/
+  engram/                  Frozen lookup-memory experiment and synthetic checks
   hgq2/
     bnhgq2/                 Model, data, quantization, training, export, verification
     configs/                Scientific configurations and configuration generators
@@ -232,6 +235,7 @@ code/
     update_readme.py          Result tables from the numerical records
     validate_repository.py   Source, configuration, result, and link checks
 results/
+  engram/                  Recorded metrics, failures and source provenance
   pre_conference/           Fixed-precision AUC, EBOPs, ROC curves, uncertainties
   post_conference/          Budget-control and constrained-training results
   hardware/                HLS resource and performance estimates

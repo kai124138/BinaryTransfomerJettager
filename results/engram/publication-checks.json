@@ -1,0 +1,31 @@
+{
+  "checked_at_utc": "2026-09-22T06:53:12.695641+00:00",
+  "status": "PASS",
+  "checks": [
+    "address_reference_mask_gradient_serialization_[1]_none_1",
+    "address_reference_mask_gradient_serialization_[1]_hard_1",
+    "address_reference_mask_gradient_serialization_[2, 3]_hard_2",
+    "round_to_even_saturation_bin_boundaries",
+    "table_adam_lr_multiplier_and_no_weight_decay",
+    "all_eight_production_configs_fit_declared_module_budgets",
+    "engram_cost_tiebreak_legacy_order_preserved_and_export_rejected",
+    "all_eight_arms_build_binary_initialization_cost_reload",
+    "diagnostics_are_finite_nonmutating_and_show_initial_zero_residual",
+    "private_tracking_and_campaign_isolation_guards",
+    "existing_trainer_resume_matches_uninterrupted_optimizer_pid_outputs"
+  ],
+  "runtime_versions": {
+    "tensorflow": "2.21.0",
+    "keras": "3.15.0",
+    "hgq2": "0.1.9",
+    "quantizers": "1.2.2",
+    "numpy": "2.4.6",
+    "scikit-learn": "1.9.0"
+  },
+  "platform": "macOS CPU",
+  "scope": "Small synthetic correctness checks only. Production checkpoint finalization failures are unresolved.",
+  "environment_note": "Local NumPy 2.4.6 differs from production NumPy 2.5.0; this is not a claim of production-environment checkpoint resume equivalence.",
+  "runtime_source_files_match_production": true,
+  "accuracy_gain_measured": false,
+  "hardware_validated": false
+}

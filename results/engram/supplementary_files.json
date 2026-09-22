@@ -1,0 +1,20 @@
+{
+  "note": "Published helpers and configurations outside the runtime source-manifest hash. prepare_batch_cache.py is the existing shared cache preparer.",
+  "files": {
+    "prepare_batch_cache.py": "918e57c18ecf9a1094531f83f75ae67ca5a346162747e850e6e65f567f0cd366",
+    "check_engram.py": "6081a1def721c687c71d7bfba5d3ed1dac663a1a5f1f0931de42a68c74598906",
+    "requirements-training.txt": "ceadefd97be5d10525d74a671095956d7168775d7bef7bb2d1df98259578de7c",
+    "requirements-cpu.txt": "1cd95ea69a398126ce43a10b2bf244a061c72d24cee82bf454fa604aa656ecdf",
+    "configs/engram/engram-e01-s1.json": "ab60f518818ebc40a08a406f6465ee7e98f9795714fce32d007f8b3a7a724de0",
+    "configs/engram/engram-e00-s1.json": "0cb480262482350a94f630c8e2e8d534b8c9919d31bc10a9f5d7c65adfba889b",
+    "configs/engram/engram-e02-s1.json": "2099df478cfbc91aece096cbd2277a652604811ccc7ab0afed07c966770e7e54",
+    "configs/engram/engram-e03-s1.json": "30185ed6b56d63b3f7e2540365ea431c79f4d4bdf989691158a5b4cf92c8cb05",
+    "configs/engram/engram-e06-s1.json": "fde7cce2ca5951d3338b1da4fb4e40f6786ce4773176a398376284c5efc00722",
+    "configs/engram/engram-e07-s1.json": "db9aa050aa705a6419a3c5984127961aeceb1d4c86b464d449cbad7ed364ad93",
+    "configs/engram/engram-e05-s1.json": "af9257a8aee7ce8e66d433e92c1a82dfc98a7183f642f942a0135a2166ad5d70",
+    "configs/engram/index.json": "b8b36c4d11b03c73b19bba215b31d32792baf9ba5f9c4bcb1210be3272266020",
+    "configs/engram/engram-e04-s1.json": "22d2ff9a089fb951094dd12a59a2815ca8946cca9ad7485cd129732b5f0bf9fb",
+    "configs/batch20260917/batch20260917-a04-s1.json": "77c8342330f942234a641f8d06d2705c583cef14027f7836d5fa658a80ed541f",
+    "convert_binary.py": "229c98f31c6a14235101ff8c96ec9db4f8c56cddc07e13b96e6cd80a5d3cca3d"
+  }
+}
