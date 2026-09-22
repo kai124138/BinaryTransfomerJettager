@@ -1,13 +1,13 @@
 # Current work: accuracy under a computational budget
 
-**Updated 20 September 2026 · batches `batch20260917` and `batch20260918`**
+**Updated 21 September 2026 · batches `batch20260917` and `batch20260918`**
 
-We are testing which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. The original 12-configuration screen has reached its first 100-epoch checkpoint. The further 15 runs testing attention design, attention precision, and compression timing have completed their 400-epoch screen. All seven original ablations have now completed 1,000 epochs. Frozen-backbone classifier fitting and hybrid DSP mappings are separate, conditional follow-ups.
+We are testing which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. All 27 architecture and attention runs were continued from their screening checkpoints under the existing 1,000-epoch schedules. Fifteen runs have now finished; five architecture runs have a feasible checkpoint, while all 15 attention runs remain without one. All seven original ablations have now completed 1,000 epochs. Frozen-backbone classifier fitting and hybrid DSP mappings are separate, conditional follow-ups.
 
-[15-run follow-up](BATCH20260918_ATTENTION_STUDY.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run configurations](../../code/hgq2/configs/batch20260917/) · [Machine-readable live status](live-status.json) · [Project results](../../README.md)
+[15-run follow-up](BATCH20260918_ATTENTION_STUDY.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run configurations](../../code/hgq2/configs/batch20260917/) · [Machine-readable status snapshot](training-status-20260921.json) · [Project results](../../README.md)
 
 <!-- WANDB_LINK_START -->
-[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. This public page includes the requested numerical summaries, fetched through the authenticated W&B API; project visibility was not changed.
+[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. The September 21 numerical snapshot comes from durable trainer records; earlier W&B snapshots remain linked as history. Project visibility was not changed.
 <!-- WANDB_LINK_END -->
 
 ## How to follow this work
@@ -16,42 +16,38 @@ Start with the status table below, open a run’s W&B link for live curves, and 
 
 ## Current execution status
 
-**All 27 public architecture and attention runs are submitted for full 1,000-epoch continuation.** Snapshot **2026-09-20T22:08:06.102882+00:00**: 11 Running, 16 Pending. Pending runs are queued for shared resources; Running containers may still be starting. The original seven ablations have already completed 1,000 epochs.
+**Snapshot: 21 September 2026, 17:39 PDT (22 September, 00:39 UTC).** Fifteen of the 27 public continuation runs have finished their 1,000-epoch schedules; 12 remain active. Five architecture runs have recorded a checkpoint within their own final budgets. None of the 15 attention runs has recorded a checkpoint within its 350,000-EBOP budget.
 
-**[Continuation status and checkpoint guarantees](FULL_LENGTH_CONTINUATION_20260920.md)** · **[Complete screening metrics](TRAINING_PROGRESS_20260920.md)**. The six previously unavailable attention summaries were recovered from W&B. All 15 last screening checkpoints exceed 350k EBOPs, and all 27 durable screening states record no feasible checkpoint at their own targets. Per-run source timestamps distinguish historical screening metrics from resumed execution.
+| Campaign | Runs | Finished runs | Active runs | Runs with a feasible checkpoint |
+|---|---:|---:|---:|---:|
+| Architecture, A00–A11 | 12 | 2 | 10 | 5 |
+| Attention, B00–B04 × seeds 4–6 | 15 | 13 | 2 | 0 |
 
-The separate [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) retains its dated hardware record. This training update adds no FPGA resource, latency, or II measurements.
+**[Full September 21 results and limitations](TRAINING_PROGRESS_20260921.md)** · [Exact recorded metrics](training-status-20260921.json) · [Continuation launch record](FULL_LENGTH_CONTINUATION_20260920.md).
 
-## W&B results: first 100-epoch screen
+The separate [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) retains its dated hardware record. This update adds no FPGA resource, latency, or II measurements.
+
+## Architecture checkpoints within budget
 
 <!-- LIVE_STATUS_START -->
 
-Snapshot fetched: **2026-09-18T12:16:51Z**, through the authenticated W&B API. All values below are **latest-epoch internal-validation measurements**, on the common 124,000-event validation split, with initialization seed 1. They are not held-out test results or selected budget-feasible checkpoints.
+Internal-validation results, 124,000 jets, initialization seed 1; not independently recomputed from predictions in this update. Selected epochs are one-based.
 
-| Run | Epochs | Latest validation accuracy | Latest macro-OvR AUC | Latest native EBOPs | Final target | Within target? |
-|---|---:|---:|---:|---:|---:|---|
-| [A00](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8b75fad4710f) | 100 | 58.3468% | 0.848755 | 599,799 | 350,000 | No |
-| [A01](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8cdfda97a5a5) | 100 | 53.8419% | 0.822689 | 456,462 | 350,000 | No |
-| [A02](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/2d39a44e8179) | 100 | 58.1605% | 0.850718 | 570,630 | 350,000 | No |
-| [A03](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/968ae5d77f36) | 100 | 57.3113% | 0.844536 | 443,662 | 350,000 | No |
-| [A04](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/d8fca5f337d4) | 100 | 49.2258% | 0.801304 | 834,733 | 350,000 | No |
-| [A05](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/0f7f39c0d625) | 100 | 37.7177% | 0.681871 | 2,496,133 | 350,000 | No |
-| [A06](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/c8390667f58e) | 100 | 57.4411% | 0.846978 | 692,894 | 350,000 | No |
-| [A07](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/2182aedd5fba) | 100 | 55.8363% | 0.838775 | 553,981 | 350,000 | No |
-| [A08](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/422cac75fde4) | 100 | 48.8831% | 0.808782 | 692,305 | 350,000 | No |
-| [A09](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/92c3adf8ea07) | 100 | 53.6984% | 0.823393 | 937,044 | 500,000 | No |
-| [A10](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8de4f4468d17) | 100 | 47.5806% | 0.789301 | 788,177 | 250,000 | No |
-| [A11](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/722576c02e4e) | 100 | 61.2129% | 0.865581 | 688,677 | 500,000 | No |
+| Run | Completed epochs | Selected epoch | Validation accuracy | Macro-OvR AUC | Native EBOPs | Budget |
+|---|---:|---:|---:|---:|---:|---:|
+| A00 / seed 1 | 761 | 685 | 58.77% | 0.8502 | 349,322 | 350,000 |
+| A01 / seed 1 | 780 | 618 | 58.25% | 0.8473 | 344,270 | 350,000 |
+| A02 / seed 1 | 663 | 638 | 60.55% | 0.8580 | 342,832 | 350,000 |
+| A03 / seed 1 | 1,000 | 1,000 | 59.44% | 0.8563 | 346,222 | 350,000 |
+| A11 / seed 1 | 534 | 502 | 62.38% | 0.8736 | 453,439 | 500,000 |
 
-**Every latest checkpoint remains above its own EBOP target.** A11 has the highest latest validation accuracy (61.2129%), at 688,677 EBOPs against a 500,000 target. Among the 350,000-target rows, A00 has the highest latest validation accuracy (58.3468%), at 599,799 EBOPs. These are descriptive screening observations, not established improvements or deployment-ready winners. The September20 continuation preflight subsequently inspected all12 durable checkpoint states and found `best_feasible=null` for every run. See [checkpoint-state evidence](checkpoint-screen-status-20260920.json).
+A02 is a candidate for final evaluation, not an established improvement. A11 has a larger 500k budget. The other seven architecture runs have no feasible checkpoint at their configured targets. No seed-robust or held-out superiority claim follows from this table.
 
-The screen has not established convergence or training-seed robustness. Promotion must consider learning curves, cost trajectories, matched controls, and the configured final budget. Checkpoint selection continues to use validation accuracy subject to that budget. W&B AUC and accuracy are reported directly here and have not been independently recomputed from prediction arrays for this update.
-
-Exact values, source timestamps, runtime scope, and config hashes are in [live-status.json](live-status.json). The [allowlisted W&B source snapshot](wandb-snapshot-20260918.json) preserves the queried summary fields for both campaigns. Runtime from a resumed W&B session is not necessarily total GPU time.
+Earlier snapshots: [100-epoch architecture measurements](live-status.json), [400-epoch attention measurements](batch20260918-status.json), [September 20 screening report](TRAINING_PROGRESS_20260920.md).
 
 <!-- LIVE_STATUS_END -->
 
-## The 15 additional runs: 400-epoch screen complete
+## The 15 additional runs: 13 finished, none within budget
 
 Five configurations are each trained from scratch with **matched initialization seeds 4, 5, and 6**. All use the A04 reference: 16 constituents, D=32, FFN=32, two transformer blocks, four heads, channel-wise learned activation widths, binary projection weights, and a final 350k-EBOP target. A04 is a controlled reference, not the winner of the 100-epoch screen.
 
@@ -64,7 +60,7 @@ Five configurations are each trained from scratch with **matched initialization 
 | B04 | EBOP target 525k → 420k at epoch 100 → 350k at epoch 200 | Does delaying compression preserve useful representations? | 3 |
 | **Total** | **Five configurations × three seeds** | | **15** |
 
-Each run pauses at cumulative **400 epochs** of an unchanged **1,000-epoch schedule**. The planned continuation is B00 plus the two strongest variant arms, retaining all three seeds. B04 spends the final 200 screening epochs at the 350k target; selection always uses the final target, including during its relaxed-budget phase. These are full-model training runs. The B00–B04 identifiers belong specifically to `batch20260918`; they do not refer to the older conditional B-series menu.
+All 15 runs completed the 400-epoch screen and were continued to their unchanged **1,000-epoch schedules** under the September 20 amendment. Thirteen have finished; the remaining two have committed epochs 989 and 867. None has a feasible checkpoint; lowest recorded costs span 464,979–721,173 EBOPs against 350k. Selection always uses the final target, including during B04’s relaxed-budget phase. These are full-model training runs. The B00–B04 identifiers belong specifically to `batch20260918`; they do not refer to the older conditional B-series menu.
 
 The positional-encoding switch has been implemented in the submitted training bundle and synthetic preflight passed. **B02 export still needs changes before HLS** because existing exporters assume a positional layer. See [exact configs and training protocol](BATCH20260918_ATTENTION_STUDY.md).
 
@@ -103,6 +99,8 @@ All rows train the **whole model** with binary projection weights and learned ac
 Every configuration keeps a 1,000-epoch schedule. Screening pauses and resumes the same run at cumulative epochs 100, 200, and 400; it does not restart or shorten the learning-rate schedule. A00 remains a control through epoch 400. The 250k and 500k probes stay separate from the primary 350k comparison.
 
 ## Training stages and follow-ups
+
+**Historical plan:** the selective promotion diagram below describes the original protocol. The September 20 amendment continued every current architecture/attention arm to 1,000 epochs. Conditional classifier fitting, seed confirmation and hardware studies have not been implied by that continuation.
 
 ```mermaid
 flowchart TD
@@ -156,6 +154,8 @@ flowchart LR
 II=1 means accepting a new **whole jet** every clock cycle, not merely one token per cycle. The requested clock is 2.5 ns, with latency below 1 microsecond as a provisional screening ceiling pending integration requirements. Neither setting is a measured result. Selected designs require multi-transaction co-simulation and implementation timing checks; synthesis estimates alone are insufficient.
 
 ## Resource discipline and reporting
+
+The allocation figures below describe the original selective plan. The current amendment instead authorizes 12×1,000 architecture and 15×1,000 attention epoch passes across their full histories; these counts do not measure GPU-hours. Actual completion and feasibility are reported in the September 21 snapshot above.
 
 The A-screen allocation is **2,800 epoch passes**: 12×100, then 8×100 additional, then 4×200 additional. The recovered first rung used configured parallelism 12; the submitted follow-up uses parallelism 15. Actual concurrency depends on scheduling and worker readiness. Epoch passes are not GPU-hours; measured seconds per epoch and peak memory determine the remaining-cost forecast. Frozen-feature preparation, head fitting, metric checks, and hardware synthesis use suitable CPU resources.
 

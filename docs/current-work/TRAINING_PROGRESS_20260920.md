@@ -1,5 +1,7 @@
 # Training progress — 20 September 2026
 
+**September 21 update:** [current continuation results](TRAINING_PROGRESS_20260921.md). The observations and original protocol below retain their stated dates.
+
 **Later execution update:** all 27 public architecture/attention runs are submitted for full-length continuation. [Current continuation status](FULL_LENGTH_CONTINUATION_20260920.md). The screening-completion observations below retain their original times.
 
 Cluster verified at **2026-09-20T20:46:42Z** (13:46 PDT). The three public training campaigns have **zero active workers**. Screening runs are awaiting a continuation decision; completion of a screening interval does not imply completion of the configured 1,000-epoch schedule.

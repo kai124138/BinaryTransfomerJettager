@@ -405,5 +405,10 @@
     "target_epochs": 1000,
     "status": "submitted"
   },
-  "screening_snapshot_note": "Per-run metric/phase values below describe the completed screening stop. Consult continuation_status for subsequent execution."
+  "screening_snapshot_note": "Per-run metric/phase values below describe the completed screening stop. Consult continuation_status for subsequent execution.",
+  "latest_status_snapshot": {
+    "source": "training-status-20260921.json",
+    "snapshot_at_utc": "2026-09-22T00:39:42.715826+00:00",
+    "note": "Historical screening metrics below are retained; consult this source for subsequent continuation progress and feasibility."
+  }
 }

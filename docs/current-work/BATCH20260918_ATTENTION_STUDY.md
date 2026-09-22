@@ -1,5 +1,7 @@
 # Fifteen-run follow-up: attention and compression timing
 
+**September 21 update:** [current continuation results](TRAINING_PROGRESS_20260921.md). The observations and original protocol below retain their stated dates.
+
 **Continuation amendment (20 September):** all current architecture/attention arms will complete their existing 1,000-epoch schedules, superseding selective promotion below. Original scientific settings remain fixed. [Execution record](FULL_LENGTH_CONTINUATION_20260920.md).
 
 **Campaign `batch20260918` · all 15 screening runs completed 2026-09-19T10:05:38Z · verified 20 September**

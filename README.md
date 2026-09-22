@@ -10,9 +10,9 @@ This repository contains the model implementation, training and evaluation scrip
 
 **[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
 
-All **27 current architecture and attention runs** have been submitted to complete their existing **1,000-epoch schedules**, resuming from the 100- and 400-epoch screening checkpoints. All seven original EBOP ablations have already finished 1,000 epochs. The six missing attention summaries have been recovered from W&B. See the **[continuation status](docs/current-work/FULL_LENGTH_CONTINUATION_20260920.md)** and **[complete screening results](docs/current-work/TRAINING_PROGRESS_20260920.md)** for execution evidence, metrics and budget limitations. Frozen-backbone classifier refinements and FPGA implementation remain separate follow-up stages.
+**September 21 status:** 15 of the 27 current architecture/attention runs have finished 1,000 epochs; 12 remain active. Five architecture runs now have checkpoints within their configured budgets. A02 records **60.55% internal-validation accuracy at 342,832 EBOPs** under a 350k target; A03 has finished with **59.44% at 346,222 EBOPs**. **None of the 15 attention runs has found a checkpoint within 350k**, including the 13 that have finished. These are trainer-recorded validation measurements, not newly verified held-out results or established improvements. See the **[September 21 results and limitations](docs/current-work/TRAINING_PROGRESS_20260921.md)** and **[machine-readable snapshot](docs/current-work/training-status-20260921.json)**. The original seven ablations finished previously; their older held-out evaluations below retain their dates.
 
-[Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/live-status.json)
+[Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/training-status-20260921.json)
 
 ## Research update — September 2026
 
