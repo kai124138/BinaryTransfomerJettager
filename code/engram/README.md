@@ -2,9 +2,9 @@
 
 This directory contains the runtime source used by the E00–E03 pilot and full-length continuation. All 22 files listed in [source_manifest.json](../../results/engram/source_manifest.json) match their recorded SHA-256 hashes. The manifest also records the Linux production dependency versions. The hash includes those versions, so a different environment cannot resume the same run identity.
 
-[Study, results and limitations](../../docs/current-work/ENGRAM_STUDY.md) · [Exact status](../../results/engram/status-20260921.json) · [Supplementary file hashes](../../results/engram/supplementary_files.json)
+[Study, results and limitations](../../docs/current-work/ENGRAM_STUDY.md) · [Final status](../../results/engram/status-20260923.json) · [Earlier failure evidence](../../results/engram/status-20260921.json) · [Supplementary file hashes](../../results/engram/supplementary_files.json)
 
-This is a frozen experiment package. Invoke its runner directly as below so Python imports this directory's `bnhgq2`; the root editable installation exposes the older `code/hgq2` package. Do not launch memory configurations with the generic ablation runner. Finalization currently fails metric-reproduction checks on the production E01–E03 checkpoints; the code preserves that check for investigation. HLS conversion of the memory module is unsupported.
+This is a frozen experiment package. Invoke its runner directly as below so Python imports this directory's `bnhgq2`; the root editable installation exposes the older `code/hgq2` package. Do not launch memory configurations with the generic ablation runner. E00 finalization succeeded; E01–E03 fail metric-reproduction checks, which the code preserves for investigation. HLS conversion of the memory module is unsupported.
 
 ## Environment and synthetic checks
 
@@ -45,7 +45,7 @@ KERAS_BACKEND=tensorflow TF_FORCE_GPU_ALLOW_GROWTH=true WANDB_MODE=disabled \
   --data-cache outputs/engram-cache/n16/data --out outputs/engram/engram-e02-s1
 ```
 
-For the historical 100-epoch screening stop, append `--stop-after 100`; the learning-rate schedule remains 1,000 epochs. E00/E01 are controls without memory, E02 is ungated memory, and E03 is gated memory. E04–E07 are unrun designs, not completed experiments. Changes to seeds, configuration, source or dependencies need a separate run/output identity.
+For the historical 100-epoch screening stop, append `--stop-after 100`; the learning-rate schedule remains 1,000 epochs. E00/E01 are controls without memory, E02 is ungated memory, and E03 is gated memory. E04–E07 were not run in this original N16 continuation; separately adapted versions appear in the [N8/N64 exploratory screen](../../docs/current-work/CONSTITUENT_SCREEN_20260923.md). Changes to seeds, configuration, source or dependencies need a separate run/output identity.
 
 Tracking is optional and omitted above. The frozen runner's `--track` mode requires its configured separate private W&B destination and verifies it. Public GitHub publication does not change that project's access. Reproduction without W&B uses the same numerical training code.
 

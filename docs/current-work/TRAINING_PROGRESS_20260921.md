@@ -1,5 +1,7 @@
 # Training progress — 21 September 2026
 
+**Final update:** [all 27 runs completed on 23 September](TRAINING_RESULTS_20260923.md). This page preserves the earlier progress snapshot.
+
 **Snapshot: 21 September 2026, 17:39 PDT (22 September, 00:39 UTC).** Fifteen of the 27 public continuation runs have finished their 1,000-epoch schedules; 12 remain active. Five architecture runs have recorded a checkpoint within their own final budgets. None of the 15 attention runs has recorded a checkpoint within its 350,000-EBOP budget.
 
 | Campaign | Runs | Finished runs | Active runs | Runs with a feasible checkpoint |

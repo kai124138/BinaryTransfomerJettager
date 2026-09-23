@@ -1,16 +1,16 @@
 # Engram-inspired jet memory: implementation and current results
 
-**Snapshot: 21 September 2026, 23:46 PDT (22 September, 06:46 UTC).** E01–E03 reached 1,000 epochs but failed the selected-checkpoint metric-reproduction check. E00 is still running at epoch 675. **None of the four runs has recorded a checkpoint within the 350,000 augmented-cost target.**
+**Snapshot: 23 September 2026, 15:53 PDT (22:53 UTC).** All four E00–E03 training loops reached 1,000 epochs. E00 passed the outer runner; E01–E03 failed the selected-checkpoint metric-reproduction check. **None recorded a checkpoint within the 350,000 augmented-cost target.**
 
-[Exact metrics and failure evidence](../../results/engram/status-20260921.json) · [Frozen source and reproduction](../../code/engram/README.md) · [Runtime source manifest](../../results/engram/source_manifest.json)
+[Exact final metrics](../../results/engram/status-20260923.json) · [Earlier failure evidence](../../results/engram/status-20260921.json) · [Frozen source and reproduction](../../code/engram/README.md) · [Runtime source manifest](../../results/engram/source_manifest.json)
 
 ## Latest recorded training measurements
 
-These are trainer-recorded internal-validation values on 124,000 jets, not independently verified final predictions or held-out test results. E00 has a shorter training prefix. The memory variants include a custom arithmetic estimate, so their totals must not be treated as interchangeable with native-only EBOP counts from other studies.
+These are trainer-recorded internal-validation values on 124,000 jets, not independently recomputed held-out test results. The memory variants include a custom arithmetic estimate, so their totals must not be treated as interchangeable with native-only EBOP counts from other studies.
 
 | Run | Model | Completed epochs | Latest accuracy | Latest macro-OvR AUC | Augmented selection cost | Status |
 |---|---|---:|---:|---:|---:|---|
-| E00 | Two-block reference | 675 | 33.94% | 0.6310 | 721,213 | Running |
+| E00 | Two-block reference | 1,000 | 33.27% | 0.6384 | 721,193 | Outer runner succeeded; no feasible checkpoint |
 | E01 | One-block control | 1,000 | 33.44% | 0.6450 | 362,158 | Final validation failed |
 | E02 | One block + ungated memory | 1,000 | 54.55% | 0.8322 | 380,009 | Final validation failed |
 | E03 | One block + gated memory | 1,000 | 52.55% | 0.8203 | 440,525 | Final validation failed |
@@ -31,7 +31,7 @@ output = hidden + quantize(g * value)
 
 The implementation applies explicit quantization to keys, values, queries, reductions and the residual; see [JetEngram](../../code/engram/bnhgq2/engram.py). Values initialize to zero so adding memory preserves the initial backbone outputs. Table updates use a 5× learning-rate multiplier and no table weight decay. Backbone and memory train jointly. The memory is multibit even though the backbone projection weights are binary.
 
-The initial E00–E03 pilot paused at 100 epochs on a 1,000-epoch schedule. On September 20 all four were continued under the same configurations and checkpoint identities. E04–E07 remain unrun follow-ups: two-block gated memory, four-bit memory, a smaller 64-row tuple table, and hashed constituent-rank bigrams. Their configuration files are included for transparency and are not evidence of executed experiments.
+The initial E00–E03 pilot paused at 100 epochs on a 1,000-epoch schedule. On September 20 all four were continued under the same configurations and checkpoint identities; all training loops are now complete. E04–E07 remain unrun under this original N16 continuation. Adapted versions were separately tested under the 50-epoch [N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md), whose protocol and run identities are distinct.
 
 ## Cost and storage contract
 
@@ -42,9 +42,9 @@ The initial E00–E03 pilot paused at 100 epochs on a 1,000-epoch schedule. On S
 
 Selection cost is native HGQ2 backbone EBOPs plus the fixed custom estimate. The latter contributes no activation-width gradient, so the existing backbone regularizer must make room for it. The shared caps are 64 KiB logical table storage and 512 KiB in the stated replication scenario. That scenario assumes eight copies of a two-read-port memory to serve 16 arbitrary addresses per jet at whole-jet II=1. It is not a measured FPGA resource requirement. Quantizer/control/wiring costs and physical memory rounding are not fully priced. No HLS lowering, timing closure or hardware II guarantee exists for the module.
 
-## Finalization failures and stale artifacts
+## Finalization results and stale artifacts
 
-All three completed training loops fail the outer `run_engram.py` check comparing reloaded selected-checkpoint AUC/accuracy with recorded metrics at `atol=1e-7`, `rtol=0`. The [machine-readable trace excerpts](../../results/engram/status-20260921.json) retain the full-precision observed mismatches. Their cause is unresolved; this publication preserves the failing assertion and does not relax its tolerance.
+E00 passed the outer `run_engram.py` finalization. E01–E03 fail its check comparing reloaded selected-checkpoint AUC/accuracy with recorded metrics at `atol=1e-7`, `rtol=0`. The [machine-readable trace excerpts](../../results/engram/status-20260921.json) retain the full-precision observed mismatches. Their cause is unresolved; this publication preserves the failing assertion and does not relax its tolerance.
 
 The inner trainer writes `COMPLETE.json` before that check. Its presence therefore establishes completion of the training loop, not successful final validation. E02/E03 also retain `engram_result.json` and predictions/tables from the old **100-epoch screen**. Those files were not overwritten after the failed 1,000-epoch validation and must not be reported as final artifacts. They are not distributed here as current results.
 

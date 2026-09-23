@@ -1,0 +1,683 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-09-23T22:53:27.294311+00:00",
+  "scope": "Final 1,000-epoch trainer summaries for A00-A11 and B00-B04 seeds 4-6.",
+  "source": {
+    "wandb_project": "kayamaguchi-uc-san-diego/BNJetTag-Batch20260917",
+    "wandb_access": "authenticated read",
+    "cluster_context": "nautilus",
+    "namespace": "cms-ml",
+    "jobs": [
+      {
+        "name": "kai-batch0917-full-e1000-0920",
+        "uid": "b7dddcd8-ad88-4529-8ee9-d253a4ae4225",
+        "created_utc": "2026-09-20T22:03:18Z",
+        "completed_utc": "2026-09-23T05:30:23Z",
+        "active": 0,
+        "succeeded": 12,
+        "failed": 0,
+        "completed_indexes": "0-11",
+        "failed_indexes": "",
+        "conditions": [
+          {
+            "type": "SuccessCriteriaMet",
+            "status": "True",
+            "reason": "CompletionsReached",
+            "message": "Reached expected number of succeeded pods",
+            "transition_utc": "2026-09-23T05:30:23Z"
+          },
+          {
+            "type": "Complete",
+            "status": "True",
+            "reason": "CompletionsReached",
+            "message": "Reached expected number of succeeded pods",
+            "transition_utc": "2026-09-23T05:30:24Z"
+          }
+        ]
+      },
+      {
+        "name": "kai-batch0918-full-e1000-0920",
+        "uid": "ae09f1d4-135f-42fa-bb85-ebef96f24cb2",
+        "created_utc": "2026-09-20T22:03:19Z",
+        "completed_utc": "2026-09-22T07:44:42Z",
+        "active": 0,
+        "succeeded": 15,
+        "failed": 0,
+        "completed_indexes": "0-14",
+        "failed_indexes": "",
+        "conditions": [
+          {
+            "type": "SuccessCriteriaMet",
+            "status": "True",
+            "reason": "CompletionsReached",
+            "message": "Reached expected number of succeeded pods",
+            "transition_utc": "2026-09-22T07:44:42Z"
+          },
+          {
+            "type": "Complete",
+            "status": "True",
+            "reason": "CompletionsReached",
+            "message": "Reached expected number of succeeded pods",
+            "transition_utc": "2026-09-22T07:44:42Z"
+          }
+        ]
+      }
+    ]
+  },
+  "metric_scope": {
+    "split": "internal_validation",
+    "n_events": 124000,
+    "held_out_evaluation_updated": false,
+    "hardware_validated": false,
+    "seed_note": "Architecture uses seed 1; attention uses matched seeds 4, 5 and 6."
+  },
+  "summary": {
+    "runs": 27,
+    "training_complete": 27,
+    "architecture_runs": 12,
+    "architecture_feasible": 5,
+    "attention_runs": 15,
+    "attention_feasible": 0
+  },
+  "runs": [
+    {
+      "run": "batch20260917-a00-s1",
+      "wandb_run_id": "8b75fad4710f",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.5980241935483871,
+        "val_macro_auc": 0.8585149411184512,
+        "ebops": 323771
+      },
+      "selected_feasible_checkpoint": {
+        "epoch_one_based": 1000,
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.5980241935483871,
+        "val_macro_auc": 0.8585149411184512,
+        "ebops": 323771
+      },
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "batch20260917-a01-s1",
+      "wandb_run_id": "8cdfda97a5a5",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.5811209677419354,
+        "val_macro_auc": 0.8507365978396317,
+        "ebops": 354670
+      },
+      "selected_feasible_checkpoint": {
+        "epoch_one_based": 618,
+        "epoch_zero_based": 617,
+        "val_categorical_accuracy": 0.5824516129032258,
+        "val_macro_auc": 0.8472707975829978,
+        "ebops": 344270
+      },
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "batch20260917-a02-s1",
+      "wandb_run_id": "2d39a44e8179",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.6025403225806452,
+        "val_macro_auc": 0.8619110113509418,
+        "ebops": 326839
+      },
+      "selected_feasible_checkpoint": {
+        "epoch_one_based": 913,
+        "epoch_zero_based": 912,
+        "val_categorical_accuracy": 0.6108064516129033,
+        "val_macro_auc": 0.8612207640166119,
+        "ebops": 349298
+      },
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "batch20260917-a03-s1",
+      "wandb_run_id": "968ae5d77f36",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.5943709677419354,
+        "val_macro_auc": 0.8562795794868405,
+        "ebops": 346222
+      },
+      "selected_feasible_checkpoint": {
+        "epoch_one_based": 1000,
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.5943709677419354,
+        "val_macro_auc": 0.8562795794868405,
+        "ebops": 346222
+      },
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "batch20260917-a04-s1",
+      "wandb_run_id": "d8fca5f337d4",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.41496774193548386,
+        "val_macro_auc": 0.7086782577626167,
+        "ebops": 721198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.34395967741935485,
+        "val_macro_auc": 0.6665205268776703,
+        "ebops": 721178
+      }
+    },
+    {
+      "run": "batch20260917-a05-s1",
+      "wandb_run_id": "0f7f39c0d625",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.4696290322580645,
+        "val_macro_auc": 0.7659938283041613,
+        "ebops": 2486562
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.4500887096774194,
+        "val_macro_auc": 0.7481671985299684,
+        "ebops": 2486552
+      }
+    },
+    {
+      "run": "batch20260917-a06-s1",
+      "wandb_run_id": "c8390667f58e",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.38,
+        "val_macro_auc": 0.6720932167579936,
+        "ebops": 498373
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.342,
+        "val_macro_auc": 0.6546262389878249,
+        "ebops": 498353
+      }
+    },
+    {
+      "run": "batch20260917-a07-s1",
+      "wandb_run_id": "2182aedd5fba",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3832338709677419,
+        "val_macro_auc": 0.6988097426252896,
+        "ebops": 362195
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.3979274193548387,
+        "val_macro_auc": 0.7009667236763115,
+        "ebops": 362195
+      }
+    },
+    {
+      "run": "batch20260917-a08-s1",
+      "wandb_run_id": "422cac75fde4",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.35183870967741937,
+        "val_macro_auc": 0.6647202924295867,
+        "ebops": 550390
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.27673387096774194,
+        "val_macro_auc": 0.611288683610493,
+        "ebops": 550365
+      }
+    },
+    {
+      "run": "batch20260917-a09-s1",
+      "wandb_run_id": "92c3adf8ea07",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 500000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3380967741935484,
+        "val_macro_auc": 0.6545336720485001,
+        "ebops": 721178
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.2793951612903226,
+        "val_macro_auc": 0.6334832750526656,
+        "ebops": 721168
+      }
+    },
+    {
+      "run": "batch20260917-a10-s1",
+      "wandb_run_id": "8de4f4468d17",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 250000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.284258064516129,
+        "val_macro_auc": 0.6310547342181586,
+        "ebops": 721198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.34303225806451615,
+        "val_macro_auc": 0.6803419992647074,
+        "ebops": 721168
+      }
+    },
+    {
+      "run": "batch20260917-a11-s1",
+      "wandb_run_id": "722576c02e4e",
+      "wandb_state": "finished",
+      "campaign": "architecture",
+      "target_ebops": 500000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.6226774193548387,
+        "val_macro_auc": 0.8730449241452233,
+        "ebops": 482849
+      },
+      "selected_feasible_checkpoint": {
+        "epoch_one_based": 789,
+        "epoch_zero_based": 788,
+        "val_categorical_accuracy": 0.6262177419354839,
+        "val_macro_auc": 0.8749270525596688,
+        "ebops": 479462
+      },
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "batch20260918-b00-s4",
+      "wandb_run_id": "417bc88cd02e",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.4177096774193548,
+        "val_macro_auc": 0.7247011575266031,
+        "ebops": 721208
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.33698387096774196,
+        "val_macro_auc": 0.6476976568543786,
+        "ebops": 721163
+      }
+    },
+    {
+      "run": "batch20260918-b00-s5",
+      "wandb_run_id": "b89beb498eb8",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.27699193548387097,
+        "val_macro_auc": 0.5931137736732328,
+        "ebops": 721230
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.3800725806451613,
+        "val_macro_auc": 0.6952945584617196,
+        "ebops": 721173
+      }
+    },
+    {
+      "run": "batch20260918-b00-s6",
+      "wandb_run_id": "7239c1688717",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.35358870967741934,
+        "val_macro_auc": 0.6929036297856042,
+        "ebops": 721198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.21108064516129033,
+        "val_macro_auc": 0.6226817715181613,
+        "ebops": 721158
+      }
+    },
+    {
+      "run": "batch20260918-b01-s4",
+      "wandb_run_id": "46c390b6c0e4",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.35185483870967743,
+        "val_macro_auc": 0.6777381165924142,
+        "ebops": 465004
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.2967983870967742,
+        "val_macro_auc": 0.6626307594233214,
+        "ebops": 464989
+      }
+    },
+    {
+      "run": "batch20260918-b01-s5",
+      "wandb_run_id": "cd187434fdfc",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3831290322580645,
+        "val_macro_auc": 0.6684377117091458,
+        "ebops": 465004
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.2853790322580645,
+        "val_macro_auc": 0.6450628791384153,
+        "ebops": 464984
+      }
+    },
+    {
+      "run": "batch20260918-b01-s6",
+      "wandb_run_id": "8f1fa97adfbd",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3446048387096774,
+        "val_macro_auc": 0.6617887830403169,
+        "ebops": 465004
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.3409516129032258,
+        "val_macro_auc": 0.6608186265903117,
+        "ebops": 464979
+      }
+    },
+    {
+      "run": "batch20260918-b02-s4",
+      "wandb_run_id": "6ddab006f995",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.34569354838709676,
+        "val_macro_auc": 0.6750698706531317,
+        "ebops": 721198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.26468548387096774,
+        "val_macro_auc": 0.5675808092195475,
+        "ebops": 721158
+      }
+    },
+    {
+      "run": "batch20260918-b02-s5",
+      "wandb_run_id": "f0d2d1ea5296",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3586048387096774,
+        "val_macro_auc": 0.6953609723504041,
+        "ebops": 721188
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.24385483870967745,
+        "val_macro_auc": 0.5884039629720642,
+        "ebops": 721168
+      }
+    },
+    {
+      "run": "batch20260918-b02-s6",
+      "wandb_run_id": "b83fc8bbb99e",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.20075806451612904,
+        "val_macro_auc": 0.49998454052186575,
+        "ebops": 721193
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.2925322580645161,
+        "val_macro_auc": 0.6581398856837001,
+        "ebops": 721158
+      }
+    },
+    {
+      "run": "batch20260918-b03-s4",
+      "wandb_run_id": "64aa21dac400",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.42279032258064514,
+        "val_macro_auc": 0.7110214042145483,
+        "ebops": 688435
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.34295967741935485,
+        "val_macro_auc": 0.6755261667133208,
+        "ebops": 688400
+      }
+    },
+    {
+      "run": "batch20260918-b03-s5",
+      "wandb_run_id": "eab07105ae52",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.4102258064516129,
+        "val_macro_auc": 0.7199382317091005,
+        "ebops": 688445
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.28938709677419355,
+        "val_macro_auc": 0.6523798086451318,
+        "ebops": 688385
+      }
+    },
+    {
+      "run": "batch20260918-b03-s6",
+      "wandb_run_id": "60550ff8dac9",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3376209677419355,
+        "val_macro_auc": 0.6687639341713129,
+        "ebops": 688435
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.33741129032258066,
+        "val_macro_auc": 0.6515538936872469,
+        "ebops": 688395
+      }
+    },
+    {
+      "run": "batch20260918-b04-s4",
+      "wandb_run_id": "37f5c59cacf9",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.33754032258064515,
+        "val_macro_auc": 0.6639688338745302,
+        "ebops": 721198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.315,
+        "val_macro_auc": 0.6543824960399384,
+        "ebops": 721163
+      }
+    },
+    {
+      "run": "batch20260918-b04-s5",
+      "wandb_run_id": "199429658783",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3606451612903226,
+        "val_macro_auc": 0.657458793613355,
+        "ebops": 721188
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.3246612903225806,
+        "val_macro_auc": 0.6592140357633818,
+        "ebops": 721173
+      }
+    },
+    {
+      "run": "batch20260918-b04-s6",
+      "wandb_run_id": "24a674f320ef",
+      "wandb_state": "finished",
+      "campaign": "attention",
+      "target_ebops": 350000,
+      "training_complete": true,
+      "latest": {
+        "epoch_zero_based": 999,
+        "completed_epochs": 1000,
+        "val_categorical_accuracy": 0.3915806451612903,
+        "val_macro_auc": 0.6924010864241898,
+        "ebops": 721193
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.33220967741935487,
+        "val_macro_auc": 0.6637896574095876,
+        "ebops": 721173
+      }
+    }
+  ]
+}

@@ -10,11 +10,11 @@ This repository contains the model implementation, training and evaluation scrip
 
 **[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
 
-**September 21 status:** 15 of the 27 current architecture/attention runs have finished 1,000 epochs; 12 remain active. Five architecture runs now have checkpoints within their configured budgets. A02 records **60.55% internal-validation accuracy at 342,832 EBOPs** under a 350k target; A03 has finished with **59.44% at 346,222 EBOPs**. **None of the 15 attention runs has found a checkpoint within 350k**, including the 13 that have finished. These are trainer-recorded validation measurements, not newly verified held-out results or established improvements. See the **[September 21 results and limitations](docs/current-work/TRAINING_PROGRESS_20260921.md)** and **[machine-readable snapshot](docs/current-work/training-status-20260921.json)**. The original seven ablations finished previously; their older held-out evaluations below retain their dates.
+**September 23 final status:** all 27 architecture/attention runs reached 1,000 epochs. Five architecture runs have checkpoints within their configured budgets. A02 is the leading 350k candidate at **61.08% internal-validation accuracy and 349,298 EBOPs**; A11 reaches **62.62% at 479,462 EBOPs** under its separate 500k target. **None of the 15 attention runs found a checkpoint within 350k.** See the **[final results and limitations](docs/current-work/TRAINING_RESULTS_20260923.md)** and **[machine-readable snapshot](docs/current-work/training-results-20260923.json)**.
 
-[Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run status snapshot](docs/current-work/training-status-20260921.json)
+[Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Final run snapshot](docs/current-work/training-results-20260923.json)
 
-**Engram study:** the [four-arm lookup-memory experiment](docs/current-work/ENGRAM_STUDY.md) and its [frozen implementation](code/engram/README.md) are now included. At the September 21, 23:46 PDT snapshot, E01–E03 reached 1,000 epochs but failed final metric-reproduction checks; E00 remained in training. None has a feasible checkpoint under the augmented 350k target. These provisional records are separate from the native-only architecture/attention tables.
+**Engram studies:** all four original E00–E03 training loops reached 1,000 epochs. E00 passed the outer runner; E01–E03 failed selected-checkpoint metric reproduction, and none found a feasible checkpoint under the augmented 350k target. A separate [matched N8/N64 exploratory screen](docs/current-work/CONSTITUENT_SCREEN_20260923.md) completed 28 of 38 intended cases at 50 epochs; it found an interesting N64 memory signal but no feasible checkpoint. Exact source and configurations for that screen are frozen under [`code/constituent-study-20260922`](code/constituent-study-20260922/README.md).
 
 ## Research update — September 2026
 
@@ -24,17 +24,17 @@ The current study enforces a **350,000 effective bit-operation (EBOP) ceiling** 
 
 <!-- BEGIN RECENT_RESULTS -->
 
-Evaluation snapshot: **2026-09-15**. All experiments use eight constituents and one training seed. All seven training runs have since completed 1,000 epochs; the checkpoint evaluations below retain their original date and interim labels pending final re-evaluation. [Training completion record](results/post_conference/ablation-training-status-20260920.json).
+Evaluation snapshot: **2026-09-16**. All experiments use eight constituents and one training seed.
 
 | Experiment | EBOPs | Validation AUC | Held-out accuracy | Status |
 |---|---:|---:|---:|---|
 | Tensor-wise baseline | 348,526 | 0.8453 | 57.48% | Completed |
 | Channel-wise quantization | 317,890 | 0.8519 | 58.74% | Completed |
 | Reduced feed-forward width (32) | 329,838 | 0.8545 | 58.31% | Completed |
-| 8-bit attention probabilities | 340,174 | 0.8463 | 57.34% | Interim |
-| Gradual budget schedule | — | — | — | No feasible checkpoint |
+| 8-bit attention probabilities | 340,174 | 0.8463 | 57.34% | Completed |
+| Gradual budget schedule | 349,550 | 0.8477 | 57.51% | Completed |
 | Fixed-width recovery | 349,390 | 0.8410 | 56.94% | Completed |
-| Knowledge distillation | 348,366 | 0.8420 | 56.91% | Interim |
+| Knowledge distillation | 348,366 | 0.8420 | 56.91% | Completed |
 
 <!-- END RECENT_RESULTS -->
 
@@ -42,13 +42,15 @@ The reduced feed-forward model has the highest recorded **validation AUC** among
 
 ![Validation AUC versus effective bit operations for constrained training](figures/post_conference_tradeoff.png)
 
-*Validation AUC uses 124,000 jets from the training archive. Interim checkpoints are distinguished from completed runs. The gradual schedule has no feasible checkpoint in the recorded snapshot.*
+*Validation AUC uses 124,000 jets from the training archive. All seven selected checkpoints meet the 350,000-EBOP ceiling.*
 
 ![Held-out categorical accuracy for constrained training](figures/post_conference_accuracy.png)
 
 *Held-out accuracy uses all 260,000 jets in the separate validation archive. These single-seed results do not establish statistical superiority across repeated training runs.*
 
 **Numerical record:** [ablation metrics and checkpoint digests](results/post_conference/ablation_metrics.json). The seven configurations are named after their experimental intervention in [the configuration directory](code/hgq2/configs).
+
+Two frozen-output follow-ups reuse the channel-wise checkpoint without retraining the backbone. A rounded logit-offset correction records 59.0600% held-out accuracy. An 8-bit refit of the final classifier records 59.1396% held-out accuracy, 0.8560 macro-OvR AUC and 322,510 EBOPs. These are single-seed, mixed-precision software results without new hardware measurements; see the [exact record](results/post_conference/frozen_output_results.json).
 
 ### Initial budget-control study
 
@@ -219,6 +221,7 @@ The publication checks cover all 60 pre-conference prediction archives, JSON/con
 ```text
 code/
   engram/                  Frozen lookup-memory experiment and synthetic checks
+  constituent-study-20260922/ Exact N8/N64 screen runtime and configurations
   hgq2/
     bnhgq2/                 Model, data, quantization, training, export, verification
     configs/                Scientific configurations and configuration generators
@@ -235,6 +238,7 @@ code/
     update_readme.py          Result tables from the numerical records
     validate_repository.py   Source, configuration, result, and link checks
 results/
+  constituent_study/       N8/N64 screen results, preflight and source provenance
   engram/                  Recorded metrics, failures and source provenance
   pre_conference/           Fixed-precision AUC, EBOPs, ROC curves, uncertainties
   post_conference/          Budget-control and constrained-training results

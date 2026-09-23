@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-09-23T22:53:27.294311+00:00",
+  "scope": "Original Engram E00-E03 N16 seed-1 pilot after full-length continuation.",
+  "source": {
+    "wandb_project": "kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental",
+    "wandb_access": "authenticated read",
+    "cluster_job": {
+      "name": "kai-engram-full-e1000-0920",
+      "uid": "5bd29e46-0329-4e80-a4ba-7ec0c23a3807",
+      "created_utc": "2026-09-20T22:03:20Z",
+      "completed_utc": null,
+      "active": 0,
+      "succeeded": 1,
+      "failed": 21,
+      "completed_indexes": "0",
+      "failed_indexes": "1-3",
+      "conditions": [
+        {
+          "type": "FailureTarget",
+          "status": "True",
+          "reason": "FailedIndexes",
+          "message": "Job has failed indexes",
+          "transition_utc": "2026-09-22T23:56:01Z"
+        },
+        {
+          "type": "Failed",
+          "status": "True",
+          "reason": "FailedIndexes",
+          "message": "Job has failed indexes",
+          "transition_utc": "2026-09-22T23:56:02Z"
+        }
+      ]
+    },
+    "prior_failure_evidence": "status-20260921.json"
+  },
+  "metric_split": "internal_validation",
+  "n_validation": 124000,
+  "held_out_evaluation_updated": false,
+  "hardware_validated": false,
+  "cost_convention": "native_hgq2_plus_custom_estimate",
+  "summary": {
+    "training_loops_complete": 4,
+    "outer_runner_succeeded": 1,
+    "failed_final_metric_reproduction": 3,
+    "feasible_checkpoints": 0
+  },
+  "runs": [
+    {
+      "run": "engram-e00-s1",
+      "wandb_run_id": "10dd9f63e913",
+      "wandb_state": "finished",
+      "completed_epochs": 1000,
+      "target_epochs": 1000,
+      "target_selection_cost": 350000,
+      "best_feasible": null,
+      "latest": {
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.33273387096774193,
+        "val_macro_auc": 0.638378434112989,
+        "selection_cost": 721193
+      },
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.2361532258064516,
+        "val_macro_auc": 0.6286232845912874,
+        "selection_cost": 721173
+      },
+      "outer_runner_status": "succeeded",
+      "verified_final_result_available": false
+    },
+    {
+      "run": "engram-e01-s1",
+      "wandb_run_id": "a768d794fb1a",
+      "wandb_state": "finished",
+      "completed_epochs": 1000,
+      "target_epochs": 1000,
+      "target_selection_cost": 350000,
+      "best_feasible": null,
+      "latest": {
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.3344032258064516,
+        "val_macro_auc": 0.6450247175049784,
+        "selection_cost": 362158
+      },
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.33449193548387096,
+        "val_macro_auc": 0.6589661913158992,
+        "selection_cost": 362158
+      },
+      "outer_runner_status": "failed_final_metric_reproduction",
+      "verified_final_result_available": false
+    },
+    {
+      "run": "engram-e02-s1",
+      "wandb_run_id": "5142723bdcfe",
+      "wandb_state": "finished",
+      "completed_epochs": 1000,
+      "target_epochs": 1000,
+      "target_selection_cost": 350000,
+      "best_feasible": null,
+      "latest": {
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.5454758064516129,
+        "val_macro_auc": 0.8321664888397728,
+        "selection_cost": 380009
+      },
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5444677419354839,
+        "val_macro_auc": 0.8291755310270068,
+        "selection_cost": 380009
+      },
+      "outer_runner_status": "failed_final_metric_reproduction",
+      "verified_final_result_available": false
+    },
+    {
+      "run": "engram-e03-s1",
+      "wandb_run_id": "02559056a181",
+      "wandb_state": "finished",
+      "completed_epochs": 1000,
+      "target_epochs": 1000,
+      "target_selection_cost": 350000,
+      "best_feasible": null,
+      "latest": {
+        "epoch_zero_based": 999,
+        "val_categorical_accuracy": 0.5254596774193548,
+        "val_macro_auc": 0.8202621796068055,
+        "selection_cost": 440525
+      },
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5198145161290323,
+        "val_macro_auc": 0.8068430315419335,
+        "selection_cost": 440510
+      },
+      "outer_runner_status": "failed_final_metric_reproduction",
+      "verified_final_result_available": false
+    }
+  ]
+}

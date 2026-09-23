@@ -1,6 +1,6 @@
 # Full-length continuation — 20 September 2026
 
-**September 21 update:** [current continuation results](TRAINING_PROGRESS_20260921.md). The observations and original protocol below retain their stated dates.
+**September 23 update:** [final continuation results](TRAINING_RESULTS_20260923.md). The observations and original protocol below retain their stated dates.
 
 All **27 current public training runs** have been submitted to complete their existing **1,000-epoch schedules**. This supersedes selective promotion for the architecture and attention screens. The original seven EBOP ablations are already complete and are not rerun.
 

@@ -94,7 +94,7 @@ def build(root: Path):
     metrics = json.loads((results / "post_conference/ablation_metrics.json").read_text())
     rows = [r for r in metrics["runs"] if "ebops" in r]
     fig, ax = plt.subplots(figsize=(10.5, 5.5), layout="constrained")
-    offsets = [(8, 9), (8, -15), (8, 10), (-8, 12), (-8, -14), (-8, 12)]
+    offsets = [(8, 9), (8, -15), (8, 10), (-8, 12), (-8, -14), (-8, -18), (-8, 10)]
     for row, (dx, dy) in zip(rows, offsets):
         interim = row["status"] != "finished"
         color = "#D55E00" if interim else "#0072B2"
@@ -109,7 +109,7 @@ def build(root: Path):
            ylabel="Validation macro one-vs-rest AUC", title="Post-conference: EBOP-constrained training")
     ax.xaxis.set_major_formatter(FuncFormatter(lambda x, _: f"{x / 1000:.0f}k"))
     ax.legend(loc="upper right", fontsize=9); ax.grid(alpha=.18)
-    fig.supxlabel("Single seed; selected feasible checkpoints. Gradual schedule: no feasible checkpoint in this snapshot.", fontsize=9)
+    fig.supxlabel("Single seed; all selected checkpoints satisfy the 350,000-EBOP constraint.", fontsize=9)
     save(fig, figures, "post_conference_tradeoff")
 
     fig, ax = plt.subplots(figsize=(10, 5), layout="constrained")

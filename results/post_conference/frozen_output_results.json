@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "evaluation_date": "2026-09-16",
+  "n_validation": 124000,
+  "n_test": 260000,
+  "selection_uses_test": false,
+  "source_checkpoint_sha256": "d76050090655a68546e8bee51b695ef34c42083bcbd52832758b96f0e06f6e4c",
+  "baseline": {
+    "model": "r1-channel",
+    "test_accuracy": 0.5874307692307692,
+    "test_macro_auc": 0.8507946788448859,
+    "ebops": 317890
+  },
+  "frozen_head_refit": {
+    "model": "head_fc2_w8_r0p01",
+    "bits": 8,
+    "validation_accuracy": 0.5938709677419355,
+    "test_accuracy": 0.5913961538461538,
+    "test_macro_auc": 0.8559571707069289,
+    "ebops": 322510,
+    "selected_checkpoint_sha256": "579d207239058282cbb54ff8321e61f51367331f6d367489849d452844fd26e4",
+    "independent_verification": {
+      "heldout_labels_match": true,
+      "baseline_classes_match_original_R1": true,
+      "selected_model_digest_match": true,
+      "selected_accuracy": 0.5913961538461538,
+      "selected_macro_auc_float64_sklearn": 0.8559571472396875,
+      "selected_vs_R1_paired": {
+        "delta": 0.003965384615384615,
+        "ci95": [
+          0.0031908300771985557,
+          0.004739939153570676
+        ],
+        "corrected": 5796,
+        "broken": 4765,
+        "scope": "paired event-level normal interval; one seed, not training uncertainty"
+      },
+      "selected_vs_rounded_R2_paired": {
+        "delta": 0.0007961538461538462,
+        "ci95": [
+          -0.000719376756274017,
+          0.0023116844485817096
+        ]
+      },
+      "reported_ebops": 322510
+    }
+  },
+  "rounded_logit_offset": {
+    "source_model": "r2-ffn32",
+    "source_checkpoint_sha256": "cf3894ba89e0427bcf92d3e6aa16068d82adc7e7f9fceea8e13b2703ac5af86c",
+    "test_accuracy": 0.5906,
+    "class_order": [
+      "g",
+      "q",
+      "W",
+      "Z",
+      "t"
+    ],
+    "bias": [
+      0.3115234375,
+      0.0908203125,
+      0.322265625,
+      0.0,
+      -0.255859375
+    ],
+    "arithmetic": "staged float32 multiply/add, nearest-even constants with10 fractional bits, no saturation",
+    "native_backbone_ebops": 329838,
+    "combined_hardware_cost_validated": false
+  },
+  "limitations": [
+    "Single trained seed; paired event intervals do not measure training-seed variation.",
+    "The 8-bit head is mixed precision because the preceding learned weight layers remain binary.",
+    "No FPGA resource, latency or timing measurement exists for either refinement."
+  ]
+}

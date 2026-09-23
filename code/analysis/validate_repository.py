@@ -47,6 +47,19 @@ def main():
         assert 0 <= row["test_accuracy"] <= 1
         assert re.fullmatch(r"[0-9a-f]{64}", row["checkpoint_sha256"])
         assert row["selected_epoch_one_based"] == row["selected_epoch_zero_based"] + 1
+    final_training = json.loads((ROOT / "docs/current-work/training-results-20260923.json").read_text())
+    assert final_training["summary"] == {
+        "runs": 27, "training_complete": 27,
+        "architecture_runs": 12, "architecture_feasible": 5,
+        "attention_runs": 15, "attention_feasible": 0,
+    }
+    constituent = json.loads((ROOT / "results/constituent_study/results-20260923.json").read_text())
+    assert constituent["summary"]["intended_cases"] == 38
+    assert constituent["summary"]["complete_50_epochs"] == 28
+    assert constituent["summary"]["feasible_checkpoints"] == 0
+    engram = json.loads((ROOT / "results/engram/status-20260923.json").read_text())
+    assert engram["summary"]["training_loops_complete"] == 4
+    assert engram["summary"]["feasible_checkpoints"] == 0
     for target in re.findall(r"\]\(([^)]+)\)", (ROOT / "README.md").read_text()):
         if "://" not in target and not target.startswith("#"):
             assert (ROOT / target.split("#")[0]).exists(), f"Broken README link: {target}"

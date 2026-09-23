@@ -1,0 +1,870 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-09-23T22:53:27.294311+00:00",
+  "scope": "Fresh seed-1, 50-epoch matched N8/N64 exploratory screen.",
+  "source": {
+    "wandb_project": "kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental",
+    "wandb_group": "constituent-20260922-fast50",
+    "wandb_access": "authenticated private read; publication does not change project visibility",
+    "cluster_job": {
+      "name": "kai-n8n64-screen-0922-26f3cc",
+      "uid": "97b04277-5ae8-4ae9-bc79-0f80ba998bca",
+      "created_utc": "2026-09-22T07:46:01Z",
+      "completed_utc": null,
+      "active": 0,
+      "succeeded": 12,
+      "failed": 12,
+      "completed_indexes": "0-8,10,14,15",
+      "failed_indexes": "9,11-13",
+      "conditions": [
+        {
+          "type": "FailureTarget",
+          "status": "True",
+          "reason": "FailedIndexes",
+          "message": "Job has failed indexes",
+          "transition_utc": "2026-09-22T12:53:29Z"
+        },
+        {
+          "type": "Failed",
+          "status": "True",
+          "reason": "FailedIndexes",
+          "message": "Job has failed indexes",
+          "transition_utc": "2026-09-22T12:53:29Z"
+        }
+      ]
+    },
+    "source_bundle_sha256": "26f3cc40a8f7c9ff378760c5b0d8ce046508cb4de585f9c4b80ea93653515a45"
+  },
+  "metric_scope": {
+    "split": "internal_validation",
+    "n_events": 124000,
+    "held_out_evaluation_updated": false,
+    "hardware_validated": false,
+    "protocol": "50 epochs, seed 1, peak LR 2e-4, one warmup epoch and 49 decay epochs"
+  },
+  "summary": {
+    "intended_cases": 38,
+    "gpu_training_runs": 37,
+    "complete_50_epochs": 28,
+    "partial_crashed": 7,
+    "canary_only": 2,
+    "static_infeasible": 1,
+    "feasible_checkpoints": 0
+  },
+  "static_infeasible_cases": [
+    {
+      "run": "const0922-e07-n64-s1-fast50-fp32",
+      "reason": "Fixed Engram memory arithmetic alone exceeds the target.",
+      "fixed_memory_bitops": 838272,
+      "target_ebops": 350000
+    }
+  ],
+  "runs": [
+    {
+      "run": "const0922-a00-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "582d4e4d42db",
+      "wandb_state": "finished",
+      "variant": "a00",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5119032258064516,
+        "val_macro_auc": 0.8260997545693465,
+        "selection_cost": 9474139
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5263629032258065,
+        "val_macro_auc": 0.827779015608014,
+        "selection_cost": 9437285
+      }
+    },
+    {
+      "run": "const0922-a00-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "e37a58ee2339",
+      "wandb_state": "finished",
+      "variant": "a00",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.621741935483871,
+        "val_macro_auc": 0.8747385406648354,
+        "selection_cost": 696951
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6250806451612904,
+        "val_macro_auc": 0.8750976693077849,
+        "selection_cost": 696530
+      }
+    },
+    {
+      "run": "const0922-a01-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "8eefb6821090",
+      "wandb_state": "finished",
+      "variant": "a01",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.4870161290322581,
+        "val_macro_auc": 0.8038211990168836,
+        "selection_cost": 10800700
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5024838709677419,
+        "val_macro_auc": 0.8211394566073098,
+        "selection_cost": 9424444
+      }
+    },
+    {
+      "run": "const0922-a01-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "517182a4f485",
+      "wandb_state": "crashed",
+      "variant": "a01",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 38,
+        "completed_epochs": 40,
+        "val_categorical_accuracy": 0.6112096774193548,
+        "val_macro_auc": 0.8666700903829483,
+        "selection_cost": 699566
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-a02-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "9934e8694ed5",
+      "wandb_state": "finished",
+      "variant": "a02",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5306048387096775,
+        "val_macro_auc": 0.8218337242227938,
+        "selection_cost": 9181152
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5272016129032258,
+        "val_macro_auc": 0.8272270151735255,
+        "selection_cost": 9175003
+      }
+    },
+    {
+      "run": "const0922-a02-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "9248d59233de",
+      "wandb_state": "crashed",
+      "variant": "a02",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 37,
+        "completed_epochs": 39,
+        "val_categorical_accuracy": 0.5977903225806451,
+        "val_macro_auc": 0.8611229496944626,
+        "selection_cost": 664198
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-a03-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "4649f3b3f549",
+      "wandb_state": "finished",
+      "variant": "a03",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5157177419354839,
+        "val_macro_auc": 0.8179726812905674,
+        "selection_cost": 9161276
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5206774193548387,
+        "val_macro_auc": 0.8201157545037201,
+        "selection_cost": 9161276
+      }
+    },
+    {
+      "run": "const0922-a03-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "bbef2c586775",
+      "wandb_state": "finished",
+      "variant": "a03",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6216370967741935,
+        "val_macro_auc": 0.8726505078703852,
+        "selection_cost": 632846
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6130806451612903,
+        "val_macro_auc": 0.8685805064910921,
+        "selection_cost": 577550
+      }
+    },
+    {
+      "run": "const0922-a06-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "94f7725d3576",
+      "wandb_state": "finished",
+      "variant": "a06",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.45304032258064514,
+        "val_macro_auc": 0.7764178255299614,
+        "selection_cost": 7207292
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.45304032258064514,
+        "val_macro_auc": 0.7764178255299614,
+        "selection_cost": 7207292
+      }
+    },
+    {
+      "run": "const0922-a06-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "6bdfc4182163",
+      "wandb_state": "finished",
+      "variant": "a06",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6054032258064516,
+        "val_macro_auc": 0.8583583051295977,
+        "selection_cost": 386219
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6054032258064516,
+        "val_macro_auc": 0.8583583051295977,
+        "selection_cost": 386219
+      }
+    },
+    {
+      "run": "const0922-a07-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "fb1b17221065",
+      "wandb_state": "finished",
+      "variant": "a07",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5795483870967741,
+        "val_macro_auc": 0.8618858437277176,
+        "selection_cost": 4634372
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5870887096774193,
+        "val_macro_auc": 0.8620089421354867,
+        "selection_cost": 4630276
+      }
+    },
+    {
+      "run": "const0922-a07-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "67fb16774f74",
+      "wandb_state": "finished",
+      "variant": "a07",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.611241935483871,
+        "val_macro_auc": 0.8659841896163272,
+        "selection_cost": 411302
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6140322580645161,
+        "val_macro_auc": 0.8663205669521841,
+        "selection_cost": 410022
+      }
+    },
+    {
+      "run": "const0922-a08-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "818b4e60b1df",
+      "wandb_state": "finished",
+      "variant": "a08",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5641048387096774,
+        "val_macro_auc": 0.8470360362263287,
+        "selection_cost": 6491283
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5498387096774193,
+        "val_macro_auc": 0.8410010241057595,
+        "selection_cost": 6448275
+      }
+    },
+    {
+      "run": "const0922-a08-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "92fb1a497197",
+      "wandb_state": "crashed",
+      "variant": "a08",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 36,
+        "completed_epochs": 38,
+        "val_categorical_accuracy": 0.6303467741935483,
+        "val_macro_auc": 0.8747843045020819,
+        "selection_cost": 629863
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-a09-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "34a3c9c9a1ff",
+      "wandb_state": "finished",
+      "variant": "a09",
+      "n_constituents": 64,
+      "target_ebops": 500000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.4878709677419355,
+        "val_macro_auc": 0.8094920280820883,
+        "selection_cost": 9183816
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.4878709677419355,
+        "val_macro_auc": 0.8094920280820883,
+        "selection_cost": 9183816
+      }
+    },
+    {
+      "run": "const0922-a09-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "e55df4bddf51",
+      "wandb_state": "crashed",
+      "variant": "a09",
+      "n_constituents": 8,
+      "target_ebops": 500000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 36,
+        "completed_epochs": 38,
+        "val_categorical_accuracy": 0.6319677419354839,
+        "val_macro_auc": 0.876486741924942,
+        "selection_cost": 731330
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-a10-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "cf25497800d2",
+      "wandb_state": "finished",
+      "variant": "a10",
+      "n_constituents": 64,
+      "target_ebops": 250000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5162903225806451,
+        "val_macro_auc": 0.8144868754287333,
+        "selection_cost": 9250253
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5313145161290322,
+        "val_macro_auc": 0.8224315786824802,
+        "selection_cost": 9166438
+      }
+    },
+    {
+      "run": "const0922-a10-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "d9744da66d17",
+      "wandb_state": "crashed",
+      "variant": "a10",
+      "n_constituents": 8,
+      "target_ebops": 250000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 35,
+        "completed_epochs": 37,
+        "val_categorical_accuracy": 0.6287177419354839,
+        "val_macro_auc": 0.8751795692599444,
+        "selection_cost": 619706
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-b01-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "1a58b9d5142f",
+      "wandb_state": "finished",
+      "variant": "b01",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5603467741935484,
+        "val_macro_auc": 0.8563428422386001,
+        "selection_cost": 5195955
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5915483870967742,
+        "val_macro_auc": 0.8646723507549947,
+        "selection_cost": 5116157
+      }
+    },
+    {
+      "run": "const0922-b01-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "c59b864a76d9",
+      "wandb_state": "crashed",
+      "variant": "b01",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 31,
+        "completed_epochs": 33,
+        "val_categorical_accuracy": 0.6238548387096774,
+        "val_macro_auc": 0.8730027909524093,
+        "selection_cost": 619286
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-b02-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "b7d7242fac41",
+      "wandb_state": "finished",
+      "variant": "b02",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.505991935483871,
+        "val_macro_auc": 0.8193364243900172,
+        "selection_cost": 9219798
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5167016129032258,
+        "val_macro_auc": 0.8212510108301021,
+        "selection_cost": 9168736
+      }
+    },
+    {
+      "run": "const0922-b02-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "61b3e4863d45",
+      "wandb_state": "finished",
+      "variant": "b02",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6260725806451612,
+        "val_macro_auc": 0.8731496462905293,
+        "selection_cost": 637091
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6257419354838709,
+        "val_macro_auc": 0.8752922759357386,
+        "selection_cost": 637027
+      }
+    },
+    {
+      "run": "const0922-b03-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "45f73e2b95c3",
+      "wandb_state": "finished",
+      "variant": "b03",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5458709677419354,
+        "val_macro_auc": 0.8354261049762315,
+        "selection_cost": 8646668
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5458709677419354,
+        "val_macro_auc": 0.8354261049762315,
+        "selection_cost": 8646668
+      }
+    },
+    {
+      "run": "const0922-b03-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "2b1dcb8189c5",
+      "wandb_state": "crashed",
+      "variant": "b03",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "partial_crashed",
+      "latest": {
+        "epoch_zero_based": 33,
+        "completed_epochs": 35,
+        "val_categorical_accuracy": 0.6096209677419355,
+        "val_macro_auc": 0.8683009794798962,
+        "selection_cost": 665279
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-b04-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "dae6c6788b02",
+      "wandb_state": "finished",
+      "variant": "b04",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.5184032258064516,
+        "val_macro_auc": 0.8171568464809624,
+        "selection_cost": 9211753
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.5385564516129032,
+        "val_macro_auc": 0.8333284487684915,
+        "selection_cost": 9166766
+      }
+    },
+    {
+      "run": "const0922-b04-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "58678fc8ccd3",
+      "wandb_state": "finished",
+      "variant": "b04",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6341370967741935,
+        "val_macro_auc": 0.878829363796177,
+        "selection_cost": 600329
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6341370967741935,
+        "val_macro_auc": 0.878829363796177,
+        "selection_cost": 600329
+      }
+    },
+    {
+      "run": "const0922-e02-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "f553d36e6cca",
+      "wandb_state": "finished",
+      "variant": "e02",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6659758064516129,
+        "val_macro_auc": 0.8997133741368385,
+        "selection_cost": 4720386
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6676451612903226,
+        "val_macro_auc": 0.9030345916230736,
+        "selection_cost": 4679431
+      }
+    },
+    {
+      "run": "const0922-e02-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "04486de377c1",
+      "wandb_state": "finished",
+      "variant": "e02",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "canary_only",
+      "latest": {
+        "epoch_zero_based": 1,
+        "completed_epochs": 2,
+        "val_categorical_accuracy": 0.5802822580645162,
+        "val_macro_auc": 0.846761639947835,
+        "selection_cost": 629746
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-e03-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "61e841109669",
+      "wandb_state": "finished",
+      "variant": "e03",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6545564516129032,
+        "val_macro_auc": 0.8978618531553544,
+        "selection_cost": 4966751
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.663491935483871,
+        "val_macro_auc": 0.8990833990510435,
+        "selection_cost": 4923780
+      }
+    },
+    {
+      "run": "const0922-e03-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "f7dc3a1c4c44",
+      "wandb_state": "finished",
+      "variant": "e03",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "canary_only",
+      "latest": {
+        "epoch_zero_based": 1,
+        "completed_epochs": 2,
+        "val_categorical_accuracy": 0.5683870967741935,
+        "val_macro_auc": 0.8419754796482058,
+        "selection_cost": 658860
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": null
+    },
+    {
+      "run": "const0922-e04-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "05ca1ebb5930",
+      "wandb_state": "finished",
+      "variant": "e04",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6390806451612904,
+        "val_macro_auc": 0.8879879803236813,
+        "selection_cost": 9517420
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6376935483870968,
+        "val_macro_auc": 0.8868181788757579,
+        "selection_cost": 9474476
+      }
+    },
+    {
+      "run": "const0922-e04-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "6072a1ad3971",
+      "wandb_state": "finished",
+      "variant": "e04",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6169274193548387,
+        "val_macro_auc": 0.8733393245149454,
+        "selection_cost": 648406
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6169274193548387,
+        "val_macro_auc": 0.8733393245149454,
+        "selection_cost": 648406
+      }
+    },
+    {
+      "run": "const0922-e05-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "3f533cd8ed57",
+      "wandb_state": "finished",
+      "variant": "e05",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6652258064516129,
+        "val_macro_auc": 0.8987955735898494,
+        "selection_cost": 4816654
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6604193548387097,
+        "val_macro_auc": 0.8995826633884135,
+        "selection_cost": 4816649
+      }
+    },
+    {
+      "run": "const0922-e05-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "0cfa73e33a9b",
+      "wandb_state": "finished",
+      "variant": "e05",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6236693548387097,
+        "val_macro_auc": 0.8723239978464598,
+        "selection_cost": 418159
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6109596774193549,
+        "val_macro_auc": 0.868252561485178,
+        "selection_cost": 417620
+      }
+    },
+    {
+      "run": "const0922-e06-n64-s1-fast50-fp32-s1",
+      "wandb_run_id": "65b9f5e2accc",
+      "wandb_state": "finished",
+      "variant": "e06",
+      "n_constituents": 64,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6255967741935484,
+        "val_macro_auc": 0.8824589032720246,
+        "selection_cost": 4927819
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6390241935483871,
+        "val_macro_auc": 0.8894762166399556,
+        "selection_cost": 4921685
+      }
+    },
+    {
+      "run": "const0922-e06-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "15c8927d77b7",
+      "wandb_state": "finished",
+      "variant": "e06",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6055806451612903,
+        "val_macro_auc": 0.8659391440514526,
+        "selection_cost": 430891
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6055806451612903,
+        "val_macro_auc": 0.8659391440514526,
+        "selection_cost": 430891
+      }
+    },
+    {
+      "run": "const0922-e07-n8-s1-fast50-fp32-s1",
+      "wandb_run_id": "db42a9e810fc",
+      "wandb_state": "finished",
+      "variant": "e07",
+      "n_constituents": 8,
+      "target_ebops": 350000,
+      "execution_status": "complete_50_epochs",
+      "latest": {
+        "epoch_zero_based": 49,
+        "completed_epochs": 50,
+        "val_categorical_accuracy": 0.6132903225806452,
+        "val_macro_auc": 0.8659777282904322,
+        "selection_cost": 491803
+      },
+      "selected_feasible_checkpoint": null,
+      "fallback_diagnostic": {
+        "scope": "minimum-cost fallback; not budget compliant",
+        "val_categorical_accuracy": 0.6132903225806452,
+        "val_macro_auc": 0.8659777282904322,
+        "selection_cost": 491803
+      }
+    }
+  ]
+}

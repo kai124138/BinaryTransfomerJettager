@@ -1,6 +1,6 @@
 # Training progress — 20 September 2026
 
-**September 21 update:** [current continuation results](TRAINING_PROGRESS_20260921.md). The observations and original protocol below retain their stated dates.
+**September 23 update:** [final continuation results](TRAINING_RESULTS_20260923.md). The observations and original protocol below retain their stated dates.
 
 **Later execution update:** all 27 public architecture/attention runs are submitted for full-length continuation. [Current continuation status](FULL_LENGTH_CONTINUATION_20260920.md). The screening-completion observations below retain their original times.
 

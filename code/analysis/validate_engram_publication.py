@@ -76,11 +76,28 @@ def main():
         for metric in failure['mismatched_metrics']:
             assert abs(metric['reloaded'] - metric['recorded']) > 1e-7
 
+    final_status = read(RESULTS / 'status-20260923.json')
+    assert final_status['summary'] == {
+        'training_loops_complete': 4,
+        'outer_runner_succeeded': 1,
+        'failed_final_metric_reproduction': 3,
+        'feasible_checkpoints': 0,
+    }
+    final_rows = final_status['runs']
+    assert {row['run'] for row in final_rows} == {f'engram-e{i:02d}-s1' for i in range(4)}
+    for row in final_rows:
+        assert row['completed_epochs'] == row['target_epochs'] == 1000
+        assert row['best_feasible'] is None
+        assert row['latest']['selection_cost'] > row['target_selection_cost'] == 350000
+        assert not row['verified_final_result_available']
+    assert final_rows[0]['outer_runner_status'] == 'succeeded'
+    assert all(row['outer_runner_status'] == 'failed_final_metric_reproduction' for row in final_rows[1:])
+
     for path in [CODE / 'README.md', ROOT / 'docs/current-work/ENGRAM_STUDY.md']:
         for target in re.findall(r'\]\(([^)]+)\)', path.read_text()):
             if '://' not in target and not target.startswith('#'):
                 assert (path.parent / target.split('#')[0]).exists(), (path, target)
-    print('Validated Engram source hashes, eight configs, four run records, three finalization failures and publication links')
+    print('Validated Engram source hashes, eight configs, interim/final run records, three finalization failures and publication links')
 
 
 if __name__ == '__main__':

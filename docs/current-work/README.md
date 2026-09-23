@@ -1,33 +1,33 @@
 # Current work: accuracy under a computational budget
 
-**Updated 21 September 2026 · batches `batch20260917` and `batch20260918`**
+**Updated 23 September 2026 · batches `batch20260917` and `batch20260918`**
 
-We are testing which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. All 27 architecture and attention runs were continued from their screening checkpoints under the existing 1,000-epoch schedules. Fifteen runs have now finished; five architecture runs have a feasible checkpoint, while all 15 attention runs remain without one. All seven original ablations have now completed 1,000 epochs. Frozen-backbone classifier fitting and hybrid DSP mappings are separate, conditional follow-ups.
+We tested which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. All 27 architecture and attention runs reached 1,000 epochs. Five architecture runs have a feasible checkpoint; none of the 15 attention runs does. The original seven ablations also completed 1,000 epochs. Frozen-output classifier fitting and hybrid DSP mappings are separate follow-ups.
 
-[15-run follow-up](BATCH20260918_ATTENTION_STUDY.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Run configurations](../../code/hgq2/configs/batch20260917/) · [Machine-readable status snapshot](training-status-20260921.json) · [Project results](../../README.md)
+[Final A/B results](TRAINING_RESULTS_20260923.md) · [N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Machine-readable final snapshot](training-results-20260923.json) · [Project results](../../README.md)
 
 <!-- WANDB_LINK_START -->
-[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. The September 21 numerical snapshot comes from durable trainer records; earlier W&B snapshots remain linked as history. Project visibility was not changed.
+[Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. The September 23 numerical snapshot comes from durable trainer records. Project visibility was not changed.
 <!-- WANDB_LINK_END -->
 
 ## Engram lookup-memory study
 
-The separate [Engram study and source](ENGRAM_STUDY.md) are now public. Its September 21, 23:46 PDT snapshot records E00 at epoch 675 and E01–E03 at 1,000 epochs with failed final metric-reproduction checks. None has a feasible checkpoint. Its four pilot runs are additional to the 27 architecture/attention runs below; its augmented cost convention includes custom memory arithmetic estimates.
+The separate [Engram study and source](ENGRAM_STUDY.md) records all four original E00–E03 training loops at 1,000 epochs. E00 passed its outer validation; E01–E03 failed final metric reproduction. None has a feasible checkpoint. The [matched N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md) separately tested 38 architecture, attention and memory cases under a 50-epoch schedule and also found no feasible checkpoint.
 
 ## How to follow this work
 
-Start with the status table below, open a run’s W&B link for live curves, and use the architecture table to see exactly what changed. W&B updates during training; the GitHub table is a timestamped snapshot refreshed separately. Promotion decisions and validated results will be recorded separately from preliminary training metrics.
+Start with the final status below, then use the linked result report for every endpoint and limitation. The selected architecture values are trainer-recorded internal-validation metrics; held-out evaluation and seed replication remain separate steps.
 
 ## Current execution status
 
-**Snapshot: 21 September 2026, 17:39 PDT (22 September, 00:39 UTC).** Fifteen of the 27 public continuation runs have finished their 1,000-epoch schedules; 12 remain active. Five architecture runs have recorded a checkpoint within their own final budgets. None of the 15 attention runs has recorded a checkpoint within its 350,000-EBOP budget.
+**Snapshot: 23 September 2026, 15:53 PDT (22:53 UTC).** All 27 public continuation runs finished their 1,000-epoch schedules. Five architecture runs recorded a checkpoint within their own final budgets. None of the 15 attention runs recorded a checkpoint within its 350,000-EBOP budget.
 
 | Campaign | Runs | Finished runs | Active runs | Runs with a feasible checkpoint |
 |---|---:|---:|---:|---:|
-| Architecture, A00–A11 | 12 | 2 | 10 | 5 |
-| Attention, B00–B04 × seeds 4–6 | 15 | 13 | 2 | 0 |
+| Architecture, A00–A11 | 12 | 12 | 0 | 5 |
+| Attention, B00–B04 × seeds 4–6 | 15 | 15 | 0 | 0 |
 
-**[Full September 21 results and limitations](TRAINING_PROGRESS_20260921.md)** · [Exact recorded metrics](training-status-20260921.json) · [Continuation launch record](FULL_LENGTH_CONTINUATION_20260920.md).
+**[Final results and limitations](TRAINING_RESULTS_20260923.md)** · [Exact recorded metrics](training-results-20260923.json) · [Continuation launch record](FULL_LENGTH_CONTINUATION_20260920.md).
 
 The separate [R4 hardware study](R4_HARDWARE_SYNTHESIS.md) retains its dated hardware record. This update adds no FPGA resource, latency, or II measurements.
 
@@ -39,19 +39,19 @@ Internal-validation results, 124,000 jets, initialization seed 1; not independen
 
 | Run | Completed epochs | Selected epoch | Validation accuracy | Macro-OvR AUC | Native EBOPs | Budget |
 |---|---:|---:|---:|---:|---:|---:|
-| A00 / seed 1 | 761 | 685 | 58.77% | 0.8502 | 349,322 | 350,000 |
-| A01 / seed 1 | 780 | 618 | 58.25% | 0.8473 | 344,270 | 350,000 |
-| A02 / seed 1 | 663 | 638 | 60.55% | 0.8580 | 342,832 | 350,000 |
+| A00 / seed 1 | 1,000 | 1,000 | 59.80% | 0.8585 | 323,771 | 350,000 |
+| A01 / seed 1 | 1,000 | 618 | 58.25% | 0.8473 | 344,270 | 350,000 |
+| A02 / seed 1 | 1,000 | 913 | 61.08% | 0.8612 | 349,298 | 350,000 |
 | A03 / seed 1 | 1,000 | 1,000 | 59.44% | 0.8563 | 346,222 | 350,000 |
-| A11 / seed 1 | 534 | 502 | 62.38% | 0.8736 | 453,439 | 500,000 |
+| A11 / seed 1 | 1,000 | 789 | 62.62% | 0.8749 | 479,462 | 500,000 |
 
-A02 is a candidate for final evaluation, not an established improvement. A11 has a larger 500k budget. The other seven architecture runs have no feasible checkpoint at their configured targets. No seed-robust or held-out superiority claim follows from this table.
+A02 is the leading 350k candidate for held-out evaluation. A11 has a larger 500k budget. The other seven architecture runs have no feasible checkpoint at their configured targets. No seed-robust or held-out superiority claim follows from this table.
 
-Earlier snapshots: [100-epoch architecture measurements](live-status.json), [400-epoch attention measurements](batch20260918-status.json), [September 20 screening report](TRAINING_PROGRESS_20260920.md).
+Earlier snapshots: [100-epoch architecture measurements](live-status.json), [400-epoch attention measurements](batch20260918-status.json), [September 20 screening report](TRAINING_PROGRESS_20260920.md), [September 21 progress report](TRAINING_PROGRESS_20260921.md).
 
 <!-- LIVE_STATUS_END -->
 
-## The 15 additional runs: 13 finished, none within budget
+## The 15 additional runs: all finished, none within budget
 
 Five configurations are each trained from scratch with **matched initialization seeds 4, 5, and 6**. All use the A04 reference: 16 constituents, D=32, FFN=32, two transformer blocks, four heads, channel-wise learned activation widths, binary projection weights, and a final 350k-EBOP target. A04 is a controlled reference, not the winner of the 100-epoch screen.
 
@@ -64,7 +64,7 @@ Five configurations are each trained from scratch with **matched initialization 
 | B04 | EBOP target 525k → 420k at epoch 100 → 350k at epoch 200 | Does delaying compression preserve useful representations? | 3 |
 | **Total** | **Five configurations × three seeds** | | **15** |
 
-All 15 runs completed the 400-epoch screen and were continued to their unchanged **1,000-epoch schedules** under the September 20 amendment. Thirteen have finished; the remaining two have committed epochs 989 and 867. None has a feasible checkpoint; lowest recorded costs span 464,979–721,173 EBOPs against 350k. Selection always uses the final target, including during B04’s relaxed-budget phase. These are full-model training runs. The B00–B04 identifiers belong specifically to `batch20260918`; they do not refer to the older conditional B-series menu.
+All 15 runs completed their **1,000-epoch schedules**. None has a feasible checkpoint. At the final epoch, B01 has the lowest mean cost at 465,004 EBOPs and B03 has the strongest mean accuracy at 39.02%; exact per-seed endpoints and spreads are in the [final report](TRAINING_RESULTS_20260923.md#attention-results). Selection always uses the final target, including during B04’s relaxed-budget phase. These are full-model training runs.
 
 The positional-encoding switch has been implemented in the submitted training bundle and synthetic preflight passed. **B02 export still needs changes before HLS** because existing exporters assume a positional layer. See [exact configs and training protocol](BATCH20260918_ATTENTION_STUDY.md).
 
@@ -171,4 +171,4 @@ Each run record should contain its config/code/data hashes, selected checkpoint 
 
 ## Status freshness
 
-The W&B links provide live training curves. This GitHub page is a dated snapshot; a finished screening interval is not a completed 1,000-epoch experiment.
+The W&B links provide training curves. This GitHub page records the completed 1,000-epoch campaigns as a dated snapshot.
