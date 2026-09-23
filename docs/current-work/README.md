@@ -4,7 +4,7 @@
 
 We tested which binary-weight transformer architectures improve five-class jet-tagging accuracy while respecting a computational budget and a whole-jet FPGA initiation interval of **II=1**. All 27 architecture and attention runs reached 1,000 epochs. Five architecture runs have a feasible checkpoint; none of the 15 attention runs does. The original seven ablations also completed 1,000 epochs. Frozen-output classifier fitting and hybrid DSP mappings are separate follow-ups.
 
-[Final A/B results](TRAINING_RESULTS_20260923.md) · [N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Machine-readable final snapshot](training-results-20260923.json) · [Project results](../../README.md)
+[Complete experiment index](EXPERIMENT_INDEX_20260923.md) · [Final A/B results](TRAINING_RESULTS_20260923.md) · [N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md) · [Original protocol](TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Project results](../../README.md)
 
 <!-- WANDB_LINK_START -->
 [Training curves on Weights & Biases](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) — both campaigns use project `BNJetTag-Batch20260917`, with groups `batch20260917` and `batch20260918`. Live curves may require project access. The September 23 numerical snapshot comes from durable trainer records. Project visibility was not changed.
@@ -13,6 +13,8 @@ We tested which binary-weight transformer architectures improve five-class jet-t
 ## Engram lookup-memory study
 
 The separate [Engram study and source](ENGRAM_STUDY.md) records all four original E00–E03 training loops at 1,000 epochs. E00 passed its outer validation; E01–E03 failed final metric reproduction. None has a feasible checkpoint. The [matched N8/N64 exploratory screen](CONSTITUENT_SCREEN_20260923.md) separately tested 38 architecture, attention and memory cases under a 50-epoch schedule and also found no feasible checkpoint.
+
+The [complete index](EXPERIMENT_INDEX_20260923.md) maps every run in the three September W&B projects and lists every fresh N8 and N64 endpoint. It also links the 60-run pre-conference precision baseline, including its 15 completed N64 runs.
 
 ## How to follow this work
 

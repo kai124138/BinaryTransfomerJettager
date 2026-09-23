@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-09-23T23:18:27.883311+00:00",
+  "source": {
+    "service": "Weights & Biases",
+    "project": "BNJetTag-EBOPs-N8",
+    "run_id": "zkcixa5z",
+    "run_name": "ebops-n8-20260911-e1000-b350k-w1a8-s1",
+    "state": "finished"
+  },
+  "configuration": {
+    "n_constituents": 8,
+    "features": ["pt", "etarel", "phirel"],
+    "seed": 1,
+    "epochs": 1000,
+    "target_ebops": 350000,
+    "selection": "max_validation_auc_under_budget",
+    "weight_precision": "binary_absmean",
+    "activation_policy": "learned_per_tensor_width"
+  },
+  "result": {
+    "completed_epochs": 1000,
+    "selected_epoch_one_based": 1000,
+    "selected_val_macro_auc": 0.8535774195319501,
+    "selected_ebops": 344430,
+    "budget_met": true,
+    "reported_training_categorical_accuracy": 0.5835907459259033
+  },
+  "limitations": {
+    "held_out_evaluation_available": false,
+    "validation_categorical_accuracy_available": false,
+    "hardware_validated": false,
+    "note": "The categorical_accuracy field is a training metric in the W&B summary and must not be presented as internal-validation or held-out accuracy."
+  }
+}

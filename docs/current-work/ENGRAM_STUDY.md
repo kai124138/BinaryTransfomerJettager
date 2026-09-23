@@ -2,7 +2,7 @@
 
 **Snapshot: 23 September 2026, 15:53 PDT (22:53 UTC).** All four E00–E03 training loops reached 1,000 epochs. E00 passed the outer runner; E01–E03 failed the selected-checkpoint metric-reproduction check. **None recorded a checkpoint within the 350,000 augmented-cost target.**
 
-[Exact final metrics](../../results/engram/status-20260923.json) · [Earlier failure evidence](../../results/engram/status-20260921.json) · [Frozen source and reproduction](../../code/engram/README.md) · [Runtime source manifest](../../results/engram/source_manifest.json)
+[Complete experiment index](EXPERIMENT_INDEX_20260923.md) · [Exact final metrics](../../results/engram/status-20260923.json) · [Earlier failure evidence](../../results/engram/status-20260921.json) · [Frozen source and reproduction](../../code/engram/README.md) · [Runtime source manifest](../../results/engram/source_manifest.json)
 
 ## Latest recorded training measurements
 

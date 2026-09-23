@@ -60,6 +60,16 @@ def main():
     engram = json.loads((ROOT / "results/engram/status-20260923.json").read_text())
     assert engram["summary"]["training_loops_complete"] == 4
     assert engram["summary"]["feasible_checkpoints"] == 0
+    registry = json.loads((ROOT / "results/wandb-project-inventory-20260923.json").read_text())
+    assert registry["summary"] == {
+        "projects": 3, "wandb_run_records": 86,
+        "scientific_training_records": 81, "diagnostic_attempts": 5,
+        "statically_rejected_cases_not_in_wandb": 1,
+    }
+    assert {row["wandb_run_records"] for row in registry["projects"]} == {13, 27, 46}
+    standalone = json.loads((ROOT / "results/post_conference/standalone_long_budget.json").read_text())
+    assert standalone["result"]["completed_epochs"] == 1000
+    assert standalone["result"]["selected_ebops"] <= standalone["configuration"]["target_ebops"]
     for target in re.findall(r"\]\(([^)]+)\)", (ROOT / "README.md").read_text()):
         if "://" not in target and not target.startswith("#"):
             assert (ROOT / target.split("#")[0]).exists(), f"Broken README link: {target}"

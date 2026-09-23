@@ -1,5 +1,7 @@
 # Matched N8/N64 exploratory screen — 23 September 2026
 
+[Complete experiment index](EXPERIMENT_INDEX_20260923.md) · [Original N16 Engram study](ENGRAM_STUDY.md)
+
 The fresh constituent-count campaign tested 19 distinct architecture, attention and Engram-inspired setups at N=8 and N=64. It used one seed and a new 50-epoch schedule with peak learning rate 2e-4. This is a short exploratory comparison, not an equal-training replacement for the historical 1,000-epoch runs.
 
 [Exact results](../../results/constituent_study/results-20260923.json) · [Frozen runtime source and configurations](../../code/constituent-study-20260922/README.md) · [Source manifest](../../results/constituent_study/source_manifest.json)

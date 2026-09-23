@@ -1,0 +1,2495 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-09-23T23:18:27.883311+00:00",
+  "entity": "kayamaguchi-uc-san-diego",
+  "scope": "All run records in the three September W&B projects shown in the project dashboard.",
+  "counting_note": "W&B records are execution records, not always unique scientific comparisons. Diagnostic attempts and the statically rejected E07/N64 case are identified separately.",
+  "summary": {
+    "projects": 3,
+    "wandb_run_records": 86,
+    "scientific_training_records": 81,
+    "diagnostic_attempts": 5,
+    "statically_rejected_cases_not_in_wandb": 1
+  },
+  "projects": [
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "wandb_run_records": 13,
+      "states": {
+        "failed": 1,
+        "finished": 12
+      },
+      "groups": {
+        "ebops-n8-20260910": 4,
+        "ebops-n8-20260910-costfirst": 1,
+        "ebops-n8-20260911-long-budget": 1,
+        "ebops-n8-20260912-ablation": 7
+      }
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "wandb_run_records": 27,
+      "states": {
+        "finished": 27
+      },
+      "groups": {
+        "batch20260917": 12,
+        "batch20260918": 15
+      }
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "wandb_run_records": 46,
+      "states": {
+        "crashed": 8,
+        "finished": 38
+      },
+      "groups": {
+        "constituent-20260922-diagnostic-tf32": 5,
+        "constituent-20260922-fast50": 37,
+        "engram-screen": 4
+      }
+    }
+  ],
+  "runs": [
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "zyj0gwkq",
+      "name": "ebops-n8-20260910-b25-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260910",
+      "job_type": "train",
+      "created_at": "2026-09-11T01:05:03Z",
+      "experiment_scope": "initial_budget_pilot",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "3817d3c8"
+      },
+      "summary_metrics": {
+        "epoch": 100,
+        "best_epoch": 48,
+        "best_val_macro_auc": 0.8629018714414356,
+        "checkpoint_ebops": 1177006,
+        "budget_met": false,
+        "val_macro_auc": 0.8585773639878111,
+        "ebops": 1062318,
+        "target_ebops": 434795.5,
+        "categorical_accuracy": 0.5979596972465515
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/zyj0gwkq"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "mkvzt7ur",
+      "name": "ebops-n8-20260910-b50-w1a8-s1",
+      "state": "failed",
+      "group": "ebops-n8-20260910",
+      "job_type": "train",
+      "created_at": "2026-09-11T01:16:01Z",
+      "experiment_scope": "initial_budget_pilot",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "ccaa1033"
+      },
+      "summary_metrics": {},
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/mkvzt7ur"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "ed3piak8",
+      "name": "ebops-n8-20260910-control-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260910",
+      "job_type": "train",
+      "created_at": "2026-09-11T01:17:55Z",
+      "experiment_scope": "initial_budget_pilot",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "6c498e72"
+      },
+      "summary_metrics": {
+        "epoch": 100,
+        "best_epoch": 90,
+        "best_val_macro_auc": 0.8716604564125753,
+        "checkpoint_ebops": 1780910,
+        "val_macro_auc": 0.8687577688206496,
+        "ebops": 1780910,
+        "categorical_accuracy": 0.6193265914916992
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/ed3piak8"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "3bynw2ra",
+      "name": "ebops-n8-20260910-b75-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260910",
+      "job_type": "train",
+      "created_at": "2026-09-11T01:29:18Z",
+      "experiment_scope": "initial_budget_pilot",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "ac37330a"
+      },
+      "summary_metrics": {
+        "epoch": 100,
+        "best_epoch": 94,
+        "best_val_macro_auc": 0.8700535576440043,
+        "checkpoint_ebops": 1263790,
+        "budget_met": true,
+        "val_macro_auc": 0.8672502783550586,
+        "ebops": 1263790,
+        "target_ebops": 1304386.5,
+        "categorical_accuracy": 0.6171733736991882
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/3bynw2ra"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "8dzauzyp",
+      "name": "ebops-n8-20260910-costfirst-b50-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260910-costfirst",
+      "job_type": "train",
+      "created_at": "2026-09-11T03:13:47Z",
+      "experiment_scope": "resource_priority_retry",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "c452955e"
+      },
+      "summary_metrics": {
+        "epoch": 7,
+        "best_epoch": 7,
+        "best_val_macro_auc": 0.7972819475780893,
+        "checkpoint_ebops": 847982,
+        "budget_met": true,
+        "val_macro_auc": 0.7972819475780893,
+        "ebops": 847982,
+        "target_ebops": 869591,
+        "categorical_accuracy": 0.5577499866485596
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/8dzauzyp"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "zkcixa5z",
+      "name": "ebops-n8-20260911-e1000-b350k-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260911-long-budget",
+      "job_type": "train",
+      "created_at": "2026-09-11T22:43:39Z",
+      "experiment_scope": "standalone_long_budget",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": 1,
+        "n_constituents": 8,
+        "variant": "w1a8",
+        "config_hash": "7044e68d"
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_epoch": 999,
+        "best_val_macro_auc": 0.8535774195319501,
+        "checkpoint_ebops": 344430,
+        "budget_met": true,
+        "val_macro_auc": 0.8535774195319501,
+        "ebops": 344430,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5835907459259033
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/zkcixa5z"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "95964aa58017",
+      "name": "ebops-n8-20260912-ablation-r0-baseline-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-12T08:30:13Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8452665068986779,
+        "checkpoint_ebops": 348526,
+        "budget_met": 0,
+        "val_macro_auc": 0.852632593454661,
+        "ebops": 393582,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5874213576316833
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/95964aa58017"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "2f84bd301583",
+      "name": "ebops-n8-20260912-ablation-r1-channel-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-12T08:34:55Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.851884371427292,
+        "checkpoint_ebops": 317890,
+        "budget_met": 1,
+        "val_macro_auc": 0.8512631478945508,
+        "ebops": 317890,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5891834497451782
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/2f84bd301583"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "64e2f6f5d184",
+      "name": "ebops-n8-20260912-ablation-r2-ffn32-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-12T08:35:39Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8544567158464471,
+        "checkpoint_ebops": 329838,
+        "budget_met": 0,
+        "val_macro_auc": 0.8606368949701043,
+        "ebops": 362606,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6001693606376648
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/64e2f6f5d184"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "3b88abc82ce3",
+      "name": "ebops-n8-20260912-ablation-r3-prob8-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-13T06:47:39Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8462618106862676,
+        "checkpoint_ebops": 340174,
+        "budget_met": 0,
+        "val_macro_auc": 0.8525079442353883,
+        "ebops": 360814,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5893164873123169
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/3b88abc82ce3"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "e5b18e950027",
+      "name": "ebops-n8-20260912-ablation-r5-recovery-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-14T12:40:21Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8410189691382677,
+        "checkpoint_ebops": 349390,
+        "budget_met": 1,
+        "val_macro_auc": 0.8232857259242538,
+        "ebops": 308270,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5690160989761353
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/e5b18e950027"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "b01b23c8027b",
+      "name": "ebops-n8-20260912-ablation-r6-distill-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-15T08:35:10Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8444254251978135,
+        "checkpoint_ebops": 344430,
+        "budget_met": 1,
+        "val_macro_auc": 0.8444254251978135,
+        "ebops": 344430,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5703709721565247
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/b01b23c8027b"
+    },
+    {
+      "project": "BNJetTag-EBOPs-N8",
+      "run_id": "cc0da02952b7",
+      "name": "ebops-n8-20260912-ablation-r4-gradual-w1a8-s1",
+      "state": "finished",
+      "group": "ebops-n8-20260912-ablation",
+      "job_type": "train",
+      "created_at": "2026-09-15T09:13:50Z",
+      "experiment_scope": "seven_arm_ablation",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8476823303826355,
+        "checkpoint_ebops": 349550,
+        "budget_met": 0,
+        "val_macro_auc": 0.850851791566901,
+        "ebops": 361838,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5818367004394531
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-EBOPs-N8/runs/cc0da02952b7"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "8b75fad4710f",
+      "name": "batch20260917-a00-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T15:25:14Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8585149411184512,
+        "checkpoint_ebops": 323771,
+        "budget_met": 1,
+        "val_categorical_accuracy": 0.5980241935483871,
+        "val_macro_auc": 0.8585149411184512,
+        "ebops": 323771,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5929152965545654
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8b75fad4710f"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "8cdfda97a5a5",
+      "name": "batch20260917-a01-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T15:30:07Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8472707975829978,
+        "checkpoint_ebops": 344270,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5811209677419354,
+        "val_macro_auc": 0.8507365978396317,
+        "ebops": 354670,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5860463380813599
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8cdfda97a5a5"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "968ae5d77f36",
+      "name": "batch20260917-a03-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T22:37:23Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8562795794868405,
+        "checkpoint_ebops": 346222,
+        "budget_met": 1,
+        "val_categorical_accuracy": 0.5943709677419354,
+        "val_macro_auc": 0.8562795794868405,
+        "ebops": 346222,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5899556279182434
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/968ae5d77f36"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "92c3adf8ea07",
+      "name": "batch20260917-a09-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:06:36Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6334832750526656,
+        "checkpoint_ebops": 721168,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3380967741935484,
+        "val_macro_auc": 0.6545336720485001,
+        "ebops": 721178,
+        "target_ebops": 500000,
+        "categorical_accuracy": 0.3584435284137726
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/92c3adf8ea07"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "c8390667f58e",
+      "name": "batch20260917-a06-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:08:40Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6546262389878249,
+        "checkpoint_ebops": 498353,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.38,
+        "val_macro_auc": 0.6720932167579936,
+        "ebops": 498373,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4005886912345886
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/c8390667f58e"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "2d39a44e8179",
+      "name": "batch20260917-a02-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:09:00Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8612207640166119,
+        "checkpoint_ebops": 349298,
+        "budget_met": 1,
+        "val_categorical_accuracy": 0.6025403225806452,
+        "val_macro_auc": 0.8619110113509418,
+        "ebops": 326839,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6090403199195862
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/2d39a44e8179"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "0f7f39c0d625",
+      "name": "batch20260917-a05-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:09:46Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.7481671985299684,
+        "checkpoint_ebops": 2486552,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.4696290322580645,
+        "val_macro_auc": 0.7659938283041613,
+        "ebops": 2486562,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4712398946285248
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/0f7f39c0d625"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "d8fca5f337d4",
+      "name": "batch20260917-a04-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:31:43Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6665205268776703,
+        "checkpoint_ebops": 721178,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.41496774193548386,
+        "val_macro_auc": 0.7086782577626167,
+        "ebops": 721198,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4145302176475525
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/d8fca5f337d4"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "422cac75fde4",
+      "name": "batch20260917-a08-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-17T23:56:45Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.611288683610493,
+        "checkpoint_ebops": 550365,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.35183870967741937,
+        "val_macro_auc": 0.6647202924295867,
+        "ebops": 550390,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4138830602169037
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/422cac75fde4"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "8de4f4468d17",
+      "name": "batch20260917-a10-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-18T00:29:03Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6803419992647074,
+        "checkpoint_ebops": 721168,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.284258064516129,
+        "val_macro_auc": 0.6310547342181586,
+        "ebops": 721198,
+        "target_ebops": 250000,
+        "categorical_accuracy": 0.414931446313858
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8de4f4468d17"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "2182aedd5fba",
+      "name": "batch20260917-a07-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-18T00:43:19Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.7009667236763115,
+        "checkpoint_ebops": 362195,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3832338709677419,
+        "val_macro_auc": 0.6988097426252896,
+        "ebops": 362195,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4041995704174042
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/2182aedd5fba"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "722576c02e4e",
+      "name": "batch20260917-a11-s1",
+      "state": "finished",
+      "group": "batch20260917",
+      "job_type": "train",
+      "created_at": "2026-09-18T00:59:32Z",
+      "experiment_scope": "architecture_a00_a11",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8749270525596688,
+        "checkpoint_ebops": 479462,
+        "budget_met": 1,
+        "val_categorical_accuracy": 0.6226774193548387,
+        "val_macro_auc": 0.8730449241452233,
+        "ebops": 482849,
+        "target_ebops": 500000,
+        "categorical_accuracy": 0.622971773147583
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/722576c02e4e"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "6ddab006f995",
+      "name": "batch20260918-b02-s4",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:17:24Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.5675808092195475,
+        "checkpoint_ebops": 721158,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.34569354838709676,
+        "val_macro_auc": 0.6750698706531317,
+        "ebops": 721198,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4121915102005005
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/6ddab006f995"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "46c390b6c0e4",
+      "name": "batch20260918-b01-s4",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:17:39Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6626307594233214,
+        "checkpoint_ebops": 464989,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.35185483870967743,
+        "val_macro_auc": 0.6777381165924142,
+        "ebops": 465004,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3503447473049164
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/46c390b6c0e4"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "417bc88cd02e",
+      "name": "batch20260918-b00-s4",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:17:41Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6476976568543786,
+        "checkpoint_ebops": 721163,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.4177096774193548,
+        "val_macro_auc": 0.7247011575266031,
+        "ebops": 721208,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4255463480949402
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/417bc88cd02e"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "64aa21dac400",
+      "name": "batch20260918-b03-s4",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:29:53Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6755261667133208,
+        "checkpoint_ebops": 688400,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.42279032258064514,
+        "val_macro_auc": 0.7110214042145483,
+        "ebops": 688435,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.424711674451828
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/64aa21dac400"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "37f5c59cacf9",
+      "name": "batch20260918-b04-s4",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:30:40Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6543824960399384,
+        "checkpoint_ebops": 721163,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.33754032258064515,
+        "val_macro_auc": 0.6639688338745302,
+        "ebops": 721198,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4130665063858032
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/37f5c59cacf9"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "b89beb498eb8",
+      "name": "batch20260918-b00-s5",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:30:42Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6952945584617196,
+        "checkpoint_ebops": 721173,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.27699193548387097,
+        "val_macro_auc": 0.5931137736732328,
+        "ebops": 721230,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4080100655555725
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/b89beb498eb8"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "cd187434fdfc",
+      "name": "batch20260918-b01-s5",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:30:43Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6450628791384153,
+        "checkpoint_ebops": 464984,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3831290322580645,
+        "val_macro_auc": 0.6684377117091458,
+        "ebops": 465004,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.40448787808418274
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/cd187434fdfc"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "f0d2d1ea5296",
+      "name": "batch20260918-b02-s5",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:30:43Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.5884039629720642,
+        "checkpoint_ebops": 721168,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3586048387096774,
+        "val_macro_auc": 0.6953609723504041,
+        "ebops": 721188,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3628084659576416
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/f0d2d1ea5296"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "eab07105ae52",
+      "name": "batch20260918-b03-s5",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T12:59:04Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6523798086451318,
+        "checkpoint_ebops": 688385,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.4102258064516129,
+        "val_macro_auc": 0.7199382317091005,
+        "ebops": 688445,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4160705506801605
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/eab07105ae52"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "b83fc8bbb99e",
+      "name": "batch20260918-b02-s6",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:16Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6581398856837001,
+        "checkpoint_ebops": 721158,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.20075806451612904,
+        "val_macro_auc": 0.49998454052186575,
+        "ebops": 721193,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3558971583843231
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/b83fc8bbb99e"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "60550ff8dac9",
+      "name": "batch20260918-b03-s6",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:20Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6515538936872469,
+        "checkpoint_ebops": 688395,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3376209677419355,
+        "val_macro_auc": 0.6687639341713129,
+        "ebops": 688435,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.420344740152359
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/60550ff8dac9"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "24a674f320ef",
+      "name": "batch20260918-b04-s6",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:38Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6637896574095876,
+        "checkpoint_ebops": 721173,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3915806451612903,
+        "val_macro_auc": 0.6924010864241898,
+        "ebops": 721193,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.42057257890701294
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/24a674f320ef"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "8f1fa97adfbd",
+      "name": "batch20260918-b01-s6",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:42Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6608186265903117,
+        "checkpoint_ebops": 464979,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3446048387096774,
+        "val_macro_auc": 0.6617887830403169,
+        "ebops": 465004,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4220261871814728
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/8f1fa97adfbd"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "199429658783",
+      "name": "batch20260918-b04-s5",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:44Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6592140357633818,
+        "checkpoint_ebops": 721173,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3606451612903226,
+        "val_macro_auc": 0.657458793613355,
+        "ebops": 721188,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3548548221588135
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/199429658783"
+    },
+    {
+      "project": "BNJetTag-Batch20260917",
+      "run_id": "7239c1688717",
+      "name": "batch20260918-b00-s6",
+      "state": "finished",
+      "group": "batch20260918",
+      "job_type": "train",
+      "created_at": "2026-09-18T13:06:52Z",
+      "experiment_scope": "attention_b00_b04",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6226817715181613,
+        "checkpoint_ebops": 721158,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.35358870967741934,
+        "val_macro_auc": 0.6929036297856042,
+        "ebops": 721198,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3701511919498443
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917/runs/7239c1688717"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "10dd9f63e913",
+      "name": "engram-e00-s1",
+      "state": "finished",
+      "group": "engram-screen",
+      "job_type": "train",
+      "created_at": "2026-09-18T16:56:06Z",
+      "experiment_scope": "original_engram_e00_e03",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6286232845912874,
+        "checkpoint_ebops": 721173,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.33273387096774193,
+        "val_macro_auc": 0.638378434112989,
+        "ebops": 721193,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.4076511859893799
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/10dd9f63e913"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "a768d794fb1a",
+      "name": "engram-e01-s1",
+      "state": "finished",
+      "group": "engram-screen",
+      "job_type": "train",
+      "created_at": "2026-09-18T18:37:37Z",
+      "experiment_scope": "original_engram_e00_e03",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.6589661913158992,
+        "checkpoint_ebops": 362158,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.3344032258064516,
+        "val_macro_auc": 0.6450247175049784,
+        "ebops": 362158,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.3341088593006134
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/a768d794fb1a"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "5142723bdcfe",
+      "name": "engram-e02-s1",
+      "state": "finished",
+      "group": "engram-screen",
+      "job_type": "train",
+      "created_at": "2026-09-18T19:38:10Z",
+      "experiment_scope": "original_engram_e00_e03",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8291755310270068,
+        "checkpoint_ebops": 380009,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5454758064516129,
+        "val_macro_auc": 0.8321664888397728,
+        "ebops": 380009,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5504052042961121
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/5142723bdcfe"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "02559056a181",
+      "name": "engram-e03-s1",
+      "state": "finished",
+      "group": "engram-screen",
+      "job_type": "train",
+      "created_at": "2026-09-18T21:25:33Z",
+      "experiment_scope": "original_engram_e00_e03",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 999,
+        "best_val_macro_auc": 0.8068430315419335,
+        "checkpoint_ebops": 440510,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5254596774193548,
+        "val_macro_auc": 0.8202621796068055,
+        "ebops": 440525,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5445201396942139
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/02559056a181"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "48c71189d8d4",
+      "name": "const0922-a02-n8-s1-fast50-s1",
+      "state": "finished",
+      "group": "constituent-20260922-diagnostic-tf32",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:17:13Z",
+      "experiment_scope": "constituent_tf32_diagnostic",
+      "record_role": "diagnostic_attempt",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5902983870967742,
+        "val_macro_auc": 0.8531235130476127,
+        "ebops": 1227679,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5888064503669739
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/48c71189d8d4"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "7e6e03253a76",
+      "name": "const0922-e02-n8-s1-fast50-s1",
+      "state": "finished",
+      "group": "constituent-20260922-diagnostic-tf32",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:17:20Z",
+      "experiment_scope": "constituent_tf32_diagnostic",
+      "record_role": "diagnostic_attempt",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5818548387096775,
+        "val_macro_auc": 0.8467893547155547,
+        "ebops": 627122,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5600322484970093
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/7e6e03253a76"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "266f08ad1094",
+      "name": "const0922-e03-n8-s1-fast50-s1",
+      "state": "finished",
+      "group": "constituent-20260922-diagnostic-tf32",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:17:37Z",
+      "experiment_scope": "constituent_tf32_diagnostic",
+      "record_role": "diagnostic_attempt",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5718225806451613,
+        "val_macro_auc": 0.8441549072418024,
+        "ebops": 658791,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5603669285774231
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/266f08ad1094"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "698a247d56ac",
+      "name": "const0922-e03-n64-s1-fast50-s1",
+      "state": "finished",
+      "group": "constituent-20260922-diagnostic-tf32",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:18:35Z",
+      "experiment_scope": "constituent_tf32_diagnostic",
+      "record_role": "diagnostic_attempt",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.62125,
+        "val_macro_auc": 0.8803800099965887,
+        "ebops": 18234827,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6160100698471069
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/698a247d56ac"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "808d439b6038",
+      "name": "const0922-a02-n64-s1-fast50-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-diagnostic-tf32",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:18:45Z",
+      "experiment_scope": "constituent_tf32_diagnostic",
+      "record_role": "diagnostic_attempt",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {},
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/808d439b6038"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "9248d59233de",
+      "name": "const0922-a02-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:34:43Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 37,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5977903225806451,
+        "val_macro_auc": 0.8611229496944626,
+        "ebops": 664198,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6222963333129883
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/9248d59233de"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "04486de377c1",
+      "name": "const0922-e02-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:34:47Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5802822580645162,
+        "val_macro_auc": 0.846761639947835,
+        "ebops": 629746,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5586996078491211
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/04486de377c1"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "f7dc3a1c4c44",
+      "name": "const0922-e03-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:35:03Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 1,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5683870967741935,
+        "val_macro_auc": 0.8419754796482058,
+        "ebops": 658860,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5547560453414917
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/f7dc3a1c4c44"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "61e841109669",
+      "name": "const0922-e03-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:35:14Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8990833990510435,
+        "checkpoint_ebops": 4923780,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6545564516129032,
+        "val_macro_auc": 0.8978618531553544,
+        "ebops": 4966751,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.655453622341156
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/61e841109669"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "9934e8694ed5",
+      "name": "const0922-a02-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:35:25Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8272270151735255,
+        "checkpoint_ebops": 9175003,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5306048387096775,
+        "val_macro_auc": 0.8218337242227938,
+        "ebops": 9181152,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5409415364265442
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/9934e8694ed5"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "e37a58ee2339",
+      "name": "const0922-a00-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:21Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8750976693077849,
+        "checkpoint_ebops": 696530,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.621741935483871,
+        "val_macro_auc": 0.8747385406648354,
+        "ebops": 696951,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6216874718666077
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/e37a58ee2339"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "92fb1a497197",
+      "name": "const0922-a08-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:26Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 36,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6303467741935483,
+        "val_macro_auc": 0.8747843045020819,
+        "ebops": 629863,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6229334473609924
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/92fb1a497197"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "582d4e4d42db",
+      "name": "const0922-a00-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:28Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.827779015608014,
+        "checkpoint_ebops": 9437285,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5119032258064516,
+        "val_macro_auc": 0.8260997545693465,
+        "ebops": 9474139,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5420100688934326
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/582d4e4d42db"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "517182a4f485",
+      "name": "const0922-a01-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:29Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 38,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6112096774193548,
+        "val_macro_auc": 0.8666700903829483,
+        "ebops": 699566,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6094878911972046
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/517182a4f485"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "e55df4bddf51",
+      "name": "const0922-a09-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:31Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 36,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6319677419354839,
+        "val_macro_auc": 0.876486741924942,
+        "ebops": 731330,
+        "target_ebops": 500000,
+        "categorical_accuracy": 0.6264193654060364
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/e55df4bddf51"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "4649f3b3f549",
+      "name": "const0922-a03-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:38Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8201157545037201,
+        "checkpoint_ebops": 9161276,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5157177419354839,
+        "val_macro_auc": 0.8179726812905674,
+        "ebops": 9161276,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.504667341709137
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/4649f3b3f549"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "fb1b17221065",
+      "name": "const0922-a07-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:38Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8620089421354867,
+        "checkpoint_ebops": 4630276,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5795483870967741,
+        "val_macro_auc": 0.8618858437277176,
+        "ebops": 4634372,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5852318406105042
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/fb1b17221065"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "8eefb6821090",
+      "name": "const0922-a01-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:42Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8211394566073098,
+        "checkpoint_ebops": 9424444,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.4870161290322581,
+        "val_macro_auc": 0.8038211990168836,
+        "ebops": 10800700,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.525715708732605
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/8eefb6821090"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "bbef2c586775",
+      "name": "const0922-a03-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:42Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8685805064910921,
+        "checkpoint_ebops": 577550,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6216370967741935,
+        "val_macro_auc": 0.8726505078703852,
+        "ebops": 632846,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.612159252166748
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/bbef2c586775"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "818b4e60b1df",
+      "name": "const0922-a08-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:43Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8410010241057595,
+        "checkpoint_ebops": 6448275,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5641048387096774,
+        "val_macro_auc": 0.8470360362263287,
+        "ebops": 6491283,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5538830757141113
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/818b4e60b1df"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "94f7725d3576",
+      "name": "const0922-a06-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:44Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.7764178255299614,
+        "checkpoint_ebops": 7207292,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.45304032258064514,
+        "val_macro_auc": 0.7764178255299614,
+        "ebops": 7207292,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.46673384308815
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/94f7725d3576"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "d9744da66d17",
+      "name": "const0922-a10-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:45Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 35,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6287177419354839,
+        "val_macro_auc": 0.8751795692599444,
+        "ebops": 619706,
+        "target_ebops": 250000,
+        "categorical_accuracy": 0.6199758052825928
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/d9744da66d17"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "6bdfc4182163",
+      "name": "const0922-a06-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:46Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8583583051295977,
+        "checkpoint_ebops": 386219,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6054032258064516,
+        "val_macro_auc": 0.8583583051295977,
+        "ebops": 386219,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6018467545509338
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/6bdfc4182163"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "34a3c9c9a1ff",
+      "name": "const0922-a09-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:54Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8094920280820883,
+        "checkpoint_ebops": 9183816,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.4878709677419355,
+        "val_macro_auc": 0.8094920280820883,
+        "ebops": 9183816,
+        "target_ebops": 500000,
+        "categorical_accuracy": 0.5279576182365417
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/34a3c9c9a1ff"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "67fb16774f74",
+      "name": "const0922-a07-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:48:58Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8663205669521841,
+        "checkpoint_ebops": 410022,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.611241935483871,
+        "val_macro_auc": 0.8659841896163272,
+        "ebops": 411302,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6093124747276306
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/67fb16774f74"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "b7d7242fac41",
+      "name": "const0922-b02-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:07Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8212510108301021,
+        "checkpoint_ebops": 9168736,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.505991935483871,
+        "val_macro_auc": 0.8193364243900172,
+        "ebops": 9219798,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5346209406852722
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/b7d7242fac41"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "1a58b9d5142f",
+      "name": "const0922-b01-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:14Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8646723507549947,
+        "checkpoint_ebops": 5116157,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5603467741935484,
+        "val_macro_auc": 0.8563428422386001,
+        "ebops": 5195955,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5867620706558228
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/1a58b9d5142f"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "cf25497800d2",
+      "name": "const0922-a10-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:14Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8224315786824802,
+        "checkpoint_ebops": 9166438,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5162903225806451,
+        "val_macro_auc": 0.8144868754287333,
+        "ebops": 9250253,
+        "target_ebops": 250000,
+        "categorical_accuracy": 0.5285302400588989
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/cf25497800d2"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "45f73e2b95c3",
+      "name": "const0922-b03-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:15Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8354261049762315,
+        "checkpoint_ebops": 8646668,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5458709677419354,
+        "val_macro_auc": 0.8354261049762315,
+        "ebops": 8646668,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5453346371650696
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/45f73e2b95c3"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "3f533cd8ed57",
+      "name": "const0922-e05-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:18Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8995826633884135,
+        "checkpoint_ebops": 4816649,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6652258064516129,
+        "val_macro_auc": 0.8987955735898494,
+        "ebops": 4816654,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6586390733718872
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/3f533cd8ed57"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "65b9f5e2accc",
+      "name": "const0922-e06-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:20Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8894762166399556,
+        "checkpoint_ebops": 4921685,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6255967741935484,
+        "val_macro_auc": 0.8824589032720246,
+        "ebops": 4927819,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.619175374507904
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/65b9f5e2accc"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "f553d36e6cca",
+      "name": "const0922-e02-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:26Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.9030345916230736,
+        "checkpoint_ebops": 4679431,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6659758064516129,
+        "val_macro_auc": 0.8997133741368385,
+        "ebops": 4720386,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6694132685661316
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/f553d36e6cca"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "05ca1ebb5930",
+      "name": "const0922-e04-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:48Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8868181788757579,
+        "checkpoint_ebops": 9474476,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6390806451612904,
+        "val_macro_auc": 0.8879879803236813,
+        "ebops": 9517420,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.638967752456665
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/05ca1ebb5930"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "dae6c6788b02",
+      "name": "const0922-b04-n64-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T07:49:50Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8333284487684915,
+        "checkpoint_ebops": 9166766,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.5184032258064516,
+        "val_macro_auc": 0.8171568464809624,
+        "ebops": 9211753,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.5247056484222412
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/dae6c6788b02"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "c59b864a76d9",
+      "name": "const0922-b01-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:01:15Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 31,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6238548387096774,
+        "val_macro_auc": 0.8730027909524093,
+        "ebops": 619286,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6183124780654907
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/c59b864a76d9"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "61b3e4863d45",
+      "name": "const0922-b02-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:01:22Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8752922759357386,
+        "checkpoint_ebops": 637027,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6260725806451612,
+        "val_macro_auc": 0.8731496462905293,
+        "ebops": 637091,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.622961699962616
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/61b3e4863d45"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "2b1dcb8189c5",
+      "name": "const0922-b03-n8-s1-fast50-fp32-s1",
+      "state": "crashed",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:01:27Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 33,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6096209677419355,
+        "val_macro_auc": 0.8683009794798962,
+        "ebops": 665279,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.621328592300415
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/2b1dcb8189c5"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "58678fc8ccd3",
+      "name": "const0922-b04-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:06:43Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.878829363796177,
+        "checkpoint_ebops": 600329,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6341370967741935,
+        "val_macro_auc": 0.878829363796177,
+        "ebops": 600329,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6233588457107544
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/58678fc8ccd3"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "0cfa73e33a9b",
+      "name": "const0922-e05-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:14:24Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.868252561485178,
+        "checkpoint_ebops": 417620,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6236693548387097,
+        "val_macro_auc": 0.8723239978464598,
+        "ebops": 418159,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6183467507362366
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/0cfa73e33a9b"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "6072a1ad3971",
+      "name": "const0922-e04-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:14:29Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8733393245149454,
+        "checkpoint_ebops": 648406,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6169274193548387,
+        "val_macro_auc": 0.8733393245149454,
+        "ebops": 648406,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6266531944274902
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/6072a1ad3971"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "15c8927d77b7",
+      "name": "const0922-e06-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:16:12Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8659391440514526,
+        "checkpoint_ebops": 430891,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6055806451612903,
+        "val_macro_auc": 0.8659391440514526,
+        "ebops": 430891,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.613937497138977
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/15c8927d77b7"
+    },
+    {
+      "project": "BNJetTag-Engram-Experimental",
+      "run_id": "db42a9e810fc",
+      "name": "const0922-e07-n8-s1-fast50-fp32-s1",
+      "state": "finished",
+      "group": "constituent-20260922-fast50",
+      "job_type": "train",
+      "created_at": "2026-09-22T10:16:28Z",
+      "experiment_scope": "constituent_n8_n64_screen",
+      "record_role": "scientific_training",
+      "configuration": {
+        "seed": null,
+        "n_constituents": null,
+        "variant": null,
+        "config_hash": null
+      },
+      "summary_metrics": {
+        "epoch": 49,
+        "best_val_macro_auc": 0.8659777282904322,
+        "checkpoint_ebops": 491803,
+        "budget_met": 0,
+        "val_categorical_accuracy": 0.6132903225806452,
+        "val_macro_auc": 0.8659777282904322,
+        "ebops": 491803,
+        "target_ebops": 350000,
+        "categorical_accuracy": 0.6069072484970093
+      },
+      "url": "https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Engram-Experimental/runs/db42a9e810fc"
+    }
+  ]
+}

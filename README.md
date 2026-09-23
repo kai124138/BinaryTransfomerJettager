@@ -8,13 +8,15 @@ This repository contains the model implementation, training and evaluation scrip
 
 ## What I’m working on now
 
-**[Current-work hub: accuracy, architecture and FPGA tradeoffs](docs/current-work/README.md)**
+**[Complete experiment index](docs/current-work/EXPERIMENT_INDEX_20260923.md)** · [Current-work hub](docs/current-work/README.md)
 
 **September 23 final status:** all 27 architecture/attention runs reached 1,000 epochs. Five architecture runs have checkpoints within their configured budgets. A02 is the leading 350k candidate at **61.08% internal-validation accuracy and 349,298 EBOPs**; A11 reaches **62.62% at 479,462 EBOPs** under its separate 500k target. **None of the 15 attention runs found a checkpoint within 350k.** See the **[final results and limitations](docs/current-work/TRAINING_RESULTS_20260923.md)** and **[machine-readable snapshot](docs/current-work/training-results-20260923.json)**.
 
 [Live training curves](https://wandb.ai/kayamaguchi-uc-san-diego/BNJetTag-Batch20260917) · [Full batch plan](docs/current-work/TRAINING_BATCH_PLAN_WITH_FROZEN_BACKBONE_FOLLOWUP.md) · [Final run snapshot](docs/current-work/training-results-20260923.json)
 
 **Engram studies:** all four original E00–E03 training loops reached 1,000 epochs. E00 passed the outer runner; E01–E03 failed selected-checkpoint metric reproduction, and none found a feasible checkpoint under the augmented 350k target. A separate [matched N8/N64 exploratory screen](docs/current-work/CONSTITUENT_SCREEN_20260923.md) completed 28 of 38 intended cases at 50 epochs; it found an interesting N64 memory signal but no feasible checkpoint. Exact source and configurations for that screen are frozen under [`code/constituent-study-20260922`](code/constituent-study-20260922/README.md).
+
+The complete index maps all **86 W&B records** across the three September projects, including every trained N64 row, all original and fresh Engram variants, diagnostic attempts, the statically rejected E07/N64 case, and the separate pre-conference N64 baseline.
 
 ## Research update — September 2026
 
@@ -55,6 +57,8 @@ Two frozen-output follow-ups reuse the channel-wise checkpoint without retrainin
 ### Initial budget-control study
 
 The initial 101-epoch study compared an unconstrained control with budgets defined as fractions of the calibrated initial EBOP count. The 75% budget produced a feasible checkpoint at **1,263,790 EBOPs** with reported validation AUC **0.8701**. The 25% budget did not produce a feasible checkpoint; the original 50% run failed before completing an epoch. A separate resource-priority configuration reached **847,982 EBOPs**, with reported validation AUC **0.7973**.
+
+A separate N8 long-budget run completed 1,000 epochs and selected its final epoch at **344,430 EBOPs** with reported internal-validation AUC **0.8536**. It has no published held-out evaluation; see the [standalone run record](results/post_conference/standalone_long_budget.json).
 
 ![Activation-width distributions and measured computation in the initial budget study](figures/budget_pilot_widths.png)
 
@@ -238,6 +242,7 @@ code/
     update_readme.py          Result tables from the numerical records
     validate_repository.py   Source, configuration, result, and link checks
 results/
+  wandb-project-inventory-20260923.json  All 86 September dashboard records
   constituent_study/       N8/N64 screen results, preflight and source provenance
   engram/                  Recorded metrics, failures and source provenance
   pre_conference/           Fixed-precision AUC, EBOPs, ROC curves, uncertainties
