@@ -4,6 +4,8 @@
 
 The fresh constituent-count campaign tested 19 distinct architecture, attention and Engram-inspired setups at N=8 and N=64. It used one seed and a new 50-epoch schedule with peak learning rate 2e-4. This is a short exploratory comparison, not an equal-training replacement for the historical 1,000-epoch runs.
 
+**Follow-up update, 24 September:** A07, E02 and E05 at N64 now have seed-2/3 confirmations in the [full 1,000-epoch queue](CONFIRMATION_RUNS_20260924.md) under a separate 5,000,000-eBOP target. There is no intermediate promotion gate.
+
 [Exact results](../../results/constituent_study/results-20260923.json) · [Frozen runtime source and configurations](../../code/constituent-study-20260922/README.md) · [Source manifest](../../results/constituent_study/source_manifest.json)
 
 ## Execution result
@@ -59,6 +61,6 @@ The memory variants occupy the highest observed N64 accuracy positions. Among se
 - Seven N8 comparisons are incomplete, including several direct architecture/attention pairs.
 - W&B remains private; publishing these numerical records and frozen source does not change project visibility.
 
-The result is therefore twofold: the N64 memory signal is interesting, while the fixed-budget objective failed across the entire screen. Any continuation should first decide whether to redesign the cost structure or explicitly relax the budget.
+The screen established an interesting N64 memory signal while its original fixed-budget objective failed. The active follow-up explicitly chose a separate 5,000,000-eBOP N64 target and full 1,000-epoch schedules; this historical screen does not stop or promote those runs.
 
 [Return to current work](README.md).

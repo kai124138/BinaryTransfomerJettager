@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-09-24T21:45:42Z",
+  "status": "training_active",
+  "checkpoint_evaluation": {
+    "deterministic_reload_max_abs_logit_difference": 0.0,
+    "held_out_events": 260000,
+    "runs": [
+      {
+        "arm": "A02",
+        "selected_epoch_zero_based": 912,
+        "selected_epoch_one_based": 913,
+        "ebops": 349298,
+        "held_out_accuracy": 0.60785,
+        "held_out_macro_ovr_auc": 0.8604315531
+      },
+      {
+        "arm": "A11",
+        "selected_epoch_zero_based": 788,
+        "selected_epoch_one_based": 789,
+        "ebops": 479462,
+        "held_out_accuracy": 0.6233346154,
+        "held_out_macro_ovr_auc": 0.8738126864
+      }
+    ]
+  },
+  "execution_policy": {
+    "runs": 12,
+    "target_epochs_per_run": 1000,
+    "intermediate_decision_gates": 0,
+    "gpu_count": 1,
+    "concurrent_processes": 3,
+    "batch_size": 256,
+    "chunk_epochs": 20,
+    "chunk_purpose": "release TensorFlow memory and resume exact checkpoint state",
+    "stop_on_target": false
+  },
+  "cluster_observation": {
+    "job": "kai-confirm-onegpu-0924-e0c0a3-r2",
+    "gpu": "NVIDIA A10",
+    "pod_restarts": 0,
+    "steady_gpu_utilization_percent": [100, 100, 99, 100, 99, 100]
+  },
+  "runs": [
+    {"name": "confirm0923-a00-s2-e1000", "family": "N8 architecture", "arm": "A00", "seed": 2, "target_ebops": 350000, "completed_epochs": 138},
+    {"name": "confirm0923-a00-s3-e1000", "family": "N8 architecture", "arm": "A00", "seed": 3, "target_ebops": 350000, "completed_epochs": 318},
+    {"name": "confirm0923-a02-s2-e1000", "family": "N8 architecture", "arm": "A02", "seed": 2, "target_ebops": 350000, "completed_epochs": 121},
+    {"name": "confirm0923-a02-s3-e1000", "family": "N8 architecture", "arm": "A02", "seed": 3, "target_ebops": 350000, "completed_epochs": 120},
+    {"name": "confirm0923-a03-s2-e1000", "family": "N8 architecture", "arm": "A03", "seed": 2, "target_ebops": 350000, "completed_epochs": 126},
+    {"name": "confirm0923-a03-s3-e1000", "family": "N8 architecture", "arm": "A03", "seed": 3, "target_ebops": 350000, "completed_epochs": 120},
+    {"name": "confirm0924-a07-n64-s2-e1000-5m", "family": "N64 architecture", "arm": "A07", "seed": 2, "target_ebops": 5000000, "completed_epochs": 2},
+    {"name": "confirm0924-a07-n64-s3-e1000-5m", "family": "N64 architecture", "arm": "A07", "seed": 3, "target_ebops": 5000000, "completed_epochs": 2},
+    {"name": "confirm0924-e02-n64-s2-e1000-5m", "family": "N64 Engram", "arm": "E02", "seed": 2, "target_ebops": 5000000, "completed_epochs": 2},
+    {"name": "confirm0924-e02-n64-s3-e1000-5m", "family": "N64 Engram", "arm": "E02", "seed": 3, "target_ebops": 5000000, "completed_epochs": 0},
+    {"name": "confirm0924-e05-n64-s2-e1000-5m", "family": "N64 Engram", "arm": "E05", "seed": 2, "target_ebops": 5000000, "completed_epochs": 0},
+    {"name": "confirm0924-e05-n64-s3-e1000-5m", "family": "N64 Engram", "arm": "E05", "seed": 3, "target_ebops": 5000000, "completed_epochs": 0}
+  ],
+  "limitations": [
+    "Confirmation training is ongoing; checkpoint progress is a point-in-time operational status, not a result.",
+    "N8 and N64 use separate 350000 and 5000000 eBOP targets and must not be compared as one cost budget.",
+    "The N64 confirmations have not yet produced final validation or held-out results."
+  ]
+}

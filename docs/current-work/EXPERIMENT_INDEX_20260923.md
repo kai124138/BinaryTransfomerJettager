@@ -14,6 +14,9 @@ This page is the entry point for the full published experiment record. It includ
 | Fresh matched constituent screen | 19 normalized setups × N=8/64 = 38 intended cases | 28 complete, seven partial, two canary-only, one statically rejected; none feasible | [Exact screen results](../../results/constituent_study/results-20260923.json) |
 | Frozen-output refinements | Rounded output correction and 4-/8-bit frozen-head fits | Completed software evaluation; two modest held-out improvements | [Exact results](../../results/post_conference/frozen_output_results.json) |
 | Hardware work | Softmax/device characterization and R4 export/synthesis investigation | Dated estimates and failure evidence; no new routed Engram/N64 result | [Hardware record](R4_HARDWARE_SYNTHESIS.md) |
+| Full-run confirmations | N8 A00/A02/A03 and N64 A07/E02/E05 × seeds 2/3 = 12 runs | Active; every run targets 1,000 epochs with no intermediate promotion gate | [September 24 status](CONFIRMATION_RUNS_20260924.md) |
+
+The 86-record W&B inventory below is a frozen September 23 snapshot. The confirmation runs launched on September 24 are recorded separately and are not silently added to that historical count.
 
 ## How the W&B dashboard counts map to experiments
 

@@ -8,7 +8,9 @@ This repository contains the model implementation, training and evaluation scrip
 
 ## What I’m working on now
 
-**[Complete experiment index](docs/current-work/EXPERIMENT_INDEX_20260923.md)** · [Current-work hub](docs/current-work/README.md)
+**[Full-run confirmation campaign](docs/current-work/CONFIRMATION_RUNS_20260924.md)** · [Complete experiment index](docs/current-work/EXPERIMENT_INDEX_20260923.md) · [Current-work hub](docs/current-work/README.md)
+
+**September 24 confirmation update:** A02 and A11 held-out checkpoint evaluation is deterministic across independent reloads. A02 records **60.7850% held-out accuracy and 0.860432 macro-OvR AUC** at 349,298 eBOPs; A11 records **62.3335% and 0.873813** at its separate 479,462-eBOP point. Twelve seed-confirmation runs—six N8 and six N64—are now running under full 1,000-epoch schedules with no intermediate promotion gate. Three processes share one GPU and have measured 99–100% utilization.
 
 **September 23 final status:** all 27 architecture/attention runs reached 1,000 epochs. Five architecture runs have checkpoints within their configured budgets. A02 is the leading 350k candidate at **61.08% internal-validation accuracy and 349,298 EBOPs**; A11 reaches **62.62% at 479,462 EBOPs** under its separate 500k target. **None of the 15 attention runs found a checkpoint within 350k.** See the **[final results and limitations](docs/current-work/TRAINING_RESULTS_20260923.md)** and **[machine-readable snapshot](docs/current-work/training-results-20260923.json)**.
 

@@ -67,6 +67,21 @@ def main():
         "statically_rejected_cases_not_in_wandb": 1,
     }
     assert {row["wandb_run_records"] for row in registry["projects"]} == {13, 27, 46}
+    confirmation = json.loads(
+        (ROOT / "docs/current-work/confirmation-status-20260924.json").read_text()
+    )
+    assert confirmation["execution_policy"]["runs"] == 12
+    assert confirmation["execution_policy"]["target_epochs_per_run"] == 1000
+    assert confirmation["execution_policy"]["intermediate_decision_gates"] == 0
+    assert confirmation["execution_policy"]["gpu_count"] == 1
+    assert confirmation["execution_policy"]["concurrent_processes"] == 3
+    assert confirmation["checkpoint_evaluation"][
+        "deterministic_reload_max_abs_logit_difference"
+    ] == 0.0
+    assert len(confirmation["runs"]) == 12
+    assert len({row["name"] for row in confirmation["runs"]}) == 12
+    assert {row["target_ebops"] for row in confirmation["runs"]} == {350000, 5000000}
+    assert all(0 <= row["completed_epochs"] <= 1000 for row in confirmation["runs"])
     standalone = json.loads((ROOT / "results/post_conference/standalone_long_budget.json").read_text())
     assert standalone["result"]["completed_epochs"] == 1000
     assert standalone["result"]["selected_ebops"] <= standalone["configuration"]["target_ebops"]
