@@ -251,6 +251,9 @@ results/
   post_conference/          Budget-control and constrained-training results
   hardware/                HLS resource and performance estimates
 figures/                   PNG previews and scalable SVG figures
+docs/
+  current-work/            Dated status reports and machine-readable snapshots
+  delta/                   Delta: a pre-registered queue of 103 methods (designed, not yet run)
 ```
 
 ## Updating the research record
