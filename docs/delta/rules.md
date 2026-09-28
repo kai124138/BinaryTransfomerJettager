@@ -7,6 +7,28 @@ this file is either a design choice, shape arithmetic from
 [`delta_spec.py`](catalogue/delta_spec.py), or a power constant from
 [`screen_power.py`](catalogue/screen_power.py). None is a training result.
 
+## Amendments from the wave-2 pre-registration (2026-09-28)
+
+ The frozen wave-2 pre-registration amends the rules below for wave 2, dated before its launch. §5 is not rewritten; where it and this list differ for wave 2, this list and the wave-2 pre-registration govern. No rule is added here. The wave-2 pre-registration, whose sections the last column names, will be published with the wave-2 results.
+
+| rule | before | wave 2 (after) | wave-2 section |
+| --- | --- | --- | --- |
+| Primary ranking statistic | lower 80 % bound of g | median of the paired per-seed gaps g_s, with [min, max]; mean g (family-pooled interval), the low-mode run count and the per-cell lower 80 % bound beside it. Mean g was chosen 2026-09-27 and replaced by median g 2026-09-28 | Selection rule, Ranking |
+| Seed count | n ∈ {4, 6, 8} from √2 · the reference configuration's epoch-500 seed sd; ranking mode at n = 4 if none qualifies | n = 4 fixed in both families, ranking mode, lists labelled by s_int (next row); the seed-rule input is the replicas' own sd; significance mode not armed. If 1.0 pt ≤ s_int ≤ T, the top 16 (5M) / top 6 (350k) cells run seeds 5-8 | Seeds; Appendix A |
+| Label rule | "ranked, not advanced" | "ranked" if the cell × seed interaction sd s_int ≤ T, else "descriptive"; T = 1.2 pt at 5M, 2.1 pt at 350k | Selection rule, Label |
+| Family test | none in ranking mode | Dunnett-type many-to-one max-t of d = cell − placebo, each cell's own paired sd, one-sided α 0.10, critical value simulated for the family's m and n; a "no" is not evidence of absence | Selection rule, Family test |
+| Compute pause | no seed-sd pause; base-stability pause | none: the n = 4 design runs whatever the replica sd reads; the base-stability pause is kept | Seeds; Controls, Base stability |
+| Confirm cap | at most 12 cells, ordered by lower 80 % bound | unchanged at 12, ordered by median g | Selection rule, Cap |
+| Control | reference-configuration snapshot at the same seed; replica on a drift trigger | the in-wave drift replica at the same seed is always the primary control; replica − reference configuration is descriptive only | Controls and pairing |
+| Drift replicas | base arms at seeds 1-n | the d24h2 (350k) and d32h4 (5M) replicas at seeds 1-8 (seeds above n stop at epoch 500); the d32h4 350k replica at seeds 1-n | Arms, Drift replicas |
+| Placebo | none | one placebo per target: the replica config with identity keys changed, seeds 1-4, 500 epochs; family-test reference only, not ranked | Arms, Placebo cells |
+| Non-selecting companions | winner's-curse note only | last-epoch and split-half companions per run, each with g, interval, rank and Kendall τ; rank-move flag; neither changes the list | Selection rule, Winner's curse |
+| Memory-growth launch gate | none | a host-memory growth canary on one d24h2 and one d32h4 cell, threshold in the wave-2 pre-registration; the wave waits if it fails | Prerequisites and launch gate |
+| Launch condition | reference-configuration epoch-500 snapshots at seeds 1-n exist | the reference configuration's pilot epoch-500 validation readout | Prerequisites and launch gate |
+| Ranked-list membership | every tested cell of the wave × target | 500-epoch paired cells only (at most 11 at 350k, 35 at 5M); M015, M031, M032 in a separate longer-horizon list, unpaired cells apart | Selection rule, Lists |
+| Eligible epochs | not stated | epochs with a traced EBOPs value only (one in ten) | Selection rule |
+| 350k base | d24h2 | unchanged (d24h2) | Arms, Base arms |
+
 ## Reading an entry
 
 Each entry has an ID (M001 to M103), a family, the method cards it comes from (listed in the
