@@ -130,10 +130,14 @@ feasible, non-degenerate checkpoints; if d24h2 does not, the contingencies in
 
 ## Code
 
-> **Placeholder.** The patch series and the new modules that implement the entries (new
-> attention kinds, the Deep Sets body, the Bop optimizer, the STE variants, the diagnostics) will
-> be added in a second commit. Until then, the `code_changes` names in the catalogue describe
-> planned changes, and some may be renamed when the code is published.
+[`code/delta/`](../../code/delta/README.md) holds 25 patches against the screen code in
+`code/constituent-study-20260922` and six new modules, named after the catalogue's
+`code_changes`. They cover 22 of the 38 code changes plus three post-run diagnostics; the
+Linformer layer is there but not wired. The code for 34 entries is complete there and 11 need
+none. The other 58 require the reference-configuration patches, which are not published here.
+Every entry's base configuration also depends on that code, so no Delta cell can be run from
+this repository alone. The code README lists which patches `convert_binary.py` refuses to
+export and which checks were run.
 
 ## Files
 
