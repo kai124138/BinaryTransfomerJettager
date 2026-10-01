@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "record_date": "2026-10-01",
+  "evidence_scope": {
+    "method": "Reconciliation of saved source records; no new scientific computation or live cluster query.",
+    "latest_campaign_evidence_date": "2026-09-29",
+    "live_cluster_observed_at_utc": null,
+    "live_cluster_status": "unknown",
+    "source_hashes_measured_on": "2026-10-01",
+    "training_launched_for_this_update": false
+  },
+  "pt_weighting": {
+    "status": "completed; quoted from prior verification",
+    "source_ids": [
+      "pt_weighting_verify"
+    ],
+    "verification_date": "2026-09-26",
+    "runs_completed": 24,
+    "configuration": {
+      "constituents": 8,
+      "input_set": "l1x3",
+      "precision": "W1A8",
+      "maximum_epochs": 101,
+      "early_stopping_patience": 15
+    },
+    "metric": "macro one-vs-rest AUC",
+    "split": "held-out ROC-test archive",
+    "n_events": 260000,
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "spread": "sample standard deviation, ddof=1",
+    "values_rounded_as_source": true,
+    "arms": {
+      "BASE": {
+        "mean": 0.8711,
+        "sample_sd": 0.0013
+      },
+      "PTW5": {
+        "mean": 0.8603,
+        "sample_sd": 0.0019
+      },
+      "PTWNC": {
+        "mean": 0.8587,
+        "sample_sd": 0.002
+      }
+    },
+    "paired_comparisons": [
+      {
+        "comparison": "PTW5 - BASE",
+        "mean_delta": -0.0108,
+        "confidence_interval_95": [
+          -0.0124,
+          -0.0093
+        ],
+        "interval_method": "paired t",
+        "degrees_of_freedom": 7,
+        "seeds_lower": 8,
+        "seed_pairs": 8
+      },
+      {
+        "comparison": "PTWNC - BASE",
+        "mean_delta": -0.0125,
+        "confidence_interval_95": [
+          -0.0148,
+          -0.0101
+        ],
+        "interval_method": "paired t",
+        "degrees_of_freedom": 7,
+        "seeds_lower": 8,
+        "seed_pairs": 8
+      }
+    ],
+    "limitations": [
+      "Primary metric, paired comparison rule, falsifier and pT-sextile analysis were post hoc.",
+      "Numbers quote the source verification; this update did not independently recompute event-level predictions.",
+      "Conclusion applies to the tested N8 W1A8 l1x3 recipe."
+    ]
+  },
+  "architecture_attention": {
+    "source_ids": [
+      "architecture_attention_results",
+      "architecture_attention_report"
+    ],
+    "status": "training loops completed; trainer-recorded feasibility",
+    "epochs": 1000,
+    "metric_scope": {
+      "split": "internal validation",
+      "n_events": 124000
+    },
+    "architecture": {
+      "runs": 12,
+      "completed": 12,
+      "feasible_checkpoints_found": 5,
+      "seeds": [
+        1
+      ],
+      "budgets": "Configured per arm; A11 has a separate 500000 target."
+    },
+    "attention": {
+      "runs": 15,
+      "completed": 15,
+      "feasible_checkpoints_found": 0,
+      "seeds": [
+        4,
+        5,
+        6
+      ],
+      "target_ebops": 350000
+    }
+  },
+  "selected_checkpoint_evaluation": {
+    "status": "previously reported; not freshly verified",
+    "source_ids": [
+      "confirmation_public_snapshot"
+    ],
+    "split": "held-out ROC-test archive",
+    "n_events": 260000,
+    "seed": 1,
+    "deterministic_reload_max_abs_logit_difference_reported": 0.0,
+    "runs": [
+      {
+        "arm": "A02",
+        "constituents": 8,
+        "selected_epoch_one_based": 913,
+        "target_ebops": 350000,
+        "selected_ebops": 349298,
+        "held_out_accuracy": 0.60785,
+        "held_out_macro_ovr_auc": 0.8604315531
+      },
+      {
+        "arm": "A11",
+        "constituents": 8,
+        "selected_epoch_one_based": 789,
+        "target_ebops": 500000,
+        "selected_ebops": 479462,
+        "held_out_accuracy": 0.6233346154,
+        "held_out_macro_ovr_auc": 0.8738126864
+      }
+    ],
+    "limitations": [
+      "Single-seed evaluation.",
+      "A02 and A11 have different budgets; no same-budget or matched-seed superiority claim."
+    ]
+  },
+  "confirmation": {
+    "source_ids": [
+      "confirmation_public_snapshot",
+      "confirmation_later_status"
+    ],
+    "declared_runs": 12,
+    "epochs_per_run": 1000,
+    "seeds": [
+      2,
+      3
+    ],
+    "families": [
+      {
+        "constituents": 8,
+        "arms": [
+          "A00",
+          "A02",
+          "A03"
+        ],
+        "target_ebops": 350000
+      },
+      {
+        "constituents": 64,
+        "arms": [
+          "A07",
+          "E02",
+          "E05"
+        ],
+        "target_ebops": 5000000
+      }
+    ],
+    "last_public_observation_utc": "2026-09-24T21:45:42Z",
+    "later_local_report": {
+      "status": "failed; not relaunched at the handoff",
+      "failure_date_approximate": "2026-09-26",
+      "diagnosed_date": "2026-09-27",
+      "source_handoff_utc": "2026-09-29T00:32:00Z",
+      "reported_epoch_ranges": {
+        "N8": [
+          281,
+          300
+        ],
+        "N64": [
+          240,
+          280
+        ]
+      },
+      "reported_failure_mechanism": "The queue runner exits the entire pod when one arm exits.",
+      "checkpoint_resumability": "reported resumable; not independently rechecked"
+    },
+    "current_status": "unknown; requires live status and artifact recovery",
+    "final_confirmation_results_available": false,
+    "limitations": [
+      "Later handoff epoch ranges have not been reconciled against per-run checkpoints.",
+      "N8 and N64 use separate budgets.",
+      "The N64 5M target was chosen after the exploratory screen, not pre-registered before that screen."
+    ]
+  },
+  "engram": {
+    "source_ids": [
+      "engram_report",
+      "engram_status"
+    ],
+    "status": "training loops completed; final metric reproduction failed for three arms",
+    "constituents": 16,
+    "runs": 4,
+    "epochs_completed_per_run": 1000,
+    "outer_validation_pass": [
+      "E00"
+    ],
+    "selected_checkpoint_metric_reproduction_failed": [
+      "E01",
+      "E02",
+      "E03"
+    ],
+    "feasible_checkpoints_found": 0,
+    "target_augmented_cost": 350000,
+    "held_out_final_results_verified": false
+  },
+  "constituent_screen": {
+    "source_ids": [
+      "constituent_screen_report"
+    ],
+    "status": "historical exploratory screen",
+    "declared_comparisons": 38,
+    "completed_50_epochs": 28,
+    "partial_33_to_40_epochs": 7,
+    "two_epoch_canary_only": 2,
+    "static_rejection": 1,
+    "feasible_checkpoints_found": 0
+  },
+  "chang": {
+    "source_ids": [
+      "chang_run",
+      "chang_b3_rules",
+      "chang_b3_certification",
+      "confirmation_later_status"
+    ],
+    "status": "pilot decision pending; production blocked",
+    "b3": {
+      "status": "epoch-500 pause and readout completed",
+      "arms": [
+        "A07-350-s1",
+        "C-s1",
+        "F-s1"
+      ],
+      "certified_primary_and_sensitivity_checkpoint_count": 4,
+      "arms_with_certified_checkpoints": [
+        "C-s1",
+        "F-s1"
+      ],
+      "arms_without_feasible_checkpoint": [
+        "A07-350-s1"
+      ]
+    },
+    "b5": {
+      "last_saved_status": "Four of five arms paused; C-prime still training at last recorded observation.",
+      "terminal_readout_available": false,
+      "current_status": "unknown"
+    },
+    "scientific_gate": {
+      "K1": "fired; decision pending",
+      "approval_of_option_c_or_d": "pending",
+      "required": "Full b5 readout and Kai decision; changed code/configuration requires new frozen record and applicable preflight/pilot checks."
+    },
+    "pilot_tagging_metrics_promoted": false
+  },
+  "delta": {
+    "source_ids": [
+      "delta_run"
+    ],
+    "status": "resource canaries only; no completed screen result",
+    "E_A10_K4": {
+      "status": "finite training with acceptable recorded RSS; stopped to yield GPU",
+      "epochs_approximate": [
+        99,
+        100
+      ],
+      "full_110_epoch_phase_completed": false
+    },
+    "A07_A10_K3": {
+      "status": "failed GPU memory gate",
+      "oom": true
+    },
+    "A07_A10_two_survivors": {
+      "completed_epochs": 110,
+      "host_rss_gate": "both passed",
+      "packing_approval": "pending product and study resource conditions"
+    },
+    "launch_status": "pending preflight and resource gates"
+  },
+  "gpu_benchmark": {
+    "source_ids": [
+      "gpu_benchmark_verify"
+    ],
+    "status": "verified operational telemetry; hardware choice pending",
+    "jobs_applied": 16,
+    "jobs_completed": 9,
+    "jobs_not_scheduled_within_window": 7,
+    "executed_arm_runs": 70,
+    "epochs_per_arm_run": 21,
+    "checkpoint_verification_passes": 70,
+    "actual_schedulable_gpu_counts_measured": false,
+    "cross_product_node_spread_measured": false,
+    "selected_product": null,
+    "remaining_gates": [
+      "Product and packing choice using current capacity.",
+      "Chosen-product 110-epoch memory/RSS canary and eBOP certification.",
+      "Decision-time A10 comparison and registered falsifier checks."
+    ],
+    "physics_result": false
+  },
+  "code_and_hardware": {
+    "source_ids": [
+      "code_merge_study",
+      "legacy_r4_synthesis"
+    ],
+    "code_merge_status": "No passing merged-tree result in cited study.",
+    "merge_gates": [
+      "Build existing configurations on CPU.",
+      "Reload saved checkpoints within 1e-7.",
+      "PREFLIGHT_ALL_PASS."
+    ],
+    "current_candidate_hardware_measurements_available": false,
+    "legacy_R4_status": "Stopped after Vitis frontend failures; no RTL or Vivado model synthesis result in cited snapshot."
+  },
+  "next_steps": [
+    {
+      "order": 1,
+      "action": "Recover terminal b5 artifacts and live confirmation state; preserve checkpoint identities and logs.",
+      "requires_launch": false
+    },
+    {
+      "order": 2,
+      "action": "Complete Chang rule analysis and record Kai option c/d decision; refreeze and repeat required checks/pilot for changes.",
+      "scientific_gate": "pending"
+    },
+    {
+      "order": 3,
+      "action": "Select GPU product and K; complete resource/certification checks and remaining Delta preflight and fingerprint gates."
+    },
+    {
+      "order": 4,
+      "action": "Launch/resume only with action-time authority, cleared scientific gates, validated immutable handoff and manifest lint.",
+      "source_ids": [
+        "run_handoff_workflow"
+      ]
+    },
+    {
+      "order": 5,
+      "action": "Complete schedules and checkpoint reproduction, then matched-seed intervals and fixed-selection held-out evaluation."
+    },
+    {
+      "order": 6,
+      "action": "Complete code-merge CPU/reload gates and separately synthesize validated candidates."
+    }
+  ],
+  "sources": {
+    "pt_weighting_verify": {
+      "local_path_relative_to_lab": "campaigns/2026-09-25-pt-weighting/VERIFY.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-26",
+      "sha256": "dac6c0c1d6c2fd28505e7113a92986337a2003efeaed183af144ccfcf2fe8171",
+      "bytes": 26259,
+      "scope": "Verification recomputed from held-out prediction artifacts on the stated source date."
+    },
+    "architecture_attention_results": {
+      "local_path_relative_to_lab": "publication/docs/current-work/training-results-20260923.json",
+      "public_repo_path": "docs/current-work/training-results-20260923.json",
+      "source_record_date": "2026-09-23T22:53:27.294311+00:00",
+      "sha256": "e4672910b281b4cf970b0bf73d9316b1ce113cf3276ac3d258d4958ef3372377",
+      "bytes": 21705,
+      "scope": "Saved trainer summaries and Job completion evidence."
+    },
+    "architecture_attention_report": {
+      "local_path_relative_to_lab": "publication/docs/current-work/TRAINING_RESULTS_20260923.md",
+      "public_repo_path": "docs/current-work/TRAINING_RESULTS_20260923.md",
+      "source_record_date": "2026-09-23",
+      "sha256": "c3e19d4f49655f5fb30ec61ceff29d5d94ddcdae400cf93ff883d29bc062b2f7",
+      "bytes": 5624,
+      "scope": "Existing public report; internal validation, n=124000."
+    },
+    "confirmation_public_snapshot": {
+      "local_path_relative_to_lab": "publication/docs/current-work/confirmation-status-20260924.json",
+      "public_repo_path": "docs/current-work/confirmation-status-20260924.json",
+      "source_record_date": "2026-09-24T21:45:42Z",
+      "sha256": "3904dcf99bfa4b86015e8ff6ffc176b27a9dc2137d8c8e4f376c59054c5a1377",
+      "bytes": 3344,
+      "scope": "Historical progress and selected seed-1 checkpoint evaluation."
+    },
+    "confirmation_later_status": {
+      "local_path_relative_to_lab": "campaigns/2026-09-26-training-batch/ONBOARDING.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29T00:32:00Z",
+      "sha256": "581530e84da44d7ac13794e74c29e9a4a842350f30ba7e3f10fb44ab0caf6112",
+      "bytes": 16817,
+      "scope": "Section 10 reports failure around September 26, diagnosed September 27, with no relaunch at the handoff. Approximate epoch ranges are not reconciled against checkpoint files."
+    },
+    "engram_report": {
+      "local_path_relative_to_lab": "publication/docs/current-work/ENGRAM_STUDY.md",
+      "public_repo_path": "docs/current-work/ENGRAM_STUDY.md",
+      "source_record_date": "2026-09-23T22:53:00Z",
+      "sha256": "0ebecf021a9804a2db9215ab956dd577a4af703cdde1b6f5ec7681c28943c4fe",
+      "bytes": 6599,
+      "scope": "Completed training loops with final metric-reproduction failures for E01-E03."
+    },
+    "engram_status": {
+      "local_path_relative_to_lab": "publication/results/engram/status-20260923.json",
+      "public_repo_path": "results/engram/status-20260923.json",
+      "source_record_date": "2026-09-23",
+      "sha256": "ca4d9fc2a834c2a9d5034e6403e6a8326ce5a2852cbec2df630b33c843222b34",
+      "bytes": 4642,
+      "scope": "Existing machine-readable Engram status."
+    },
+    "constituent_screen_report": {
+      "local_path_relative_to_lab": "publication/docs/current-work/CONSTITUENT_SCREEN_20260923.md",
+      "public_repo_path": "docs/current-work/CONSTITUENT_SCREEN_20260923.md",
+      "source_record_date": "2026-09-23",
+      "sha256": "7bc0c0286482e17a32b057805c46a25ffa0934315f426c6367956f77f1e25015",
+      "bytes": 5897,
+      "scope": "Exploratory short screen, with later September 24 follow-up note.",
+      "public_counterpart_note": "SHA256 and byte count identify the local lab record, whose interpretation includes later edits not present in the linked historical public report. The screen counts quoted here agree in both versions.",
+      "public_counterpart_at_commit": "b2e2f7b48baa1b60e678a0a00b0e065f67a23d37",
+      "public_counterpart_sha256": "7b63cf77fd413f9fc59a478aa5e5f8393910204d8a40a13d653b4b9a8c747936"
+    },
+    "chang_run": {
+      "local_path_relative_to_lab": "campaigns/2026-09-26-training-batch/RUN.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29",
+      "sha256": "98b0aefaca95ea19e7c30cc8d41ce6e99992268b9cde91441173588c05684b3c",
+      "bytes": 79389,
+      "scope": "Latest saved entry concerns the b5 pilot at 18:30-18:48Z, with telemetry read at 18:54Z; terminal b5 evidence is absent from this update."
+    },
+    "chang_b3_rules": {
+      "local_path_relative_to_lab": "campaigns/2026-09-26-training-batch/readout/b3/rules-b3.txt",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29",
+      "sha256": "8137874f9245681bec7ff0feebddd107d1ef209312a6ade246cf29196d265fab",
+      "bytes": 26152,
+      "scope": "Saved analysis of the b3 epoch-500 pilot; K1 threshold fires for A07-350-s1."
+    },
+    "chang_b3_certification": {
+      "local_path_relative_to_lab": "campaigns/2026-09-26-training-batch/readout/b3/readout-epoch-0500-42abed-b3/certify-snapshot-0500.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29",
+      "sha256": "9948e7b233dc6d09255beac5ad3bea461d1fa0cef7645362a444202eebca4eb9",
+      "bytes": 3627,
+      "scope": "Four checkpoint certifications passed across C-s1 and F-s1; A07-350-s1 had no feasible checkpoint."
+    },
+    "delta_run": {
+      "local_path_relative_to_lab": "campaigns/2026-09-27-delta-screen/RUN.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29",
+      "sha256": "68192b9cea331571567e1616c21c3434b22873b661aba3b3a8ce919f3ba7d618",
+      "bytes": 39476,
+      "scope": "Latest entry at 06:08Z records A07 canary completion, with deletion at 06:09:28Z before its second pod ran."
+    },
+    "gpu_benchmark_verify": {
+      "local_path_relative_to_lab": "campaigns/2026-09-29-gpu-benchmark/VERIFY.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-29",
+      "sha256": "8ca574da1c31cb8f3a01eb90af91f4f177179f295b403e472513b250fbfd5fd9",
+      "bytes": 64659,
+      "scope": "Telemetry verification; source states data read 17:20-18:30Z; assumed available GPU counts, one node per shape."
+    },
+    "code_merge_study": {
+      "local_path_relative_to_lab": "campaigns/2026-09-26-code-line-merge/STUDY.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-09-26",
+      "sha256": "723347766ae8341e2490856959dd43fb4716618a651f235b1285678ca152361d",
+      "bytes": 9511,
+      "scope": "Study remains scratch with no result; records required CPU build and checkpoint-reload gates."
+    },
+    "legacy_r4_synthesis": {
+      "local_path_relative_to_lab": "publication/docs/current-work/R4_HARDWARE_SYNTHESIS.md",
+      "public_repo_path": "docs/current-work/R4_HARDWARE_SYNTHESIS.md",
+      "source_record_date": "2026-09-17T18:11:40+00:00",
+      "sha256": "0ddbb7b95ad51177ccc1be5000f5102ac6aa1c6f8a6a2755765e723ccb499097",
+      "bytes": 3651,
+      "scope": "Legacy synthesis attempt stopped in Vitis frontend before RTL generation."
+    },
+    "run_handoff_workflow": {
+      "local_path_relative_to_lab": "docs/infrastructure/run-handoff.md",
+      "public_repo_path": null,
+      "source_record_date": null,
+      "sha256": "d09fbbd0f27a3638456c06ced31ad6a1dc9f0e4e1311000874ecc60b0b4e6ffc",
+      "bytes": 8607,
+      "scope": "Current local workflow as read on 2026-10-01; source has no document date."
+    }
+  }
+}
