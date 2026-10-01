@@ -279,6 +279,15 @@ def train(cfg: dict, seed: int, out_dir: str, smoke: bool = False,
     data_dir = os.environ.get("BNHGQ2_TRAIN_DATA", tr["data"])
     X, Y, nfiles = load_train_data(data_dir, n_part, max_files=max_files,
                                    features=features)
+    # Pt sample weights (sample_weighting study; absent/disabled => byte-identical behavior).
+    # Pt is loaded separately and carried through the SAME permutation and split as X/Y.
+    ptw = tr.get("pt_weights") or {}
+    Pts = None
+    if ptw.get("enable", False):
+        from .pt_weights import load_train_pt
+        Pts, Ypt = load_train_pt(data_dir, max_files=max_files)
+        if not np.array_equal(Ypt, Y):
+            raise SystemExit("[train] pt_weights: Pt rows not aligned with labels")
     rng = np.random.default_rng(int(seed))
     idx = rng.permutation(len(X))
     X, Y = X[idx], Y[idx]
@@ -288,6 +297,27 @@ def train(cfg: dict, seed: int, out_dir: str, smoke: bool = False,
     Xtr, Ytr = X[nval:], Y[nval:]
     print(f"[train] data: {nfiles} files, {len(X)} jets ({len(Xtr)} train / {len(Xval)} val), "
           f"class counts {Y.sum(0).astype(int).tolist()}", flush=True)
+
+    weights = None
+    ptw_summary = None
+    if Pts is not None:
+        from .data import CLASS_NICE
+        from . import pt_weights as ptwm
+        Pts_tr = Pts[idx][nval:]
+        ytr = np.argmax(Ytr, axis=1)
+        weights, ptw_info = ptwm.compute_pt_weights(
+            Pts_tr, ytr, n_bins=int(ptw.get("n_bins", 100)), cap=ptw.get("cap"),
+            class_weight=ptw.get("class_weight"))
+        ptw_summary = ptwm.weight_summary(weights, ytr, CLASS_NICE)
+        ptwm.save_pt_weights(ptw_info, ptw_summary, out_dir)
+        if ptw.get("plot", True):
+            tag = f"{_variant(cfg)}-s{seed}"
+            ptwm.plot_pt_weights(ptw_info, CLASS_NICE, out_dir, tag)
+            ptwm.plot_weight_hist(weights, ytr, CLASS_NICE, out_dir, tag)
+        print(f"[train] pt_weights ON: n_bins={ptw_info['n_bins']} cap={ptw_info['cap']} "
+              f"class_weight={ptw_info['class_weight']} (train split only) "
+              f"eff_frac={ {k: round(v['eff_frac'], 3) for k, v in ptw_summary.items()} }",
+              flush=True)
 
     # reference experiment knob (guarded; absent key => byte-identical behavior): offline per-feature
     # standardization from the TRAIN split only. Stats travel with the checkpoint as
@@ -403,7 +433,8 @@ def train(cfg: dict, seed: int, out_dir: str, smoke: bool = False,
         cbs.append(LogBudgetToWandb())
     t0 = time.time()
     model.fit(Xtr, Ytr, epochs=epochs, batch_size=int(tr.get("batch", 256)),
-              verbose=2, callbacks=cbs)
+              verbose=2, callbacks=cbs,
+              **({"sample_weight": weights} if weights is not None else {}))
     dt = time.time() - t0
     grid_after = qat.act_grid_params(model)
     if act_calib == "trainable":
@@ -483,6 +514,7 @@ def train(cfg: dict, seed: int, out_dir: str, smoke: bool = False,
         "act_calib": act_calib, "act_recalib_epochs": recal_epochs,
         "act_grid_before": grid_before, "act_grid_after": grid_after,
         **({"ebops_budget": budget_result} if budget_result is not None else {}),
+        **({"pt_weights": {**ptw, "summary": ptw_summary}} if ptw_summary is not None else {}),
         "front": front, "front_selected": selected_front(front),
         "started": time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime(t0)),
         "finished": time.strftime("%Y-%m-%dT%H:%M:%S", time.gmtime()),
