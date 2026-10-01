@@ -2,7 +2,7 @@
 
 The completed pT-weighting experiment gives a negative result for its tested recipe. The earlier architecture campaign produced feasible candidates. The separate twelve-run confirmation queue has no final result in the saved record. Chang remains blocked at its pilot decision; Delta has resource-canary evidence but no screen result.
 
-This update uses saved records through 29 September; live cluster status on 1 October is unknown. The [provenance JSON](results-status-20261001.json) records source dates, evidence status and SHA256 hashes.
+This update preserves the scientific records through 29 September and adds the reviewed cluster capture at `2026-10-01T05:13:12.975881Z` and the bounded code-compatibility checks. The [provenance JSON](results-status-20261001.json) records original source dates and hashes alongside the sanitized operational observations. No new scientific result is reported.
 
 ## Completed training and held-out results
 
@@ -33,25 +33,29 @@ All four N16 [Engram loops](ENGRAM_STUDY.md) reached 1,000 epochs. E00 passed ou
 
 | Workstream | Latest saved evidence | Remaining gate |
 |---|---|---|
-| Twelve-run confirmation queue | The 24 September snapshot showed training in progress. A later handoff reports failure around 26 September, diagnosed on 27 September, with no relaunch at the handoff. It reports N8 epochs 281–300 and N64 epochs 240–280 of 1,000. | Recover current status and exact checkpoint state. No final confirmation results are available in the saved record. |
-| Chang regime-B pilot | The three-arm `b3` pilot reached its epoch-500 pause. The readout certified the primary and sensitivity checkpoints for C-s1 and F-s1; A07-350-s1 had no feasible checkpoint. The K1 PID-input rule fired. | Full terminal `b5` readout and Kai's pending (c)/(d) decision. Production remains blocked. |
+| Twelve-run confirmation queue | The Job has `Failed=True`, reason `FailedIndexes`, with transition time `2026-09-26T07:24:11Z`. Its `status.failed=5` is a Kubernetes counter, not five failed scientific arms. | Recover arm logs, all twelve checkpoint pointers and their generations. No final confirmation result or checkpoint validity is established. |
+| Chang regime-B pilot | The three-arm `b3` readout certified the primary and sensitivity checkpoints for C-s1 and F-s1; A07-350-s1 had no feasible checkpoint. K1 fired. The separate `b5` Job has `Complete=True` at `2026-09-29T20:52:06Z`, with `succeeded=1`. | Recover all five terminal arm outcomes and the full `b5` readout. Job completion does not certify pilot outcomes. Kai's (c)/(d) decision remains pending; production stays blocked. |
 | Delta | Resource canaries ran. E at K=4 reached roughly 100 epochs with finite training and acceptable recorded RSS before stopping to yield the GPU. A07 at K=3 ran out of GPU memory on A10; its two surviving arms completed 110 epochs and passed the host-RSS gate. | No completed Delta screen result. Product, packing and the frozen study's resource conditions require resolution before launch. |
 | GPU-product benchmark | Of 16 Jobs, nine completed and seven did not schedule within the allowed window. All 70 executed arm-runs completed 21 epochs and passed checkpoint verification. | Product choice is pending. Actual schedulable GPU counts were not measured; the chosen product still needs its 110-epoch canary and cost certification. |
 
-The confirmation failure is a local report, not a fresh cluster observation. Its epoch ranges require confirmation from per-run checkpoints. The report attributes the whole-pod exit to one arm failing.
+Both Job-specific pod queries, filtered by `user=kai` and `job-name`, were empty at collection, so this capture recovered no container logs. The exact `user=kai` query for `kai-chang0926-readoutb5-42abed` also returned no Job. That observation does not establish whether a readout previously ran or produced artifacts. The earlier handoff's N8 epochs 281–300, N64 epochs 240–280 and whole-pod exit diagnosis remain unreconciled against per-run evidence.
+
+NRP authentication succeeded. A separate capture at `2026-10-01T05:17:47.601818Z` records `kai-data` as `Bound`, `100Gi`, `ReadWriteMany`; a namespace query at `05:17:48.902193Z` found no pods mounting it. A reader route is being prepared separately; no workload was launched for this update. The legacy Jobs lack immutable-handoff binding annotations, so their context remains unavailable under that workflow. No checkpoint validity or scientific gate clearance follows from these observations.
 
 Chang's readout is a pilot diagnostic. Option (c) feeds traced eBOPs to the PID; option (d) scales each arm's setpoint by its measured ratio. Neither choice is approved. Changes require a new frozen record and the applicable preflight and pilot checks.
 
 The GPU benchmark is operational telemetry. Its projections assume available GPU counts and use one node per Job shape; they do not establish the fastest deployable campaign. Source records: `confirmation_later_status`, `chang_run`, `chang_b3_rules`, `delta_run` and `gpu_benchmark_verify` in the [provenance JSON](results-status-20261001.json).
 
+The [code-compatibility update at the reviewed commit](https://github.com/kai124138/BinaryTransfomerJettager/blob/e56fd7361f0299c1721aa053506d1eabc092cdba/docs/current-work/CODE_COMPATIBILITY_20261001.md) records a bounded engineering PASS: 217 passing comparisons comprising 21 interface/behavior contracts, 100 configuration builds and 96 checkpoint-reload combinations. The work is available in [draft pull request #1](https://github.com/kai124138/BinaryTransfomerJettager/pull/1) and is not merged into main. Synthetic reload differences were zero within the `1e-7` tolerance. Historical metric reproduction, calibrated-width remeasurement and attribution of 74 checkpoint paths remain pending. This does not establish full historical compatibility or hardware readiness; uncovered historical entry points remain retained.
+
 ## Work remaining, in dependency order
 
-1. Recover terminal `b5` artifacts and confirmation state through authorized access. Preserve logs and checkpoint identities before any resume decision.
+1. Recover terminal `b5` artifacts and confirmation checkpoint state through the separately prepared access route. Preserve logs and checkpoint identities before any resume decision; the Job conditions above do not replace those artifacts.
 2. Complete the Chang readout, resolve Kai's (c)/(d) decision and repeat the required freeze, CPU checks and pilot for the selected change. K1 fired; its required decision remains pending.
 3. Choose the GPU product and packing from measured throughput and current capacity. Complete the selected product's 110-epoch memory/RSS canary, cost certification and decision-time checks. Resolve Delta's resource conditions and remaining preflight and fingerprint gates.
 4. Launch or resume only with explicit action-time authority, a validated immutable run handoff, a passing manifest check and cleared scientific gates. Saved pilot progress alone does not authorize production.
 5. After full schedules finish, validate selected checkpoints and report matched-seed comparisons with intervals. Evaluate fixed selections on the held-out archive; retain separate N8/N64 budgets and native versus augmented cost conventions. Diagnose Engram's metric-reproduction failure before using its final results.
-6. Complete the code-line merge with CPU build and checkpoint-reload gates for the existing configurations. Synthesize the selected, validated candidates separately from training. The earlier [R4 synthesis attempt](R4_HARDWARE_SYNTHESIS.md) stopped at a Vitis frontend failure; it supplies no current-candidate hardware result.
+6. Review the bounded code-compatibility change in draft PR #1, recover missing historical associations and complete applicable metric and calibrated-width checks. Synthesize selected, validated candidates separately from training. The earlier [R4 synthesis attempt](R4_HARDWARE_SYNTHESIS.md) stopped at a Vitis frontend failure; it supplies no current-candidate hardware result.
 
 The completed [60-model fixed-precision baseline](../../README.md#pre-conference-fixed-precision-study) remains the reference. FPGA resources, latency, initiation interval and timing closure for current candidates still require hardware measurements.
 

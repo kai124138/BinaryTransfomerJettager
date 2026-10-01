@@ -2,12 +2,15 @@
   "schema_version": 1,
   "record_date": "2026-10-01",
   "evidence_scope": {
-    "method": "Reconciliation of saved source records; no new scientific computation or live cluster query.",
+    "method": "Reconciliation of saved scientific records, reviewed one-shot cluster observations and bounded engineering checks; no new scientific computation.",
     "latest_campaign_evidence_date": "2026-09-29",
-    "live_cluster_observed_at_utc": null,
-    "live_cluster_status": "unknown",
+    "live_cluster_observed_at_utc": "2026-10-01T05:13:12.975881+00:00",
+    "live_cluster_status": "Confirmation Job failure and b5 Job completion observed; per-arm outcomes, checkpoints and readout artifacts remain unestablished.",
     "source_hashes_measured_on": "2026-10-01",
-    "training_launched_for_this_update": false
+    "training_launched_for_this_update": false,
+    "latest_operational_evidence_date": "2026-10-01",
+    "scientific_gates_cleared_by_this_update": false,
+    "reader_workload_launched_for_this_update": false
   },
   "pt_weighting": {
     "status": "completed; quoted from prior verification",
@@ -153,7 +156,9 @@
   "confirmation": {
     "source_ids": [
       "confirmation_public_snapshot",
-      "confirmation_later_status"
+      "confirmation_later_status",
+      "cluster_capture_receipt",
+      "cluster_capture_review"
     ],
     "declared_runs": 12,
     "epochs_per_run": 1000,
@@ -200,13 +205,15 @@
       "reported_failure_mechanism": "The queue runner exits the entire pod when one arm exits.",
       "checkpoint_resumability": "reported resumable; not independently rechecked"
     },
-    "current_status": "unknown; requires live status and artifact recovery",
+    "current_status": "Job Failed=True (FailedIndexes), transition 2026-09-26T07:24:11Z, observed 2026-10-01; arm diagnosis and checkpoint recovery pending.",
     "final_confirmation_results_available": false,
     "limitations": [
       "Later handoff epoch ranges have not been reconciled against per-run checkpoints.",
       "N8 and N64 use separate budgets.",
-      "The N64 5M target was chosen after the exploratory screen, not pre-registered before that screen."
-    ]
+      "The N64 5M target was chosen after the exploratory screen, not pre-registered before that screen.",
+      "status.failed=5 counts Kubernetes failures; it does not establish five failed scientific arms."
+    ],
+    "operational_evidence_ref": "operational_evidence.cluster_capture.jobs.confirmation"
   },
   "engram": {
     "source_ids": [
@@ -246,7 +253,9 @@
       "chang_run",
       "chang_b3_rules",
       "chang_b3_certification",
-      "confirmation_later_status"
+      "confirmation_later_status",
+      "cluster_capture_receipt",
+      "cluster_capture_review"
     ],
     "status": "pilot decision pending; production blocked",
     "b3": {
@@ -268,7 +277,9 @@
     "b5": {
       "last_saved_status": "Four of five arms paused; C-prime still training at last recorded observation.",
       "terminal_readout_available": false,
-      "current_status": "unknown"
+      "current_status": "Job Complete=True at 2026-09-29T20:52:06Z with succeeded=1; five arm outcomes and terminal readout remain unestablished.",
+      "operational_evidence_ref": "operational_evidence.cluster_capture.jobs.chang_b5",
+      "readout_job_current_observation": "Exact-name query with user=kai returned no Job; prior execution and artifacts remain unknown."
     },
     "scientific_gate": {
       "K1": "fired; decision pending",
@@ -325,22 +336,50 @@
   "code_and_hardware": {
     "source_ids": [
       "code_merge_study",
-      "legacy_r4_synthesis"
+      "legacy_r4_synthesis",
+      "code_compatibility_report"
     ],
-    "code_merge_status": "No passing merged-tree result in cited study.",
+    "code_merge_status": "MERGE_ENGINEERING_PASS for bounded local coverage; draft pull request #1, not merged into main.",
     "merge_gates": [
-      "Build existing configurations on CPU.",
-      "Reload saved checkpoints within 1e-7.",
-      "PREFLIGHT_ALL_PASS."
+      "Historical selected-checkpoint metric reproduction remains pending.",
+      "Calibrated-width remeasurement remains pending.",
+      "Attribution of 74 checkpoint paths and remaining historical config/source associations remains pending.",
+      "Retain uncovered historical entry points until their applicable gates pass."
     ],
     "current_candidate_hardware_measurements_available": false,
-    "legacy_R4_status": "Stopped after Vitis frontend failures; no RTL or Vivado model synthesis result in cited snapshot."
+    "legacy_R4_status": "Stopped after Vitis frontend failures; no RTL or Vivado model synthesis result in cited snapshot.",
+    "engineering_checks": {
+      "total_passed": 217,
+      "interface_and_behavior_contracts": 21,
+      "config_build_comparisons": 100,
+      "checkpoint_reload_combinations": 96,
+      "probe_type": "deterministic synthetic inputs",
+      "max_abs_output_difference": 0.0,
+      "required_absolute_tolerance": 1e-07,
+      "scientific_accuracy_result": false
+    },
+    "historical_coverage": {
+      "attributed_checkpoint_paths": 206,
+      "config_seed_name_pairs": 94,
+      "research_configurations": 29,
+      "checkpoint_paths_without_attributable_metadata": 74,
+      "research_configurations_without_established_historical_coverage": 9,
+      "exact_renamed_public_config_historical_coverage": "not established",
+      "full_historical_compatibility": "not established"
+    },
+    "draft_pull_request": {
+      "number": 1,
+      "url": "https://github.com/kai124138/BinaryTransfomerJettager/pull/1",
+      "status": "draft; not merged",
+      "reviewed_commit": "e56fd7361f0299c1721aa053506d1eabc092cdba"
+    }
   },
   "next_steps": [
     {
       "order": 1,
-      "action": "Recover terminal b5 artifacts and live confirmation state; preserve checkpoint identities and logs.",
-      "requires_launch": false
+      "action": "Recover terminal b5 arm/readout artifacts and confirmation checkpoint state through the separately prepared access route; preserve checkpoint identities and logs.",
+      "requires_launch": false,
+      "access_route_dependency": "A reader workload, if needed, has separate authorization requirements; this update launches none."
     },
     {
       "order": 2,
@@ -364,7 +403,7 @@
     },
     {
       "order": 6,
-      "action": "Complete code-merge CPU/reload gates and separately synthesize validated candidates."
+      "action": "Review draft code-compatibility PR #1; recover historical associations and complete applicable metric and calibrated-width checks, then separately synthesize validated candidates."
     }
   ],
   "sources": {
@@ -498,6 +537,202 @@
       "sha256": "d09fbbd0f27a3638456c06ced31ad6a1dc9f0e4e1311000874ecc60b0b4e6ffc",
       "bytes": 8607,
       "scope": "Current local workflow as read on 2026-10-01; source has no document date."
+    },
+    "cluster_capture_receipt": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/cluster-20261001T0513Z/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01T05:13:12.975881+00:00",
+      "sha256": "c29c16132fd07d5e7b2ad46f19d4533452b601ac2a0add70d9ea7988b3aa93e4",
+      "bytes": 3894,
+      "scope": "Receipt for three exact-name Job queries and two Job/owner-filtered pod queries; all operations exited zero. Raw stdout is not retained."
+    },
+    "cluster_capture_review": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/LIVE_CAPTURE_REVIEW.md",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "84406f768346097cbcb383b098c4f54068b2db3d666d4647dbec06772fc18750",
+      "bytes": 4619,
+      "scope": "Independent PASS for saved observations only; confirms five stored hashes and limits Job conditions to operational evidence."
+    },
+    "cluster_collector": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/recover.py",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "23b0f0aa781e8955332c650244ec450a06ef1d9d73a8647119e2852aaa3a0f1d",
+      "bytes": 24397,
+      "scope": "Reviewed and operator-reported executed collector identity; hash separately verified against the local file, not embedded in the capture receipt."
+    },
+    "pvc_status_capture": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/access-20261001T0518Z/pvc.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01T05:17:47.601818+00:00",
+      "sha256": "2f8bfacac33e84b25e9142ab5ef7b2c82b45d7cf9b36182961efccc4b558fcd7",
+      "bytes": 589,
+      "scope": "One-shot saved PVC metadata: Bound, 100Gi, ReadWriteMany; no data or checkpoint inspection."
+    },
+    "pvc_mount_capture": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/access-20261001T0518Z/mounts.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01T05:17:48.902193+00:00",
+      "sha256": "e977ae123b4cf1b4248c8de090e28990b34f4f1f93de0994eda144fc0626e08b",
+      "bytes": 506,
+      "scope": "One-shot namespace pod listing filtered to kai-data PVC mounts; zero matches at this observation."
+    },
+    "access_capture_receipt": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/access-20261001T0518Z/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "d3d2b5b61ce893e95fe21c86a6182a3a9870b22c10f6f99abb7d126c47a9f889",
+      "bytes": 966,
+      "scope": "Supplemental access receipt; this summary uses only PVC and mount observations, whose stored hashes were verified. Receipt has no single collection timestamp."
+    },
+    "code_compatibility_report": {
+      "local_path_relative_to_lab": "publication/docs/current-work/CODE_COMPATIBILITY_20261001.md",
+      "public_repo_path": "docs/current-work/CODE_COMPATIBILITY_20261001.md",
+      "source_record_date": "2026-10-01",
+      "sha256": "8e01d86a35736b19d3e2a86879065f98e2157424fbf495615a9551ea3e8d5685",
+      "bytes": 2403,
+      "scope": "Bounded engineering coverage only; historical metrics, calibrated widths, missing attribution and current-candidate hardware remain pending.",
+      "public_commit": "e56fd7361f0299c1721aa053506d1eabc092cdba",
+      "public_url": "https://github.com/kai124138/BinaryTransfomerJettager/blob/e56fd7361f0299c1721aa053506d1eabc092cdba/docs/current-work/CODE_COMPATIBILITY_20261001.md"
+    }
+  },
+  "operational_evidence": {
+    "scope": "Sanitized portable summary of saved observations; no raw Job specifications, command environments or credentials.",
+    "cluster_capture": {
+      "source_ids": [
+        "cluster_capture_receipt",
+        "cluster_capture_review",
+        "cluster_collector"
+      ],
+      "observed_at_utc": "2026-10-01T05:13:12.975881+00:00",
+      "namespace": "cms-ml",
+      "owner_selector": "user=kai",
+      "authentication": "successful for the recorded queries",
+      "review_verdict": "PASS — saved observations only",
+      "receipt_sha256": "c29c16132fd07d5e7b2ad46f19d4533452b601ac2a0add70d9ea7988b3aa93e4",
+      "collector_sha256": "23b0f0aa781e8955332c650244ec450a06ef1d9d73a8647119e2852aaa3a0f1d",
+      "collector_identity_basis": "Independent review and operator-reported executed identity; collector hash is not embedded in the receipt.",
+      "hash_verification_scope": "All five stored hashes verified; raw stdout was not retained, so recorded raw-source hashes and sanitization transformation were not independently reproduced.",
+      "artifacts": [
+        {
+          "file": "kai-confirm-onegpu-0924-e0c0a3-r2.job.json",
+          "exit_code": 0,
+          "stored_sha256": "efc7bc841ee5cdf810b4d6e7e12ec0b410e80bbccf0e4a2c52b5a2def1286583",
+          "recorded_source_stdout_sha256": "af44708ec56e3f42bc438e13a6666c6dcba24521c32b63b08ddaa0102a83cde9"
+        },
+        {
+          "file": "kai-confirm-onegpu-0924-e0c0a3-r2.pods.json",
+          "exit_code": 0,
+          "stored_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "recorded_source_stdout_sha256": "7a779468a2dde976a9b896541df1e4ef805e813093bd5edb40ef1a6eea588edf"
+        },
+        {
+          "file": "kai-chang0926-pilotb5-42abed.job.json",
+          "exit_code": 0,
+          "stored_sha256": "ea0fbc66b13ca4f31112dee7448dbd7491b2246f299a4d82cc2312d4d4622afe",
+          "recorded_source_stdout_sha256": "25ac5947c14bd155812c0c379cae6644c36b1609951f4379094f41d13ff8c37d"
+        },
+        {
+          "file": "kai-chang0926-pilotb5-42abed.pods.json",
+          "exit_code": 0,
+          "stored_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "recorded_source_stdout_sha256": "7a779468a2dde976a9b896541df1e4ef805e813093bd5edb40ef1a6eea588edf"
+        },
+        {
+          "file": "kai-chang0926-readoutb5-42abed.job.json",
+          "exit_code": 0,
+          "stored_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+          "recorded_source_stdout_sha256": "7a779468a2dde976a9b896541df1e4ef805e813093bd5edb40ef1a6eea588edf"
+        }
+      ],
+      "jobs": {
+        "confirmation": {
+          "name": "kai-confirm-onegpu-0924-e0c0a3-r2",
+          "uid": "1a00632f-62d5-4bd0-aa4e-4a9afb13c54f",
+          "observed": "present",
+          "condition": {
+            "type": "Failed",
+            "status": "True",
+            "reason": "FailedIndexes",
+            "last_transition_time_utc": "2026-09-26T07:24:11Z"
+          },
+          "status_failed": 5,
+          "failed_indexes": "0",
+          "counter_interpretation": "Kubernetes status counter; not the number of failed scientific arms.",
+          "pods": {
+            "selector": "user=kai,job-name=kai-confirm-onegpu-0924-e0c0a3-r2",
+            "observed_count": 0
+          },
+          "logs_recovered": false
+        },
+        "chang_b5": {
+          "name": "kai-chang0926-pilotb5-42abed",
+          "uid": "d1821ce8-49fd-4389-95ba-a59bc78ec4f8",
+          "observed": "present",
+          "condition": {
+            "type": "Complete",
+            "status": "True",
+            "reason": "CompletionsReached",
+            "last_transition_time_utc": "2026-09-29T20:52:06Z"
+          },
+          "completion_time_utc": "2026-09-29T20:52:06Z",
+          "status_succeeded": 1,
+          "completed_indexes": "0",
+          "interpretation": "Kubernetes Job completion; not certification of the five pilot arms or checkpoints.",
+          "pods": {
+            "selector": "user=kai,job-name=kai-chang0926-pilotb5-42abed",
+            "observed_count": 0
+          },
+          "logs_recovered": false
+        },
+        "chang_b5_readout": {
+          "name": "kai-chang0926-readoutb5-42abed",
+          "uid": null,
+          "observed": "absent from exact-name query with user=kai selector",
+          "dependent_pod_and_log_collection": "skipped",
+          "prior_execution_or_artifacts": "unknown; current absence does not establish whether the readout ran or produced outputs."
+        }
+      },
+      "immutable_handoff": {
+        "binding_annotations": "absent from captured Jobs",
+        "context": "context unavailable"
+      },
+      "checkpoint_validity_established": false,
+      "scientific_gate_cleared": false
+    },
+    "pvc_access": {
+      "source_ids": [
+        "pvc_status_capture",
+        "pvc_mount_capture",
+        "access_capture_receipt"
+      ],
+      "pvc": {
+        "name": "kai-data",
+        "uid": "c5be55ec-3362-40a9-b283-f8d0750dcf95",
+        "phase": "Bound",
+        "capacity": {
+          "storage": "100Gi"
+        },
+        "accessModes": [
+          "ReadWriteMany"
+        ],
+        "observed_at_utc": "2026-10-01T05:17:47.601818+00:00",
+        "stored_sha256": "2f8bfacac33e84b25e9142ab5ef7b2c82b45d7cf9b36182961efccc4b558fcd7",
+        "recorded_source_stdout_sha256": "16926d2ceaa01ac54bb551d141aceb2052f54f7b9bd1bf344931384e62c6a75b"
+      },
+      "mounts": {
+        "observed_at_utc": "2026-10-01T05:17:48.902193+00:00",
+        "namespace": "cms-ml",
+        "filter": "all returned namespace pods filtered to persistentVolumeClaim.claimName=kai-data",
+        "observed_count": 0,
+        "stored_sha256": "e977ae123b4cf1b4248c8de090e28990b34f4f1f93de0994eda144fc0626e08b",
+        "recorded_source_stdout_sha256": "f63e1c1014448cd1c203cc45e1e466fbb5f5f7c842cbf552a1ae218a71bfd50a"
+      },
+      "receipt_sha256": "d3d2b5b61ce893e95fe21c86a6182a3a9870b22c10f6f99abb7d126c47a9f889",
+      "reader_route": "preparing separately; no workload launched for this update",
+      "pvc_contents_exported": false,
+      "checkpoint_validity_established": false
     }
   }
 }
