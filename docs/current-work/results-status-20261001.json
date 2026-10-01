@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_date": "2026-10-01",
   "evidence_scope": {
-    "method": "Reconciliation of saved scientific records, reviewed cluster observations, independently verified storage recovery and bounded engineering checks; no new scientific computation.",
+    "method": "Reconciliation of saved scientific records, reviewed cluster observations, verified storage recovery and bounded diagnostic operations; prior scientific measurements preserved, new scientific claims pending.",
     "latest_campaign_evidence_date": "2026-09-29",
     "live_cluster_observed_at_utc": "2026-10-01T05:13:12.975881+00:00",
     "live_cluster_status": "Confirmation Job failed; its twelve current generations are recovered. Five b5 epoch-500 snapshots are recovered; full readout remains incomplete.",
@@ -11,7 +11,11 @@
     "latest_operational_evidence_date": "2026-10-01",
     "scientific_gates_cleared_by_this_update": false,
     "reader_workload_launched_for_this_update": true,
-    "reader_workload_completed_for_this_update": true
+    "reader_workload_completed_for_this_update": true,
+    "latest_diagnostic_observed_at_utc": "2026-10-01T06:57:17.233207+00:00",
+    "diagnostic_workloads_launched_for_this_update": true,
+    "scientific_metrics_recomputed_or_promoted_by_this_update": false,
+    "partial_diagnostic_computation_in_progress": true
   },
   "pt_weighting": {
     "status": "completed; quoted from prior verification",
@@ -209,7 +213,7 @@
       "reported_failure_mechanism": "The queue runner exits the entire pod when one arm exits.",
       "checkpoint_resumability": "reported resumable; not independently rechecked"
     },
-    "current_status": "Incomplete: Job FailedIndexes; twelve current checkpoint generations recovered at 280\u2013318 of 1000 epochs. Recorded reload failures require diagnosis; exact final triggering arm unresolved.",
+    "current_status": "Incomplete: Job FailedIndexes; twelve current checkpoint generations recovered at 280–318 of 1000 epochs. Recorded reload failures require diagnosis; exact final triggering arm unresolved.",
     "final_confirmation_results_available": false,
     "limitations": [
       "Recovered per-run committed epochs supersede the earlier approximate progress ranges; copied bytes and internal metadata consistency do not establish resumability.",
@@ -442,7 +446,8 @@
         "Earlier CUDA illegal-address errors and nonfinite training have later resumed output."
       ],
       "exact_final_job_triggering_arm": "unresolved; final assertion blocks lack absolute timestamps and the terminal queue/pod log was not recovered."
-    }
+    },
+    "diagnostic_followup_ref": "operational_evidence.diagnostic_followup.confirmation_replay"
   },
   "engram": {
     "source_ids": [
@@ -627,7 +632,9 @@
           "status": "not included in transport/export scope; source existence not established here",
           "needed_for": "Per-epoch widths and genuine in-training/traced telemetry, subject to field inspection; exact W&B history may also be needed."
         }
-      ]
+      ],
+      "diagnostic_followup_ref": "operational_evidence.diagnostic_followup.b5_readout",
+      "controller_history_followup_ref": "operational_evidence.diagnostic_followup.b5_raw_histories"
     },
     "scientific_gate": {
       "K1": "fired; not cleared",
@@ -721,13 +728,14 @@
       "url": "https://github.com/kai124138/BinaryTransfomerJettager/pull/1",
       "status": "draft; not merged",
       "reviewed_commit": "e56fd7361f0299c1721aa053506d1eabc092cdba"
-    }
+    },
+    "current_candidate_artifact_followup_ref": "operational_evidence.diagnostic_followup.a02_artifact_recovery"
   },
   "next_steps": [
     {
       "order": 1,
-      "action": "Diagnose recovered confirmation reload failures and validate checkpoint resumability; recover remaining b5 controller histories and missing readout evidence.",
-      "recovery_status": "Initial 253-file storage transfer and independent hash review complete; exact final confirmation trigger remains uncertain."
+      "action": "Fix and review the confirmation diagnostic startup path, then make a distinct bounded diagnostic attempt before deciding any resume. Finish the recovered b5 controller-history analysis and missing readout evidence.",
+      "recovery_status": "Initial253-file transfer complete; five controller histories separately hash-verified; exact A02 hardware candidate and seven companion files recovered. Scientific and hardware validation remain pending."
     },
     {
       "order": 2,
@@ -1007,6 +1015,62 @@
       "sha256": "bccbc0adc43ec0063aeae15da7ecfabdb2f6b2fc7c498eb86391d9d6d5a5918b",
       "bytes": 744,
       "scope": "Explicit current-session user selection of traced-cost PID; production gates remain pending."
+    },
+    "b5_current_diagnostic_observation": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/readout-run-20261001T0625Z/observation-04/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "acba0fad6c004e8dc3ef6cb8254816d942d8892b04e4f6eef79245178407a925",
+      "bytes": 333,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "b5_raw_controller_history_transfer": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/readout-run-20261001T0625Z/telemetry-raw-01/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "a489e1f3923eced678a69645043063d7a28cd284570e5739d5b852f806248958",
+      "bytes": 3780,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "b5_history_export_refusal": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/readout-run-20261001T0625Z/telemetry-capture-01/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "4ea085d0836804d058b5960bb6812e4223ba677f62e7effc63976256f7c503c2",
+      "bytes": 1705,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "confirmation_diagnostic_terminal_objects": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/confirmation-replay-20261001T0645Z/observation-02/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "001a456ea805a67df86e29d5e4c3096f9fc29fee3337b4a3d2c18ec8755e855b",
+      "bytes": 416,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "confirmation_diagnostic_final_logs": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/confirmation-replay-20261001T0645Z/final-logs/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "634f8b5c13da7c243ba52e25fd7bc05025100860cc27bc32564dd922458571b2",
+      "bytes": 371,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "a02_hardware_artifact_transport": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/a02-hardware-evidence-20261001/receipt.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "08c4cb4d2f09ce96147d428aea99fe5efb334a75945ac4c69d59b61acb9fe073",
+      "bytes": 5635,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
+    },
+    "a02_hardware_metadata_binding": {
+      "local_path_relative_to_lab": "campaigns/2026-10-01-recovery/captures/a02-hardware-evidence-20261001/metadata-binding.json",
+      "public_repo_path": null,
+      "source_record_date": "2026-10-01",
+      "sha256": "7a211ef333e3e78b7e31dc0168b732ded94e38223d243fa906fdf0a04745ec08",
+      "bytes": 932,
+      "scope": "Operational acquisition or stored-identity comparison only; no scientific metric promotion."
     }
   },
   "operational_evidence": {
@@ -1021,7 +1085,7 @@
       "namespace": "cms-ml",
       "owner_selector": "user=kai",
       "authentication": "successful for the recorded queries",
-      "review_verdict": "PASS \u2014 saved observations only",
+      "review_verdict": "PASS — saved observations only",
       "receipt_sha256": "c29c16132fd07d5e7b2ad46f19d4533452b601ac2a0add70d9ea7988b3aa93e4",
       "collector_sha256": "23b0f0aa781e8955332c650244ec450a06ef1d9d73a8647119e2852aaa3a0f1d",
       "collector_identity_basis": "Independent review and operator-reported executed identity; collector hash is not embedded in the receipt.",
@@ -1193,6 +1257,66 @@
         "Source log hashes are reader observations; all stored transport/export bytes were independently rehashed.",
         "Full controller history and original b5 readout remain pending."
       ]
+    },
+    "diagnostic_followup": {
+      "observed_at_utc": "2026-10-01T06:57:17.233207+00:00",
+      "b5_readout": {
+        "status": "Running; partial certification log observed; full certification/entropy and rule analysis pending",
+        "job": "kai-chang1001-readoutb5-42abed-r1",
+        "job_uid": "d0b7eb2f-baf9-4af2-89b6-de3c33cec225",
+        "handoff": "rh-b6ae7a233d366d7b15d5120e",
+        "gpu_count": 0,
+        "cpu": 8,
+        "memory": "24Gi",
+        "deadline_seconds": 14400,
+        "source_ids": [
+          "b5_current_diagnostic_observation",
+          "b5_history_export_refusal"
+        ],
+        "full_readout_complete": false,
+        "export_limitation": "Five historical JSONL files exceed the original 8MiB per-file bound and were refused; the original driver cannot report complete telemetry. Source files were recovered separately without changing the running workload."
+      },
+      "b5_raw_histories": {
+        "status": "five raw files transported; source hashes and before/after stat match; scientific analysis pending",
+        "files": 5,
+        "bytes": 880343029,
+        "independent_source_sha256_matches": true,
+        "source_stat_unchanged": true,
+        "method": "bounded read-only file reads through existing owned Pod; no new workload or source writes",
+        "source_id": "b5_raw_controller_history_transfer"
+      },
+      "confirmation_replay": {
+        "status": "Failed before input checks, model loading and inference",
+        "job": "kai-confirm1001-replay-a02s3-r1",
+        "job_uid": "e78483f4-b74c-4fed-b7fa-e4b771e762a3",
+        "handoff": "rh-a15040ccc47283093ee9c734",
+        "gpu_count": 1,
+        "gpu_product": "NVIDIA-A10",
+        "container_exit_code": 1,
+        "container_finished_at_utc": "2026-10-01T06:47:50Z",
+        "job_failed_at_utc": "2026-10-01T06:48:41Z",
+        "restarts": 0,
+        "cause": "Diagnostic startup used exclusive leaf mkdir without creating the absent diagnostics parent.",
+        "historical_metric_failure_root_cause_resolved": false,
+        "scientific_result_produced": false,
+        "retry_submitted": false,
+        "source_ids": [
+          "confirmation_diagnostic_terminal_objects",
+          "confirmation_diagnostic_final_logs"
+        ]
+      },
+      "a02_artifact_recovery": {
+        "status": "exact model/config bytes and final stored provenance association match historical record; fresh validation pending",
+        "files": 8,
+        "selected_model_sha256": "b2d5e8940b5132d782de20bc9aab09ec7e37d1543472e7566627b33d66ec6e45",
+        "model_loaded": false,
+        "array_rehash_performed": false,
+        "hardware_validated": false,
+        "source_ids": [
+          "a02_hardware_artifact_transport",
+          "a02_hardware_metadata_binding"
+        ]
+      }
     }
   }
 }
