@@ -108,3 +108,7 @@ def package_hls_project(out_dir: str, tar_path: str):
                     "-C", os.path.dirname(out_dir), os.path.basename(out_dir)],
                    check=True)
     return tar_path
+
+
+# Historical import name; keep the same callable and signature.
+pack_for_mulder = package_hls_project
